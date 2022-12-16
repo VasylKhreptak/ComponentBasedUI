@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Core\Animation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Sequences\Core\Sequence.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Core\Action.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\ActionGroup.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts" />
