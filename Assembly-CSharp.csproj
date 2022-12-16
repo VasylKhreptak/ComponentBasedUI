@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Sequences\Core\Sequence.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core\AnimationAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Sequences\Actions\Core\SequenceAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\AnimationActionGroup.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Sequences\Actions\SequenceActionGroup.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts" />
