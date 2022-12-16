@@ -47,14 +47,18 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\OnDisableEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\OnAwakeEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\OnDestroyEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Animation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Sequences\Sequence.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\MonoEvents" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Events" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Events" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Resources" />
-     <Folder Include="Assets\Scripts\ComponentBasedUI\Events" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
