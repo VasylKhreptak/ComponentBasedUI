@@ -1,4 +1,3 @@
-using System;
 using ComponentBasedUI.MonoEvents.Core;
 using NaughtyAttributes;
 using UnityEngine;
@@ -92,8 +91,6 @@ namespace ComponentBasedUI.EventListeners.Core
                 AddListener();
 
                 _addedListener = true;
-                
-                Debug.Log("Added Listener!");
             }
         }
 
@@ -104,8 +101,6 @@ namespace ComponentBasedUI.EventListeners.Core
                 RemoveListener();
 
                 _addedListener = false;
-                
-                Debug.Log("Removed Listener!");
             }
         }
         
