@@ -1,4 +1,3 @@
-using ComponentBasedUI.MonoEvents;
 using ComponentBasedUI.MonoEvents.Core;
 using NaughtyAttributes;
 using UnityEngine;
@@ -15,6 +14,8 @@ namespace ComponentBasedUI.EventListeners.Core
         [ShowIf(nameof(CanShowManualControl)), SerializeField] private MonoEvent _removeListenerEvent;
 
         private bool CanShowManualControl() => _listenerType == ListenerType.Manual;
+
+        private bool _addedListener;
         
         #region MonoBehaviour
 
@@ -22,15 +23,12 @@ namespace ComponentBasedUI.EventListeners.Core
         {
             if (_listenerType == ListenerType.AwakeDestroy)
             {
-                AddListener();
-                
-                return;
+                TryAddListener();
             }
-
-            if (_listenerType == ListenerType.Manual)
+            else if (_listenerType == ListenerType.Manual)
             {
-                _addListenerEvent.onMonoCall += AddListener;
-                _removeListenerEvent.onMonoCall += RemoveListener;
+                _addListenerEvent.onMonoCall += TryAddListener;
+                _removeListenerEvent.onMonoCall += TryRemoveListener;
             }
         }
 
@@ -38,7 +36,7 @@ namespace ComponentBasedUI.EventListeners.Core
         {
             if (_listenerType == ListenerType.StartDestroy)
             {
-                AddListener();
+                TryAddListener();
             }
         }
 
@@ -46,7 +44,7 @@ namespace ComponentBasedUI.EventListeners.Core
         {
             if (_listenerType == ListenerType.EnableDisable)
             {
-                AddListener();
+                TryAddListener();
             }
         }
 
@@ -54,31 +52,52 @@ namespace ComponentBasedUI.EventListeners.Core
         {
             if (_listenerType == ListenerType.EnableDisable)
             {
-                RemoveListener();
+                TryRemoveListener();
             }
         }
 
         protected virtual void OnDestroy()
         {
-            if (_listenerType == ListenerType.AwakeDestroy || 
+            if (_listenerType == ListenerType.AwakeDestroy ||
                 _listenerType == ListenerType.StartDestroy)
             {
-                RemoveListener();
-                
-                return;
+                TryRemoveListener();
             }
-            
-            if (_listenerType == ListenerType.Manual)
+            else if (_listenerType == ListenerType.Manual)
             {
-                _addListenerEvent.onMonoCall -= AddListener;
-                _removeListenerEvent.onMonoCall -= RemoveListener;
+                _addListenerEvent.onMonoCall -= TryAddListener;
+                _removeListenerEvent.onMonoCall -= TryRemoveListener;
             }
         }
 
         #endregion
+
+        private void TryAddListener()
+        {
+            if (_addedListener == false)
+            {
+                AddListener();
+
+                _addedListener = true;
+                
+                Debug.Log("Added Listener!");
+            }
+        }
+
+        private void TryRemoveListener()
+        {
+            if (_addedListener)
+            {
+                RemoveListener();
+
+                _addedListener = false;
+                
+                Debug.Log("Removed Listener!");
+            }
+        }
         
         protected abstract void AddListener();
-        
+
         protected abstract void RemoveListener();
     }
 }

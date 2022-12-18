@@ -1,5 +1,4 @@
 using ComponentBasedUI.EventListeners.Core;
-using ComponentBasedUI.MonoEvents;
 using ComponentBasedUI.MonoEvents.Core;
 using UnityEngine;
 
