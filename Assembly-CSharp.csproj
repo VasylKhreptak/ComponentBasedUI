@@ -73,9 +73,13 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationEase.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\RestartAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationLoopType.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\ListenerType.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListener.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\MonoEventListener.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\MonoEvents" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations" />
@@ -86,6 +90,7 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Events" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Actions" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Resources" />

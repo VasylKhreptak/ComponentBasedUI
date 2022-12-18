@@ -1,14 +1,10 @@
-using DG.Tweening;
+using ComponentBasedUI.EventListeners;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class TEST : MonoBehaviour
+public class TEST : MonoEventListener
 {
-    private void Awake()
+    protected override void OnEventFired()
     {
-        Sequence sequence;
-
-        Image image;
-        CanvasGroup canvasGroup;
+        Debug.Log("Event Fired!");
     }
 }
