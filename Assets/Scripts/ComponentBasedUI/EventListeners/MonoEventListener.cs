@@ -11,8 +11,10 @@ namespace ComponentBasedUI.EventListeners
 
         #region MonoBehaviour
 
-        protected virtual void OnValidate()
+        protected override void OnValidate()
         {
+            base.OnValidate();
+            
             _monoEvent ??= GetComponent<MonoEvent>();
         }
 

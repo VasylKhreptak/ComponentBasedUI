@@ -1,3 +1,4 @@
+using System;
 using ComponentBasedUI.MonoEvents.Core;
 using NaughtyAttributes;
 using UnityEngine;
@@ -18,6 +19,18 @@ namespace ComponentBasedUI.EventListeners.Core
         private bool _addedListener;
         
         #region MonoBehaviour
+
+        protected virtual void OnValidate()
+        {
+            if (_listenerType == ListenerType.Editor)
+            {
+                TryAddListener();
+            }
+            else if (_listenerType != ListenerType.Editor)
+            {
+                TryRemoveListener();
+            }
+        }
 
         protected virtual void Awake()
         {
