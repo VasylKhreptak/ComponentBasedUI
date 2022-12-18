@@ -1,7 +1,24 @@
+using DG.Tweening;
+
 namespace ComponentBasedUI.Animations.Core
 {
-    public abstract class Animation : UnityEngine.MonoBehaviour
+    public class Animation : AnimationCore
     {
-        public abstract DG.Tweening.Tween GetTween();
+        protected Tween _tween;
+        
+        #region MonoBehaviour
+
+        private void OnDestroy()
+        {
+            _tween.Kill();
+        }
+
+        #endregion
+
+        public override Tween GetTween()
+        {
+            return _tween;
+        }
+
     }
 }

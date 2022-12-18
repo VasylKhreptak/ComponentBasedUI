@@ -1,14 +1,13 @@
 using ComponentBasedUI.Actions.Core;
 using DG.Tweening;
 using UnityEngine;
-using Animation = ComponentBasedUI.Animations.Core.Animation;
 
 namespace ComponentBasedUI.Animations.Actions
 {
     public class SetAnimationEase : Action
     {
         [Header("References")]
-        [SerializeField] private Animation _animation;
+        [SerializeField] private AnimationCore _animation;
 
         [Header("Preferences")]
         [SerializeField] private AnimationCurve _curve;
