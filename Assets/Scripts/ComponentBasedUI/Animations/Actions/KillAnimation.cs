@@ -9,8 +9,6 @@ namespace ComponentBasedUI.Animations.Actions
         public override void Do()
         {
             _animation.GetTween().Kill();
-
-            Debug.Log(_animation.GetTween() == null);
         }
     }
 }

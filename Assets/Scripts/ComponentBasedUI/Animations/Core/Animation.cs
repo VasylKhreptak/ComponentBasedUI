@@ -9,7 +9,7 @@ namespace ComponentBasedUI.Animations.Core
 
         #region MonoBehaviour
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             _tween.Kill();
         }
@@ -20,6 +20,5 @@ namespace ComponentBasedUI.Animations.Core
         {
             return _tween;
         }
-
     }
 }

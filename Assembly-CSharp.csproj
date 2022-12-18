@@ -91,6 +91,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\ColorExtensions.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\InitAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core\AnimationAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayAnimationfromStart.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Extensions" />
