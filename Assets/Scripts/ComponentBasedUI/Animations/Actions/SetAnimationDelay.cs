@@ -1,14 +1,11 @@
+using ComponentBasedUI.Animations.Actions.Core;
 using DG.Tweening;
 using UnityEngine;
-using Action = ComponentBasedUI.Actions.Core.Action;
 
 namespace ComponentBasedUI.Animations.Actions
 {
-    public class SetAnimationDelay : Action
+    public class SetAnimationDelay : AnimationAction
     {
-        [Header("References")]
-        [SerializeField] private AnimationCore _animation;
-
         [Header("Preferences")]
         [SerializeField] private float _delay;
         

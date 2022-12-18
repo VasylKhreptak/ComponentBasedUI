@@ -1,32 +1,25 @@
-using ComponentBasedUI.MonoEvents;
-using ComponentBasedUI.MonoEvents.Core;
+using ComponentBasedUI.EventListeners;
 using UnityEngine;
 using Action = ComponentBasedUI.Actions.Core.Action;
 
-public class OnEventDoAction : MonoBehaviour
+public class OnEventDoAction : MonoEventListener
 {
-   [Header("References")]
-   [SerializeField] private Action _action;
+    [Header("References")]
+    [SerializeField] private Action _action;
 
-   [Header("Events")]
-   [SerializeField] private MonoEvent _monoEvent;
+    #region MonoBehaviour
 
-   #region MonoBehaviour
+    protected override void OnValidate()
+    {
+        base.OnValidate();
 
-   private void OnValidate()
-   {
-      _monoEvent ??= GetComponent<MonoEvent>();
-   }
+        _action ??= GetComponent<Action>();
+    }
 
-   private void OnEnable()
-   {
-      _monoEvent.onMonoCall += _action.Do;
-   }
+    protected override void OnEventFired()
+    {
+        _action.Do();
+    }
 
-   private void OnDisable()
-   {
-      _monoEvent.onMonoCall -= _action.Do;
-   }
-
-   #endregion
+    #endregion
 }

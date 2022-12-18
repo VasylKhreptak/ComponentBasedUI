@@ -1,17 +1,16 @@
-using ComponentBasedUI.Actions.Core;
+using ComponentBasedUI.Animations.Actions.Core;
 using DG.Tweening;
 using UnityEngine;
 
 namespace ComponentBasedUI.Animations.Actions
 {
-    public class KillAnimation : Action
+    public class KillAnimation : AnimationAction
     {
-        [Header("References")]
-        [SerializeField] private AnimationCore _animation;
-
         public override void Do()
         {
             _animation.GetTween().Kill();
+
+            Debug.Log(_animation.GetTween() == null);
         }
     }
 }

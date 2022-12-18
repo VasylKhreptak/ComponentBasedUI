@@ -1,23 +1,40 @@
+using DG.Tweening;
 using UnityEngine;
 using Animation = ComponentBasedUI.Animations.Core.Animation;
 
-public class MoveAnimation : Animation
+namespace ComponentBasedUI.Animations
 {
-   [Header("References")]
-   [SerializeField] private Transform _transform;
+    public class MoveAnimation : Animation
+    {
+        [Header("References")]
+        [SerializeField] private Transform _transform;
 
-   [Header("Preferences")]
-   [SerializeField] private bool _fromStart = true;
-   [SerializeField] private Vector3 _startPosition;
-   [SerializeField] private Vector3 _targetPosition;
-   [SerializeField] private float _duration;
-   
-   #region MonoBehaviour
+        [Header("Preferences")]
+        [SerializeField] private Vector3 _targetPosition;
+        [SerializeField] private float _duration;
 
-   private void OnValidate()
-   {
-      _transform ??= GetComponent<Transform>();
-   }
+        #region MonoBehaviour
 
-   #endregion
+        private void OnValidate()
+        {
+            _transform ??= GetComponent<Transform>();
+        }
+
+        #endregion
+        public override Tween Init()
+        {
+            _tween = _transform.DOMove(_targetPosition, _duration);
+
+            return _tween;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (_transform == null) return;
+            
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(_targetPosition, 0.1f);
+            Gizmos.DrawLine(_transform.position, _targetPosition);
+        }
+    }
 }

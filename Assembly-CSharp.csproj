@@ -89,6 +89,8 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedSpriteRendererForAlpha.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedCanvasGroupForAlpha.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\ColorExtensions.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\InitAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core\AnimationAction.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Extensions" />
@@ -110,6 +112,7 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Events\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Actions" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Events\Mono" />
      <Folder Include="Assets\Scenes" />
