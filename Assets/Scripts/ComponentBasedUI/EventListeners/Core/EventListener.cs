@@ -1,3 +1,6 @@
+using ComponentBasedUI.MonoEvents;
+using ComponentBasedUI.MonoEvents.Core;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace ComponentBasedUI.EventListeners.Core
@@ -7,6 +10,12 @@ namespace ComponentBasedUI.EventListeners.Core
         [Header("Listener Preferences")]
         [SerializeField] protected ListenerType _listenerType;
 
+        [Header("Manual Listener Preferences")]
+        [ShowIf(nameof(CanShowManualControl)), SerializeField] private MonoEvent _addListenerEvent;
+        [ShowIf(nameof(CanShowManualControl)), SerializeField] private MonoEvent _removeListenerEvent;
+
+        private bool CanShowManualControl() => _listenerType == ListenerType.Manual;
+        
         #region MonoBehaviour
 
         protected virtual void Awake()
@@ -14,6 +23,14 @@ namespace ComponentBasedUI.EventListeners.Core
             if (_listenerType == ListenerType.AwakeDestroy)
             {
                 AddListener();
+                
+                return;
+            }
+
+            if (_listenerType == ListenerType.Manual)
+            {
+                _addListenerEvent.onMonoCall += AddListener;
+                _removeListenerEvent.onMonoCall += RemoveListener;
             }
         }
 
@@ -47,6 +64,14 @@ namespace ComponentBasedUI.EventListeners.Core
                 _listenerType == ListenerType.StartDestroy)
             {
                 RemoveListener();
+                
+                return;
+            }
+            
+            if (_listenerType == ListenerType.Manual)
+            {
+                _addListenerEvent.onMonoCall -= AddListener;
+                _removeListenerEvent.onMonoCall -= RemoveListener;
             }
         }
 

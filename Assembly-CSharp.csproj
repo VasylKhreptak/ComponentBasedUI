@@ -42,10 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\FlipAnimation.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\OnAwakeEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnAwakeEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\KillAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\RewindAnimation.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\OnStartEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnStartEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Sequences\Core\Sequence.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationUpdateType.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationInverted.cs" />
@@ -53,11 +53,11 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationDelay.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Core\Action.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\MonoEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Core\MonoEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\TogglePauseAnimation.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\OnDestroyEvent.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\OnDisableEvent.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\MonoEvents\OnEnableEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnDestroyEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnDisableEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnEnableEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\ActionGroup.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationID.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayForwardAnimation.cs" />
@@ -76,11 +76,15 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\ListenerType.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListener.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\MonoEventListener.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnUpdateEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnFixedUpdateEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnLateUpdateEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\ManualMonoEvent.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners" />
-     <Folder Include="Assets\Scripts\ComponentBasedUI\MonoEvents" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Events" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Core" />
@@ -90,8 +94,10 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Events" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Events\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Actions" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Events\Mono" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Resources" />
      <Reference Include="UnityEngine">
@@ -807,6 +813,18 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{618902da-d891-df56-38d9-3773f3ef3116}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Editor.csproj">
+      <Project>{c555af35-2114-0d29-be0a-5ba66fcff60b}</Project>
+      <Name>NaughtyAttributes.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Test.csproj">
+      <Project>{d4779e44-34a7-3f7c-b023-e4287563ad6c}</Project>
+      <Name>NaughtyAttributes.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Core.csproj">
+      <Project>{8eead09c-6944-3870-8079-852c523334d0}</Project>
+      <Name>NaughtyAttributes.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,6 @@
-using System;
 using ComponentBasedUI.EventListeners.Core;
 using ComponentBasedUI.MonoEvents;
+using ComponentBasedUI.MonoEvents.Core;
 using UnityEngine;
 
 namespace ComponentBasedUI.EventListeners
