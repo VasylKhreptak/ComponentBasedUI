@@ -2,24 +2,27 @@ using ComponentBasedUI.EventListeners;
 using UnityEngine;
 using Action = ComponentBasedUI.Actions.Core.Action;
 
-public class OnEventDoAction : MonoEventListener
+namespace ComponentBasedUI.Actions
 {
-    [Header("References")]
-    [SerializeField] private Action _action;
-
-    #region MonoBehaviour
-
-    protected override void OnValidate()
+    public class OnEventDoAction : MonoEventListener
     {
-        base.OnValidate();
+        [Header("References")]
+        [SerializeField] private Action _action;
 
-        _action ??= GetComponent<Action>();
+        #region MonoBehaviour
+
+        protected override void OnValidate()
+        {
+            base.OnValidate();
+
+            _action ??= GetComponent<Action>();
+        }
+
+        protected override void OnEventFired()
+        {
+            _action.Do();
+        }
+
+        #endregion
     }
-
-    protected override void OnEventFired()
-    {
-        _action.Do();
-    }
-
-    #endregion
 }

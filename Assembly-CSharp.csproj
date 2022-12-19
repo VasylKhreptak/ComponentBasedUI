@@ -115,6 +115,12 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\LocalMoveXAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\LocalMoveYAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\LocalMoveZAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnAwakeAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnStartAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnEnableAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnDisableAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnDestroyAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\Core\ActionContainer.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Extensions" />
@@ -122,6 +128,7 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Events" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Mono" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Core" />
@@ -137,6 +144,7 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Events\Core" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Listeners" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core" />
