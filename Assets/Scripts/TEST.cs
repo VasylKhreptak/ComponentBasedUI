@@ -1,12 +1,14 @@
 using System;
 using ComponentBasedUI.Animations.Core;
 using ComponentBasedUI.EventListeners;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class TEST : MonoEventListener
 {
     [Header("References")]
-    [SerializeField] private AnimationCore _animation;
+    [Required, SerializeField] private AnimationCore _animation;
+    [Required, SerializeField] private Rigidbody _rigidbody;
 
     private void OnEnable()
     {
