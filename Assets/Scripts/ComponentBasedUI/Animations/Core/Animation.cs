@@ -1,9 +1,13 @@
 using DG.Tweening;
+using UnityEngine;
 
 namespace ComponentBasedUI.Animations.Core
 {
     public abstract class Animation : AnimationCore
     {
+        [Header("Duration")]
+        [SerializeField] protected float _duration;
+        
         protected Tween _tween;
 
         #region MonoBehaviour
