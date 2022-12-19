@@ -1,22 +1,22 @@
-using ComponentBasedUI.MonoEvents.Core;
+using ComponentBasedUI.Events.Core;
 using NaughtyAttributes;
 using UnityEngine;
 
 namespace ComponentBasedUI.EventListeners.Core
 {
-    public abstract class EventListener : MonoBehaviour
+    public abstract class EventListener : EventListenerCore
     {
         [Header("Listener Preferences")]
         [SerializeField] protected ListenerType _listenerType;
 
         [Header("Manual Listener Preferences")]
-        [ShowIf(nameof(CanShowManualControl)), SerializeField] private MonoEvent _addListenerEvent;
-        [ShowIf(nameof(CanShowManualControl)), SerializeField] private MonoEvent _removeListenerEvent;
+        [ShowIf(nameof(CanShowManualControl)), SerializeField]
+        private MonoEvent _addListenerEvent;
+        [ShowIf(nameof(CanShowManualControl)), SerializeField]
+        private MonoEvent _removeListenerEvent;
 
-        private bool CanShowManualControl() => _listenerType == ListenerType.Manual;
+        private bool CanShowManualControl() => _listenerType == ListenerType.FullyManual;
 
-        private bool _addedListener;
-        
         #region MonoBehaviour
 
         protected virtual void OnValidate()
@@ -37,7 +37,7 @@ namespace ComponentBasedUI.EventListeners.Core
             {
                 TryAddListener();
             }
-            else if (_listenerType == ListenerType.Manual)
+            else if (_listenerType == ListenerType.FullyManual)
             {
                 _addListenerEvent.onMonoCall += TryAddListener;
                 _removeListenerEvent.onMonoCall += TryRemoveListener;
@@ -75,7 +75,7 @@ namespace ComponentBasedUI.EventListeners.Core
             {
                 TryRemoveListener();
             }
-            else if (_listenerType == ListenerType.Manual)
+            else if (_listenerType == ListenerType.FullyManual)
             {
                 _addListenerEvent.onMonoCall -= TryAddListener;
                 _removeListenerEvent.onMonoCall -= TryRemoveListener;
@@ -83,29 +83,5 @@ namespace ComponentBasedUI.EventListeners.Core
         }
 
         #endregion
-
-        private void TryAddListener()
-        {
-            if (_addedListener == false)
-            {
-                AddListener();
-
-                _addedListener = true;
-            }
-        }
-
-        private void TryRemoveListener()
-        {
-            if (_addedListener)
-            {
-                RemoveListener();
-
-                _addedListener = false;
-            }
-        }
-        
-        protected abstract void AddListener();
-
-        protected abstract void RemoveListener();
     }
 }

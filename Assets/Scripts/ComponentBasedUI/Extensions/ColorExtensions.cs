@@ -1,8 +1,11 @@
 
-public static class ColorExtensions
+namespace ComponentBasedUI.Extensions
 {
-   public static UnityEngine.Color WithAlpha(this UnityEngine.Color color, float alphaValue)
+   public static class ColorExtensions
    {
-      return new UnityEngine.Color(color.r, color.g, color.b, alphaValue);
+      public static UnityEngine.Color WithAlpha(this UnityEngine.Color color, float alphaValue)
+      {
+         return new UnityEngine.Color(color.r, color.g, color.b, alphaValue);
+      }
    }
 }

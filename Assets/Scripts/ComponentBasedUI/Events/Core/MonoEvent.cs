@@ -1,4 +1,4 @@
-namespace ComponentBasedUI.MonoEvents.Core
+namespace ComponentBasedUI.Events.Core
 {
     public class MonoEvent : UnityEngine.MonoBehaviour
     {

@@ -1,3 +1,4 @@
+using ComponentBasedUI.Animations.Core;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Action = ComponentBasedUI.Actions.Core.Action;

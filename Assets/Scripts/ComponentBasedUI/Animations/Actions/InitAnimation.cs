@@ -1,11 +1,14 @@
 using ComponentBasedUI.Animations.Actions.Core;
 using DG.Tweening;
 
-public class InitAnimation : AnimationAction
+namespace ComponentBasedUI.Animations.Actions
 {
-    public override void Do()
+    public class InitAnimation : AnimationAction
     {
-        _animation.GetTween().Kill();
-        _animation.Init();
+        public override void Do()
+        {
+            _animation.GetTween().Kill();
+            _animation.Init();
+        }
     }
 }

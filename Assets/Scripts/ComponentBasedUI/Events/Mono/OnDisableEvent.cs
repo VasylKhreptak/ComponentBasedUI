@@ -1,4 +1,4 @@
-using ComponentBasedUI.MonoEvents.Core;
+using ComponentBasedUI.Events.Core;
 
 namespace ComponentBasedUI.Events.Mono
 {

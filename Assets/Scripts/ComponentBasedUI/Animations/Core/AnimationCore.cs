@@ -1,8 +1,15 @@
-public abstract class AnimationCore : UnityEngine.MonoBehaviour
+using System;
+
+namespace ComponentBasedUI.Animations.Core
 {
-    public abstract void Init();
+    public abstract class AnimationCore : UnityEngine.MonoBehaviour
+    {
+        public Action onInit;
+        
+        public abstract void Init();
 
-    public abstract DG.Tweening.Tween GetTween();
+        public abstract DG.Tweening.Tween GetTween();
 
-    public abstract void PlayFromStart();
+        public abstract void PlayFromStart();
+    }
 }

@@ -1,4 +1,5 @@
 using ComponentBasedUI.Adapters.Core;
+using ComponentBasedUI.Extensions;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 

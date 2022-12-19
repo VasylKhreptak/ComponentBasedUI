@@ -1,6 +1,5 @@
 using ComponentBasedUI.Animations.Actions.Core;
 using DG.Tweening;
-using UnityEngine;
 
 namespace ComponentBasedUI.Animations.Actions
 {

@@ -42,19 +42,43 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\FlipAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedSpriteRendererForColor.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Core\FloatAdapter.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Core\ColorAdapter.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\OnEventLog.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnAwakeEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationStepComplete.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Gizmos.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationPlay.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\KillAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationKill.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\RewindAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnStartEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Sequences\Core\Sequence.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core\AnimationAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationLoopType.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationUpdateType.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedCanvasGroupForAlpha.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationUpdate.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationInverted.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnFixedUpdateEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationInit.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListener.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\MonoEventListener.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\ForceInitAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationComplete.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationDelay.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnUpdateEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\ColorExtensions.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Core\Action.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Listeners\AnimationListenerType.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\ListenerType.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Core\MonoEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayAnimationFromStart.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedImageForAlpha.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\TogglePauseAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnLateUpdateEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnDestroyEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnDisableEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnEnableEvent.cs" />
@@ -63,35 +87,24 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayForwardAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\OnEventDoAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationPause.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PauseAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Listeners\AnimationEventListener.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\InitAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationLoops.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedTMPForColor.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedImageForColor.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayBackwardsAnimation.cs" />
      <Compile Include="Assets\Scripts\TEST.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\CompleteAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Core\AnimationCore.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Core\Animation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationEase.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\RestartAnimation.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationLoopType.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\ListenerType.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListener.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\MonoEventListener.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnUpdateEvent.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnFixedUpdateEvent.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnLateUpdateEvent.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\ManualMonoEvent.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Core\ColorAdapter.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Core\FloatAdapter.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedImageForColor.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedTMPForColor.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedSpriteRendererForColor.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedImageForAlpha.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedSpriteRendererForAlpha.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedCanvasGroupForAlpha.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\ColorExtensions.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\InitAnimation.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core\AnimationAction.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayAnimationfromStart.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\ManualMonoEvent.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\RestartAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationRewind.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListenerCore.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Extensions" />
@@ -112,6 +125,7 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Events\Core" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Listeners" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Actions" />
@@ -832,13 +846,13 @@
       <Project>{618902da-d891-df56-38d9-3773f3ef3116}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
-    <ProjectReference Include="NaughtyAttributes.Editor.csproj">
-      <Project>{c555af35-2114-0d29-be0a-5ba66fcff60b}</Project>
-      <Name>NaughtyAttributes.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Test.csproj">
       <Project>{d4779e44-34a7-3f7c-b023-e4287563ad6c}</Project>
       <Name>NaughtyAttributes.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Editor.csproj">
+      <Project>{c555af35-2114-0d29-be0a-5ba66fcff60b}</Project>
+      <Name>NaughtyAttributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Core.csproj">
       <Project>{8eead09c-6944-3870-8079-852c523334d0}</Project>

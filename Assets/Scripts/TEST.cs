@@ -1,10 +1,25 @@
+using System;
+using ComponentBasedUI.Animations.Core;
 using ComponentBasedUI.EventListeners;
 using UnityEngine;
 
-public class TEST : MonoEventListener
+public class TEST : MonoBehaviour
 {
-    protected override void OnEventFired()
+    [Header("References")]
+    [SerializeField] private AnimationCore _animation;
+
+    private void OnEnable()
     {
-        Debug.Log("Event Fired!");
+        _animation.GetTween().onPlay += OnPlay;
+    }
+
+    private void OnDisable()
+    {
+        _animation.GetTween().onPlay -= OnPlay;
+    }
+
+    private void OnPlay()
+    {
+        Debug.Log("OnPlay");
     }
 }

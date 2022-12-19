@@ -27,10 +27,14 @@ namespace ComponentBasedUI.Animations
         }
 
         #endregion
-        public override void Init()
+
+        protected override Tween CreateTween()
         {
-            _tween = _transform.DOMove(_targetPosition, _duration);
+            Tween tween = _transform.DOMove(_targetPosition, _duration);
+
+            return tween;
         }
+
         public override void PlayFromStart()
         {
             _transform.position = _startPosition;
@@ -42,8 +46,7 @@ namespace ComponentBasedUI.Animations
             if (_transform == null) return;
 
             Gizmos.color = Color.green;
-            Gizmos.DrawSphere(_targetPosition, 0.1f);
-            Gizmos.DrawLine(_transform.position, _targetPosition);
+            Extensions.Gizmos.DrawArrow(_startPosition, (_targetPosition - _startPosition));
         }
     }
 }

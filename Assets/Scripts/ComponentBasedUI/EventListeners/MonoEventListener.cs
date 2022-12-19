@@ -1,5 +1,5 @@
 using ComponentBasedUI.EventListeners.Core;
-using ComponentBasedUI.MonoEvents.Core;
+using ComponentBasedUI.Events.Core;
 using UnityEngine;
 
 namespace ComponentBasedUI.EventListeners
@@ -22,12 +22,19 @@ namespace ComponentBasedUI.EventListeners
         
         protected override void AddListener()
         {
-            _monoEvent.onMonoCall += OnEventFired;
+            _monoEvent.onMonoCall += OnMonoCall;
         }
 
         protected override void RemoveListener()
         {
-            _monoEvent.onMonoCall -= OnEventFired;
+            _monoEvent.onMonoCall -= OnMonoCall;
+        }
+
+        private void OnMonoCall()
+        {
+            OnEventFired();
+            
+            Invoke();
         }
         
         protected abstract void OnEventFired();

@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 
 namespace ComponentBasedUI.Animations.Core
@@ -19,6 +18,15 @@ namespace ComponentBasedUI.Animations.Core
         public override Tween GetTween()
         {
             return _tween;
+        }
+
+        protected abstract Tween CreateTween();
+
+        public override void Init()
+        {
+            _tween = CreateTween();
+            
+            onInit?.Invoke();
         }
     }
 }
