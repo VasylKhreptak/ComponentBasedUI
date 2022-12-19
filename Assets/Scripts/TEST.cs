@@ -3,7 +3,7 @@ using ComponentBasedUI.Animations.Core;
 using ComponentBasedUI.EventListeners;
 using UnityEngine;
 
-public class TEST : MonoBehaviour
+public class TEST : MonoEventListener
 {
     [Header("References")]
     [SerializeField] private AnimationCore _animation;
@@ -21,5 +21,9 @@ public class TEST : MonoBehaviour
     private void OnPlay()
     {
         Debug.Log("OnPlay");
+    }
+    protected override void OnEventFired()
+    {
+        throw new NotImplementedException();
     }
 }

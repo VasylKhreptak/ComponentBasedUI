@@ -1,5 +1,6 @@
 using ComponentBasedUI.Adapters.Core;
 using ComponentBasedUI.Extensions;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace ComponentBasedUI.Adapters.Alpha
@@ -7,7 +8,7 @@ namespace ComponentBasedUI.Adapters.Alpha
     public class AdaptedSpriteRendererForAlpha : FloatAdapter
     {
         [Header("References")]
-        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [Required, SerializeField] private SpriteRenderer _spriteRenderer;
     
         public override float value
         {

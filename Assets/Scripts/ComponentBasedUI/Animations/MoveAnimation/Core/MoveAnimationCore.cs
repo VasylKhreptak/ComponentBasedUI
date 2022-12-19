@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using Animation = ComponentBasedUI.Animations.Core.Animation;
 
@@ -6,7 +7,7 @@ namespace ComponentBasedUI.Animations.MoveAnimation.Core
     public abstract class MoveAnimationCore : Animation
     {
         [Header("References")]
-        [SerializeField] protected Transform _transform;
+        [Required, SerializeField] protected Transform _transform;
 
         #region MonoBehaviour
 

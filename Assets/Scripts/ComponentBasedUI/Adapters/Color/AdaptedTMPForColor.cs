@@ -1,24 +1,28 @@
 using ComponentBasedUI.Adapters.Core;
+using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
 
-public class AdaptedTMPForColor : ColorAdapter
+namespace ComponentBasedUI.Adapters.Color
 {
-    [Header("References")]
-    [SerializeField] private TMP_Text _tmpText;
-    
-    public override Color color
+    public class AdaptedTMPForColor : ColorAdapter
     {
-        get => _tmpText.color;
-        set => _tmpText.color = value;
-    }
+        [Header("References")]
+        [Required, SerializeField] private TMP_Text _tmpText;
     
-    #region MonoBehaviour
+        public override UnityEngine.Color color
+        {
+            get => _tmpText.color;
+            set => _tmpText.color = value;
+        }
+    
+        #region MonoBehaviour
 
-    private void OnValidate()
-    {
-        _tmpText ??= GetComponent<TMP_Text>();
+        private void OnValidate()
+        {
+            _tmpText ??= GetComponent<TMP_Text>();
+        }
+
+        #endregion
     }
-
-    #endregion
 }

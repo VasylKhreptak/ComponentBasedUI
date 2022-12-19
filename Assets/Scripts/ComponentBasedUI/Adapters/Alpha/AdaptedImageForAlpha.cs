@@ -1,5 +1,6 @@
 using ComponentBasedUI.Adapters.Core;
 using ComponentBasedUI.Extensions;
+using NaughtyAttributes;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
@@ -8,7 +9,7 @@ namespace ComponentBasedUI.Adapters.Alpha
     public class AdaptedImageForAlpha : FloatAdapter
     {
         [Header("References")]
-        [SerializeField] private Image _image;
+        [Required, SerializeField] private Image _image;
     
         public override float value
         {

@@ -1,4 +1,5 @@
 using ComponentBasedUI.EventListeners;
+using NaughtyAttributes;
 using UnityEngine;
 using Action = ComponentBasedUI.Actions.Core.Action;
 
@@ -7,7 +8,7 @@ namespace ComponentBasedUI.Actions
     public class OnEventDoAction : MonoEventListener
     {
         [Header("References")]
-        [SerializeField] private Action _action;
+        [Required, SerializeField] private Action _action;
 
         #region MonoBehaviour
 

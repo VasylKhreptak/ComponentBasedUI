@@ -1,5 +1,6 @@
 using ComponentBasedUI.Animations.Core;
 using ComponentBasedUI.EventListeners.Core;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace ComponentBasedUI.Animations.Events
@@ -7,7 +8,7 @@ namespace ComponentBasedUI.Animations.Events
     public class OnAnimationInit : EventListener
     {
         [Header("References")]
-        [SerializeField] private AnimationCore _animation;
+        [Required, SerializeField] private AnimationCore _animation;
         
         protected override void AddListener()
         {

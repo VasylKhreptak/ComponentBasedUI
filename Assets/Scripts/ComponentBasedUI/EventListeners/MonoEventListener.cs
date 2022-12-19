@@ -1,5 +1,6 @@
 using ComponentBasedUI.EventListeners.Core;
 using ComponentBasedUI.Events.Core;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace ComponentBasedUI.EventListeners
@@ -7,7 +8,7 @@ namespace ComponentBasedUI.EventListeners
     public abstract class MonoEventListener : EventListener
     {
         [Header("Listener Event")]
-        [SerializeField] protected MonoEvent _monoEvent;
+        [Required, SerializeField] protected MonoEvent _monoEvent;
 
         #region MonoBehaviour
 
@@ -16,6 +17,7 @@ namespace ComponentBasedUI.EventListeners
             base.OnValidate();
             
             _monoEvent ??= GetComponent<MonoEvent>();
+            _monoEvent = _monoEvent == this ? null : _monoEvent;
         }
 
         #endregion

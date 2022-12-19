@@ -1,24 +1,28 @@
 using ComponentBasedUI.Adapters.Core;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AdaptedImageForColor : ColorAdapter
+namespace ComponentBasedUI.Adapters.Color
 {
-    [Header("References")]
-    [SerializeField] private Image _image;
-    
-    public override Color color
+    public class AdaptedImageForColor : ColorAdapter
     {
-        get => _image.color;
-        set => _image.color = value;
-    }
+        [Header("References")]
+        [Required, SerializeField] private Image _image;
     
-    #region MonoBehaviour
+        public override UnityEngine.Color color
+        {
+            get => _image.color;
+            set => _image.color = value;
+        }
+    
+        #region MonoBehaviour
 
-    private void OnValidate()
-    {
-        _image ??= GetComponent<Image>();
+        private void OnValidate()
+        {
+            _image ??= GetComponent<Image>();
+        }
+
+        #endregion
     }
-
-    #endregion
 }

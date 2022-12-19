@@ -10,9 +10,9 @@ namespace ComponentBasedUI.EventListeners.Core
         [SerializeField] protected ListenerType _listenerType;
 
         [Header("Manual Listener Preferences")]
-        [ShowIf(nameof(CanShowManualControl)), SerializeField]
+        [ShowIf(nameof(CanShowManualControl)), Required, SerializeField]
         private MonoEvent _addListenerEvent;
-        [ShowIf(nameof(CanShowManualControl)), SerializeField]
+        [ShowIf(nameof(CanShowManualControl)), Required, SerializeField]
         private MonoEvent _removeListenerEvent;
 
         private bool CanShowManualControl() => _listenerType == ListenerType.FullyManual;

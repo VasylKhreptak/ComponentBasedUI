@@ -1,4 +1,5 @@
 using ComponentBasedUI.Adapters.Core;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace ComponentBasedUI.Adapters.Color
@@ -6,7 +7,7 @@ namespace ComponentBasedUI.Adapters.Color
     public class AdaptedSpriteRendererForColor : ColorAdapter
     {
         [Header("References")]
-        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [Required, SerializeField] private SpriteRenderer _spriteRenderer;
     
         public override UnityEngine.Color color
         {

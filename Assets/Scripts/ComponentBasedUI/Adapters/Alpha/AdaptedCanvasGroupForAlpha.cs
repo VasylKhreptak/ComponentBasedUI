@@ -1,4 +1,5 @@
 using ComponentBasedUI.Adapters.Core;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace ComponentBasedUI.Adapters.Alpha
@@ -6,7 +7,7 @@ namespace ComponentBasedUI.Adapters.Alpha
     public class AdaptedCanvasGroupForColor : FloatAdapter
     {
         [Header("References")]
-        [SerializeField] private CanvasGroup _canvasGroup;
+        [Required, SerializeField] private CanvasGroup _canvasGroup;
     
         public override float value
         {

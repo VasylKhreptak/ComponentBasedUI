@@ -1,5 +1,6 @@
 using ComponentBasedUI.Animations.Core;
 using ComponentBasedUI.EventListeners.Core;
+using NaughtyAttributes;
 using UnityEngine;
 using Animation = ComponentBasedUI.Animations.Core.Animation;
 
@@ -8,7 +9,7 @@ namespace ComponentBasedUI.Animations.Listeners
     public abstract class AnimationEventListener : EventListenerCore
     {
         [Header("References")]
-        [SerializeField] protected AnimationCore _animation;
+        [Required, SerializeField] protected AnimationCore _animation;
 
         [Header("Listener Preferences")]
         [SerializeField] private AnimationListenerType _listenerType = AnimationListenerType.OnEnableOnDisable;
