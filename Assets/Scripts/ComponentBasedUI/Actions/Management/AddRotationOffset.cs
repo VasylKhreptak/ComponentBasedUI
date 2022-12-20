@@ -1,0 +1,83 @@
+using ComponentBasedUI.Actions.Management.Core;
+using NaughtyAttributes;
+using UnityEngine;
+
+namespace ComponentBasedUI.Actions.Management
+{
+    public class AddRotationOffset : TransformAction
+    {
+        [Header("Preferences")]
+        [SerializeField] private Vector3 _rotationOffset;
+
+        public override void Do()
+        {
+            Quaternion rotation = _transform.rotation;
+
+            _transform.rotation = Quaternion.Euler(_rotationOffset) * rotation;
+        }
+
+        #region Editor
+
+#if UNITY_EDITOR
+        [ShowNonSerializedField] private Vector3 _startRotation;
+        [ShowNonSerializedField] private bool _isRecording;
+        [ShowNonSerializedField] private bool _rotatedToStart;
+        [ShowNonSerializedField] private bool _rotatedToEnd;
+
+        [Button("Start Recording")]
+        private void StartRecording()
+        {
+            if (_isRecording) return;
+
+            _startRotation = _transform.rotation.eulerAngles;
+
+            _isRecording = true;
+            _rotatedToEnd = false;
+            _rotatedToStart = false;
+        }
+
+        [Button("Stop Recording")]
+        private void StopRecording()
+        {
+            if (_isRecording == false) return;
+
+            _rotationOffset = _transform.rotation.eulerAngles - _startRotation;
+            _transform.rotation = Quaternion.Euler(_startRotation);
+
+            _isRecording = false;
+            _rotatedToEnd = false;
+            _rotatedToStart = false;
+        }
+
+        [Button("Rotate To End")]
+        private void RotateToEnd()
+        {
+            if (_isRecording || _rotatedToEnd) return;
+
+            _startRotation = _transform.rotation.eulerAngles;
+
+            Quaternion transformRotation = _transform.rotation;
+            
+            _transform.rotation = Quaternion.Euler(_rotationOffset) * transformRotation;
+
+            _rotatedToEnd = true;
+            _rotatedToStart = false;
+        }
+
+        [Button("Rotate To Start")]
+        private void RotateToStart()
+        {
+            if (_isRecording || _rotatedToStart || _rotatedToEnd == false) return;
+
+            _transform.rotation = Quaternion.Euler(_startRotation);
+
+            _rotatedToStart = true;
+            _rotatedToEnd = false;
+        }
+
+#endif
+
+        #endregion
+
+    }
+}

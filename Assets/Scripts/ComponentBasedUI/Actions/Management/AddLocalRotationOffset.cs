@@ -1,0 +1,83 @@
+using ComponentBasedUI.Actions.Management.Core;
+using NaughtyAttributes;
+using UnityEngine;
+
+namespace ComponentBasedUI.Actions.Management
+{
+    public class AddLocalRotationOffset : TransformAction
+    {
+        [Header("Preferences")]
+        [SerializeField] private Vector3 _localRotationOffset;
+
+        public override void Do()
+        {
+            Quaternion transformLocalRotation = _transform.localRotation;
+
+            _transform.localRotation = Quaternion.Euler(_localRotationOffset) * transformLocalRotation;
+        }
+
+        #region Editor
+
+#if UNITY_EDITOR
+        [ShowNonSerializedField] private Vector3 _startLocalRotation;
+        [ShowNonSerializedField] private bool _isRecording;
+        [ShowNonSerializedField] private bool _rotatedToStart;
+        [ShowNonSerializedField] private bool _rotatedToEnd;
+
+        [Button("Start Recording")]
+        private void StartRecording()
+        {
+            if (_isRecording) return;
+
+            _startLocalRotation = _transform.localRotation.eulerAngles;
+
+            _isRecording = true;
+            _rotatedToEnd = false;
+            _rotatedToStart = false;
+        }
+
+        [Button("Stop Recording")]
+        private void StopRecording()
+        {
+            if (_isRecording == false) return;
+
+            _localRotationOffset = _transform.localRotation.eulerAngles - _startLocalRotation;
+            _transform.localRotation = Quaternion.Euler(_startLocalRotation);
+
+            _isRecording = false;
+            _rotatedToEnd = false;
+            _rotatedToStart = false;
+        }
+
+        [Button("Rotate To End")]
+        private void RotateToEnd()
+        {
+            if (_isRecording || _rotatedToEnd) return;
+
+            _startLocalRotation = _transform.localRotation.eulerAngles;
+
+            Quaternion transformLocalRotation = _transform.localRotation;
+            
+            _transform.localRotation = Quaternion.Euler(_localRotationOffset) * transformLocalRotation;
+
+            _rotatedToEnd = true;
+            _rotatedToStart = false;
+        }
+
+        [Button("Rotate To Start")]
+        private void RotateToStart()
+        {
+            if (_isRecording || _rotatedToStart || _rotatedToEnd == false) return;
+
+            _transform.localRotation = Quaternion.Euler(_startLocalRotation);
+
+            _rotatedToStart = true;
+            _rotatedToEnd = false;
+        }
+
+#endif
+
+        #endregion
+
+    }
+}
