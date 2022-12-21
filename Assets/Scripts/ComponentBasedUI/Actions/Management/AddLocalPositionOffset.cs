@@ -20,24 +20,58 @@ namespace ComponentBasedUI.Actions.Management
 
         [ShowNonSerializedField] private bool _isRecording;
         [ShowNonSerializedField] private Vector3 _startLocalPosition;
+        [ShowNonSerializedField] private bool _movedToStart;
+        [ShowNonSerializedField] private bool _movedToEnd;
 
         [Button("Start Recording")]
         private void StartRecording()
         {
+            if (_isRecording) return;
+
             _startLocalPosition = _transform.localPosition;
 
             _isRecording = true;
+            _movedToEnd = false;
+            _movedToStart = false;
         }
 
         [Button("Stop Recording")]
         private void StopRecording()
         {
+            if (_isRecording == false) return;
+
             _localPositionOffset = _transform.localPosition - _startLocalPosition;
             _transform.localPosition = _startLocalPosition;
 
             _isRecording = false;
+            _movedToEnd = false;
+            _movedToStart = false;
         }
 
+        [Button("Move To End")]
+        private void MoveToEnd()
+        {
+            if (_isRecording || _movedToEnd) return;
+
+            _startLocalPosition = _transform.localPosition;
+
+            _transform.localPosition = _startLocalPosition + _localPositionOffset;
+
+            _movedToEnd = true;
+            _movedToStart = false;
+        }
+
+        [Button("Move To Start")]
+        private void MoveToStart()
+        {
+            if (_isRecording || _movedToStart || _movedToEnd == false) return;
+
+            _transform.localPosition = _startLocalPosition;
+
+            _movedToStart = true;
+            _movedToEnd = false;
+        }
+        
         private void OnDrawGizmosSelected()
         {
             Transform parent = _transform.parent;
@@ -51,6 +85,14 @@ namespace ComponentBasedUI.Actions.Management
             else
             {
                 DrawArrow(parent);
+
+                if (_movedToEnd)
+                {
+                    Vector3 pointCenter = parent.TransformPoint(_startLocalPosition);
+                    
+                    Gizmos.color = Color.white;
+                    DrawPoint(ref pointCenter);
+                }
             }
         }
 
@@ -61,7 +103,7 @@ namespace ComponentBasedUI.Actions.Management
             Vector3 direction = targetPosition - startPosition;
 
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(startPosition, 0.1f);
+            DrawPoint(ref startPosition);
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
 
@@ -76,6 +118,11 @@ namespace ComponentBasedUI.Actions.Management
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
 
+        private void DrawPoint(ref Vector3 position)
+        {
+            Gizmos.DrawSphere(position, 0.1f);
+        }
+        
 #endif
 
         #endregion

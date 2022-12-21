@@ -17,26 +17,59 @@ namespace ComponentBasedUI.Actions.Management
         #region Editor
 
 #if UNITY_EDITOR
-
-        [ShowNonSerializedField] private bool _isRecording;
+        
         [ShowNonSerializedField] private Vector3 _startPosition;
+        [ShowNonSerializedField] private bool _isRecording;
+        [ShowNonSerializedField] private bool _movedToStart;
+        [ShowNonSerializedField] private bool _movedToEnd;
 
         [Button("Start Recording")]
         private void StartRecording()
         {
+            if (_isRecording) return;
+
             _startPosition = _transform.position;
 
             _isRecording = true;
+            _movedToEnd = false;
+            _movedToStart = false;
         }
 
         [Button("Stop Recording")]
         private void StopRecording()
         {
-            _offset = _transform.position - _startPosition;
+            if (_isRecording == false) return;
 
+            _offset = _transform.position - _startPosition;
             _transform.position = _startPosition;
 
             _isRecording = false;
+            _movedToEnd = false;
+            _movedToStart = false;
+        }
+
+        [Button("Move To End")]
+        private void MoveToEnd()
+        {
+            if (_isRecording || _movedToEnd) return;
+
+            _startPosition = _transform.position;
+
+            _transform.position = _startPosition + _offset;
+
+            _movedToEnd = true;
+            _movedToStart = false;
+        }
+
+        [Button("Move To Start")]
+        private void MoveToStart()
+        {
+            if (_isRecording || _movedToStart || _movedToEnd == false) return;
+
+            _transform.position = _startPosition;
+
+            _movedToStart = true;
+            _movedToEnd = false;
         }
 
         private void OnDrawGizmosSelected()
@@ -45,19 +78,28 @@ namespace ComponentBasedUI.Actions.Management
 
             if (_isRecording)
             {
-                OnRecording();
+                DrawRecordingArrow();
             }
             else
             {
                 DrawArrow();
+
+                if (_movedToEnd)
+                {
+                    Gizmos.color = Color.white;
+                    DrawPoint(ref _startPosition);
+                }
             }
         }
 
-        private void OnRecording()
+        private void DrawRecordingArrow()
         {
+            Vector3 targetPosition = _transform.position;
+            Vector3 direction = targetPosition - _startPosition;
+            
             Gizmos.color = Color.red;
-            Extensions.Gizmos.DrawArrow(_startPosition, _transform.position - _startPosition);
-            Gizmos.DrawSphere(_startPosition, 0.1f);
+            DrawPoint(ref _startPosition);
+            Extensions.Gizmos.DrawArrow(_startPosition, direction);
         }
 
         private void DrawArrow()
@@ -65,11 +107,16 @@ namespace ComponentBasedUI.Actions.Management
             Vector3 startPosition = _transform.position;
             Vector3 targetPosition = startPosition + _offset;
             Vector3 direction = targetPosition - startPosition;
-
+            
             Gizmos.color = Color.white;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
 
+        private void DrawPoint(ref Vector3 position)
+        {
+            Gizmos.DrawSphere(position, 0.1f);
+        }
+        
 #endif
 
         #endregion
