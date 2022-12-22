@@ -1,4 +1,3 @@
-using System;
 using ComponentBasedUI.Actions.Management.Transform.Core;
 using NaughtyAttributes;
 using UnityEngine;

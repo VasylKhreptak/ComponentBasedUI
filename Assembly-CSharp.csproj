@@ -84,7 +84,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnUpdateEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\Core\PositionMoveAnimationCore.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\ColorExtensions.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Color.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Transform\Position\AddPositionOffset.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnAwakeAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Vector3.cs" />
@@ -151,6 +151,9 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene\LoadScene.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene\Core\SceneAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene\ReloadScene.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\General\DoActionLooped.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Array.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\General\ToggleAction.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Components\Core" />

@@ -22,7 +22,7 @@ namespace ComponentBasedUI.Extensions
         }
 
         public static void DrawAngle(UnityEngine.Vector3 center, UnityEngine.Vector3 from, UnityEngine.Vector3 to, float radius,
-            Color arcColor, Color wireArcColor)
+            UnityEngine.Color arcColor, UnityEngine.Color wireArcColor)
         {
             float angle = UnityEngine.Vector3.Angle(from, to);
 
