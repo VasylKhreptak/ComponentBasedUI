@@ -133,8 +133,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Core\Animation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationEase.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedSpriteRendererForAlpha.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\ManualMonoEvent.cs" />
-     <Compile Include="Assets\InvertAxesTest.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\General\ManualMonoEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\RestartAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Transform\Rotation\SetLocalRotation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationRewind.cs" />
@@ -154,6 +153,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\General\DoActionLooped.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Array.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\General\ToggleAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Events\General\MonoEventGroup.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Components\Core" />
@@ -199,6 +199,7 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Transform\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Events\Mono" />
      <Folder Include="Assets\Scenes" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Events\General" />
      <Folder Include="Assets\Resources" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
