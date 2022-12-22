@@ -1,6 +1,7 @@
 using ComponentBasedUI.Actions.Management.Transform.Core;
 using NaughtyAttributes;
 using UnityEngine;
+
 namespace ComponentBasedUI.Actions.Management.Transform.Rotation
 {
     public class SetLocalRotation : TransformAction
