@@ -148,7 +148,11 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scripts\DisableScripts.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\GameObjects\Core\GameObjectsAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scripts\Core\MonoBehavioursAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene\LoadScene.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene\Core\SceneAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene\ReloadScene.cs" />
      <Folder Include="Assets" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scripts\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\General" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management" />
@@ -182,6 +186,7 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Listeners" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\GameObjects" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\GameObjects\Core" />
