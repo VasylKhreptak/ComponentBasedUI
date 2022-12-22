@@ -21,14 +21,7 @@ namespace ComponentBasedUI.EventListeners.Core
 
         protected virtual void OnValidate()
         {
-            if (_listenerType == ListenerType.Editor)
-            {
-                TryAddListener();
-            }
-            else if (_listenerType != ListenerType.Editor)
-            {
-                TryRemoveListener();
-            }
+            TryRunInEditor();
         }
 
         protected virtual void Awake()
@@ -79,6 +72,18 @@ namespace ComponentBasedUI.EventListeners.Core
             {
                 _addListenerEvent.onMonoCall -= TryAddListener;
                 _removeListenerEvent.onMonoCall -= TryRemoveListener;
+            }
+        }
+        
+        private  void TryRunInEditor()
+        {
+            if (_listenerType == ListenerType.Editor)
+            {
+                TryAddListener();
+            }
+            else if (_listenerType != ListenerType.Editor)
+            {
+                TryRemoveListener();
             }
         }
 
