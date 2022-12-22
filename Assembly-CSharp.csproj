@@ -46,7 +46,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Core\FloatAdapter.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnUpdateAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Core\ColorAdapter.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\OnEventLog.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Console\ConsoleLog.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Transform\Core\TransformAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnDestroyAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnAwakeEvent.cs" />
@@ -177,6 +177,7 @@
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences\Events" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Sequences" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha" />
+     <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Console" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Events\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Animations\Listeners" />
