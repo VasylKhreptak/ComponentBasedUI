@@ -140,6 +140,14 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationRewind.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetLocalPosition.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListenerCore.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetActiveObjects.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\DisableObjects.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\EnableObjects.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetActiveScripts.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\EnableScripts.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\DisableScripts.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Core\GameObjectsAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Core\MonoBehavioursAction.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management" />
