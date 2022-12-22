@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ComponentBasedUI.Actions.Management.Scripts
 {
-    public class SetActiveScripts : BehavioursAction
+    public class SetActiveScripts : ScriptsAction
     {
         [Header("Preferences")]
         [SerializeField] private bool _enabled;

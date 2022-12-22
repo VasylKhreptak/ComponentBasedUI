@@ -2,7 +2,7 @@ using ComponentBasedUI.Actions.Management.Scripts.Core;
 
 namespace ComponentBasedUI.Actions.Management.Scripts
 {
-    public class DisableScripts : BehavioursAction
+    public class DisableScripts : ScriptsAction
     {
         public override void Do()
         {
