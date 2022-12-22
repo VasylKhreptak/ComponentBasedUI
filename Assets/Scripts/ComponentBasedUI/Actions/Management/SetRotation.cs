@@ -9,9 +9,11 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _rotation;
 
+        private Vector3 EvaluatedRotation => Extensions.Vector3.ReplaceWithByAxes(_transform.rotation.eulerAngles, _rotation, _axes);
+
         public override void Do()
         {
-            _transform.rotation = Quaternion.Euler(_rotation);
+            _transform.rotation = Quaternion.Euler(EvaluatedRotation);
         }
 
         #region Editor
@@ -62,7 +64,7 @@ namespace ComponentBasedUI.Actions.Management
 
             _startRotation = _transform.rotation.eulerAngles;
 
-            _transform.rotation = Quaternion.Euler(_rotation);
+            _transform.rotation = Quaternion.Euler(EvaluatedRotation);
 
             _rotatedToEnd = true;
             _rotatedToStart = false;

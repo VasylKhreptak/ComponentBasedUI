@@ -367,15 +367,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537348991}
-  m_LocalRotation: {x: 0.22234851, y: -0.9412732, z: -0.058415685, w: 0.2472925}
-  m_LocalPosition: {x: 2.78, y: 0, z: 2.38}
+  m_LocalRotation: {x: -0.20014654, y: 0.5417162, z: -0.28293428, w: 0.7657892}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 677213817}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: -870.56, z: -26.582}
+  m_LocalEulerAnglesHint: {x: 0, y: 70.551, z: -40.555}
 --- !u!1 &625138228
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,14 +743,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677213816}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.910004, y: 4.72, z: 5.9000006}
+  m_LocalRotation: {x: 0, y: 0.27227587, z: 0, w: -0.96221924}
+  m_LocalPosition: {x: -1.7, y: 0, z: -1.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 537348992}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.773, y: 22.084, z: 0}
 --- !u!65 &677213819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9982913fa1d369d43a008b96e73e17cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listenerType: 4
+  _listenerType: 0
   _addListenerEvent: {fileID: 0}
   _removeListenerEvent: {fileID: 0}
   _monoEvent: {fileID: 677213823}
@@ -852,12 +852,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 677213816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6debfc917969a484dab0214929bcd8a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e96a83c78bece44d8bbe11edfdd9c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 677213817}
-  _axes: {x: 1, y: 0, z: 0}
-  _localPositionOffset: {x: -6.3499966, y: 0, z: 4.4299994}
+  _axes: {x: 0, y: 1, z: 0}
+  _localRotationOffset: {x: 348.22736, y: -306.3168, z: 0.0000006540891}
 --- !u!1 &1004250438
 GameObject:
   m_ObjectHideFlags: 0

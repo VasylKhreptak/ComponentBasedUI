@@ -9,9 +9,11 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _localRotation;
 
+        Vector3 EvaluatedLocalRotation => Extensions.Vector3.ReplaceWithByAxes(_transform.localRotation.eulerAngles, _localRotation, _axes);
+        
         public override void Do()
         {
-            _transform.localRotation = Quaternion.Euler(_localRotation);
+            _transform.localRotation = Quaternion.Euler(EvaluatedLocalRotation);
         }
 
         #region Editor
@@ -62,7 +64,7 @@ namespace ComponentBasedUI.Actions.Management
 
             _startRotation = _transform.localRotation.eulerAngles;
 
-            _transform.localRotation = Quaternion.Euler(_localRotation);
+            _transform.localRotation = Quaternion.Euler(EvaluatedLocalRotation);
 
             _rotatedToEnd = true;
             _rotatedToStart = false;

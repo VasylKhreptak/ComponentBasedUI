@@ -9,11 +9,12 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _localRotationOffset;
 
+        private Vector3 EvaluatedLocalRotationOffset => Extensions.Vector3.ReplaceWithByAxes(_localRotationOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(_axes));
+        
         public override void Do()
         {
             Quaternion transformLocalRotation = _transform.localRotation;
-
-            _transform.localRotation = Quaternion.Euler(_localRotationOffset) * transformLocalRotation;
+            _transform.localRotation = Quaternion.Euler(EvaluatedLocalRotationOffset) * transformLocalRotation;
         }
 
         #region Editor
@@ -58,7 +59,7 @@ namespace ComponentBasedUI.Actions.Management
 
             Quaternion transformLocalRotation = _transform.localRotation;
             
-            _transform.localRotation = Quaternion.Euler(_localRotationOffset) * transformLocalRotation;
+            _transform.localRotation = Quaternion.Euler(EvaluatedLocalRotationOffset) * transformLocalRotation;
 
             _rotatedToEnd = true;
             _rotatedToStart = false;

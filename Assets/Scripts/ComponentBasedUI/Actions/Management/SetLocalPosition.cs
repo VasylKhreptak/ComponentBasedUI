@@ -9,11 +9,11 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _localPosition;
 
-        private Vector3 TargetLocalPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.localPosition, _localPosition, _axes);
+        private Vector3 EvaluatedLocalPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.localPosition, _localPosition, _axes);
         
         public override void Do()
         {
-            _transform.localPosition = TargetLocalPosition;
+            _transform.localPosition = EvaluatedLocalPosition;
         }
 
         #region Editor
@@ -62,7 +62,7 @@ namespace ComponentBasedUI.Actions.Management
             if (_isRecording || _movedToEnd) return;
 
             _startLocalPosition = _transform.localPosition;
-            _transform.localPosition = TargetLocalPosition;
+            _transform.localPosition = EvaluatedLocalPosition;
 
             _movedToEnd = true;
             _movedToStart = false;
@@ -117,7 +117,7 @@ namespace ComponentBasedUI.Actions.Management
         {
             Vector3 transformLocalPosition = _transform.localPosition;
             Vector3 startPosition = parent.TransformPoint(transformLocalPosition);
-            Vector3 targetPosition = parent.TransformPoint(TargetLocalPosition);
+            Vector3 targetPosition = parent.TransformPoint(EvaluatedLocalPosition);
             Vector3 direction = targetPosition - startPosition;
 
             DrawArrow(ref startPosition, ref direction);

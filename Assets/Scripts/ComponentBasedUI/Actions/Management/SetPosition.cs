@@ -9,11 +9,11 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _position;
 
-        private Vector3 TargetPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.position, _position, _axes);
+        private Vector3 EvaluatedTargetPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.position, _position, _axes);
         
         public override void Do()
         {
-            _transform.position = TargetPosition;
+            _transform.position = EvaluatedTargetPosition;
         }
 
         #region Editor
@@ -62,7 +62,7 @@ namespace ComponentBasedUI.Actions.Management
             if (_isRecording || _movedToEnd) return;
 
             _startPosition = _transform.position;
-            _transform.position = TargetPosition;
+            _transform.position = EvaluatedTargetPosition;
 
             _movedToEnd = true;
             _movedToStart = false;
@@ -111,7 +111,7 @@ namespace ComponentBasedUI.Actions.Management
         private void DrawArrow()
         {
             Vector3 startPosition = _transform.position;
-            Vector3 direction = TargetPosition - startPosition;
+            Vector3 direction = EvaluatedTargetPosition - startPosition;
             
             Gizmos.color = Color.white;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
