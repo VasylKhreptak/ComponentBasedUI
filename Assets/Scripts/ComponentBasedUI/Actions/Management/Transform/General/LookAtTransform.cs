@@ -1,3 +1,4 @@
+using System;
 using ComponentBasedUI.Actions.Management.Transform.Core;
 using NaughtyAttributes;
 using UnityEngine;
@@ -72,6 +73,16 @@ namespace ComponentBasedUI.Actions.Management.Transform.General
 
             _movedToStart = true;
             _movedToEnd = false;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (_transform == null || _target == null) return;
+            
+            Vector3 position = _transform.position;
+            
+            Gizmos.color = Color.red;
+            Extensions.Gizmos.DrawArrow(position, _target.position - position);
         }
 
 #endif
