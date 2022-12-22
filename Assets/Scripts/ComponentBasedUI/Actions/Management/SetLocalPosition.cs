@@ -9,9 +9,11 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _localPosition;
 
+        private Vector3 TargetLocalPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.localPosition, _localPosition, _axes);
+        
         public override void Do()
         {
-            _transform.localPosition = _localPosition;
+            _transform.localPosition = TargetLocalPosition;
         }
 
         #region Editor
@@ -60,8 +62,7 @@ namespace ComponentBasedUI.Actions.Management
             if (_isRecording || _movedToEnd) return;
 
             _startLocalPosition = _transform.localPosition;
-
-            _transform.localPosition = _localPosition;
+            _transform.localPosition = TargetLocalPosition;
 
             _movedToEnd = true;
             _movedToStart = false;
@@ -83,7 +84,7 @@ namespace ComponentBasedUI.Actions.Management
             Transform parent = _transform.parent;
 
             if (_transform == null || parent == null) return;
-            
+
             if (_isRecording)
             {
                 DrawRecordingArrow(parent);
@@ -103,8 +104,10 @@ namespace ComponentBasedUI.Actions.Management
 
         private void DrawRecordingArrow(Transform parent)
         {
+            Vector3 transformLocalPosition = _transform.localPosition;
             Vector3 startPosition = parent.TransformPoint(_startLocalPosition);
-            Vector3 targetPosition = parent.TransformPoint(_transform.localPosition);
+            Vector3 targetLocalPosition = Extensions.Vector3.ReplaceWithByAxes(transformLocalPosition, _startLocalPosition, Extensions.Vector3Int.InverseAxes(_axes));
+            Vector3 targetPosition = parent.TransformPoint(targetLocalPosition);
             Vector3 direction = targetPosition - startPosition;
 
             DrawRecordingArrow(ref startPosition, ref direction);
@@ -112,8 +115,9 @@ namespace ComponentBasedUI.Actions.Management
 
         private void DrawArrow(Transform parent)
         {
-            Vector3 startPosition = parent.TransformPoint(_transform.localPosition);
-            Vector3 targetPosition = parent.TransformPoint(_localPosition);
+            Vector3 transformLocalPosition = _transform.localPosition;
+            Vector3 startPosition = parent.TransformPoint(transformLocalPosition);
+            Vector3 targetPosition = parent.TransformPoint(TargetLocalPosition);
             Vector3 direction = targetPosition - startPosition;
 
             DrawArrow(ref startPosition, ref direction);

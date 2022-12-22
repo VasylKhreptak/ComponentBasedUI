@@ -9,9 +9,11 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _position;
 
+        private Vector3 TargetPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.position, _position, _axes);
+        
         public override void Do()
         {
-            _transform.position = _position;
+            _transform.position = TargetPosition;
         }
 
         #region Editor
@@ -60,8 +62,7 @@ namespace ComponentBasedUI.Actions.Management
             if (_isRecording || _movedToEnd) return;
 
             _startPosition = _transform.position;
-
-            _transform.position = _position;
+            _transform.position = TargetPosition;
 
             _movedToEnd = true;
             _movedToStart = false;
@@ -89,26 +90,36 @@ namespace ComponentBasedUI.Actions.Management
             else
             {
                 DrawArrow();
+
+                if (_movedToEnd)
+                {
+                    DrawPoint(ref _startPosition);
+                }
             }
         }
 
         private void DrawRecordingArrow()
         {
-            Vector3 targetPosition = _transform.position;
+            Vector3 targetPosition = Extensions.Vector3.ReplaceWithByAxes(_transform.position, _startPosition, Extensions.Vector3Int.InverseAxes(_axes));
             Vector3 direction = targetPosition - _startPosition;
             
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(_startPosition, 0.1f);
+            DrawPoint(ref _startPosition);
             Extensions.Gizmos.DrawArrow(_startPosition, direction);
         }
 
         private void DrawArrow()
         {
             Vector3 startPosition = _transform.position;
-            Vector3 direction = _position - startPosition;
+            Vector3 direction = TargetPosition - startPosition;
             
             Gizmos.color = Color.white;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
+        }
+        
+        private void DrawPoint(ref Vector3 startPosition)
+        {
+            Gizmos.DrawSphere(startPosition, 0.1f);
         }
         
 #endif

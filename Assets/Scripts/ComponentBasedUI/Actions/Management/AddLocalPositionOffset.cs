@@ -9,9 +9,11 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _localPositionOffset;
 
+        private Vector3 LocalPositionOffset => Extensions.Vector3.ReplaceWithByAxes(_localPositionOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(_axes));
+        
         public override void Do()
         {
-            _transform.localPosition += _localPositionOffset;
+            _transform.localPosition += LocalPositionOffset;
         }
 
         #region Editor
@@ -55,7 +57,7 @@ namespace ComponentBasedUI.Actions.Management
 
             _startLocalPosition = _transform.localPosition;
 
-            _transform.localPosition = _startLocalPosition + _localPositionOffset;
+            _transform.localPosition = _startLocalPosition + LocalPositionOffset;
 
             _movedToEnd = true;
             _movedToStart = false;
@@ -98,8 +100,10 @@ namespace ComponentBasedUI.Actions.Management
 
         private void OnRecording(Transform parent)
         {
+            Vector3 transformLocalPosition = _transform.localPosition;
+            Vector3 targetLocalPosition = Extensions.Vector3.ReplaceWithByAxes(transformLocalPosition, _startLocalPosition, Extensions.Vector3Int.InverseAxes(_axes));
             Vector3 startPosition = parent.TransformPoint(_startLocalPosition);
-            Vector3 targetPosition = parent.TransformPoint(_transform.localPosition);
+            Vector3 targetPosition = parent.TransformPoint(targetLocalPosition);
             Vector3 direction = targetPosition - startPosition;
 
             Gizmos.color = Color.red;
@@ -111,7 +115,7 @@ namespace ComponentBasedUI.Actions.Management
         {
             Vector3 localPosition = _transform.localPosition;
             Vector3 startPosition = parent.TransformPoint(localPosition);
-            Vector3 targetPosition = parent.TransformPoint(localPosition + _localPositionOffset);
+            Vector3 targetPosition = parent.TransformPoint(localPosition + LocalPositionOffset);
             Vector3 direction = targetPosition - startPosition;
 
             Gizmos.color = Color.white;

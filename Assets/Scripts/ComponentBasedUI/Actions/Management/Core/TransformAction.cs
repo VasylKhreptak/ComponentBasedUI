@@ -9,11 +9,16 @@ namespace ComponentBasedUI.Actions.Management.Core
         [Header("References")]
         [Required, SerializeField] protected Transform _transform;
 
+        [Header("Axes")]
+        [SerializeField] protected Vector3Int _axes = Vector3Int.one;
+
         #region MonoBehaviour
 
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             _transform ??= GetComponent<Transform>();
+            
+            _axes = Extensions.Vector3Int.ClampComponents01(_axes);
         }
 
         #endregion

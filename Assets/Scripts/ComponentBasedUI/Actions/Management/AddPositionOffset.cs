@@ -9,9 +9,11 @@ namespace ComponentBasedUI.Actions.Management
         [Header("Preferences")]
         [SerializeField] private Vector3 _offset;
 
+        private Vector3 Offset => Extensions.Vector3.ReplaceWithByAxes(_offset, Vector3.zero, Extensions.Vector3Int.InverseAxes(_axes));
+        
         public override void Do()
         {
-            _transform.position += _offset;
+            _transform.position += Offset;
         }
 
         #region Editor
@@ -55,7 +57,7 @@ namespace ComponentBasedUI.Actions.Management
 
             _startPosition = _transform.position;
 
-            _transform.position = _startPosition + _offset;
+            _transform.position = _startPosition + Offset;
 
             _movedToEnd = true;
             _movedToStart = false;
@@ -94,7 +96,7 @@ namespace ComponentBasedUI.Actions.Management
 
         private void DrawRecordingArrow()
         {
-            Vector3 targetPosition = _transform.position;
+            Vector3 targetPosition = Extensions.Vector3.ReplaceWithByAxes(_transform.position, _startPosition, Extensions.Vector3Int.InverseAxes(_axes));
             Vector3 direction = targetPosition - _startPosition;
             
             Gizmos.color = Color.red;
@@ -105,7 +107,7 @@ namespace ComponentBasedUI.Actions.Management
         private void DrawArrow()
         {
             Vector3 startPosition = _transform.position;
-            Vector3 targetPosition = startPosition + _offset;
+            Vector3 targetPosition = startPosition + Offset;
             Vector3 direction = targetPosition - startPosition;
             
             Gizmos.color = Color.white;

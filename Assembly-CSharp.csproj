@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\ColorExtensions.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\AddPositionOffset.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnAwakeAction.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Vector3.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Core\Action.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\Core\MoveAnimationCore.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Listeners\AnimationListenerType.cs" />
@@ -92,6 +93,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayAnimationFromStart.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedImageForAlpha.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\TogglePauseAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Mathf.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\Core\DirectionMoveAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnLateUpdateEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\LocalMoveAnimation.cs" />
@@ -113,6 +115,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationLoops.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedTMPForColor.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\LocalMoveYAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Vector3Int.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedImageForColor.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayBackwardsAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\Core\ActionContainer.cs" />
@@ -125,6 +128,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationEase.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedSpriteRendererForAlpha.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\ManualMonoEvent.cs" />
+     <Compile Include="Assets\InvertAxesTest.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\RestartAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetLocalRotation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationRewind.cs" />
