@@ -1,7 +1,7 @@
-using ComponentBasedUI.Actions.Management.Components.Core;
+using ComponentBasedUI.Actions.Management.Scripts.Core;
 using UnityEngine;
 
-namespace ComponentBasedUI.Actions.Management.Components
+namespace ComponentBasedUI.Actions.Management.Scripts
 {
     public class SetActiveScripts : BehavioursAction
     {

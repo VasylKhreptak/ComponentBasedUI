@@ -1,7 +1,7 @@
 using ComponentBasedUI.Actions.Core;
 using UnityEngine;
 
-namespace ComponentBasedUI.Actions.Management.Components.Core
+namespace ComponentBasedUI.Actions.Management.Scripts.Core
 {
     public abstract class BehavioursAction : Action
     {
