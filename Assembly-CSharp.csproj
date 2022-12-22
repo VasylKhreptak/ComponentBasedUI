@@ -154,6 +154,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Array.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\General\ToggleAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\General\MonoEventGroup.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\GameObjects\DestroyObjects.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Components\Core" />
