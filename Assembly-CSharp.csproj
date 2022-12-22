@@ -44,12 +44,14 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\FlipAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedSpriteRendererForColor.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Core\FloatAdapter.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnUpdateAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Core\ColorAdapter.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\OnEventLog.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Core\TransformAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnDestroyAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnAwakeEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationStepComplete.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnFixedUpdateAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Gizmos.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\LocalMoveZAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\MoveXAnimation.cs" />
@@ -73,8 +75,10 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\MoveZAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\AddLocalRotationOffset.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListener.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\LookAtTransform.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\MonoEventListener.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\ForceInitAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\AddLocalScaleOffset.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationComplete.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\SetAnimationDelay.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayAnimation.cs" />
@@ -94,6 +98,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Alpha\AdaptedImageForAlpha.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\TogglePauseAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Mathf.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\OnLateUpdateAction.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\Core\DirectionMoveAnimation.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Events\Mono\OnLateUpdateEvent.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\MoveAnimation\LocalMoveAnimation.cs" />
@@ -118,6 +123,7 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Extensions\Vector3Int.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Adapters\Color\AdaptedImageForColor.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayBackwardsAnimation.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetLocalScale.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Mono\Core\ActionContainer.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\AddRotationOffset.cs" />
      <Compile Include="Assets\Scripts\TEST.cs" />
@@ -134,8 +140,6 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationRewind.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetLocalPosition.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListenerCore.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetLocalScale.cs" />
-     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\AddLocalScaleOffset.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management" />

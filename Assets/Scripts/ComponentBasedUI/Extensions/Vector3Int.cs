@@ -19,6 +19,11 @@ namespace ComponentBasedUI.Extensions
             return new UnityEngine.Vector3Int(Mathf.ClampInt01(vector3Int.x), Mathf.ClampInt01(vector3Int.y), Mathf.ClampInt01(vector3Int.z));
         }
 
+        public static UnityEngine.Vector3Int ClampComponents1BothSign(this UnityEngine.Vector3Int vector3Int)
+        {
+            return new UnityEngine.Vector3Int(Mathf.ClampInt1BothSign(vector3Int.x), Mathf.ClampInt1BothSign(vector3Int.y), Mathf.ClampInt1BothSign(vector3Int.z));
+        }
+        
         public static UnityEngine.Vector3 ToVector3(UnityEngine.Vector3Int vector3Int)
         {
             return new UnityEngine.Vector3(vector3Int.x, vector3Int.y, vector3Int.z);

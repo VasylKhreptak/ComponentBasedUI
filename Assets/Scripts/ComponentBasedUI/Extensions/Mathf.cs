@@ -2,19 +2,24 @@ namespace ComponentBasedUI.Extensions
 {
     public static class Mathf
     {
-        public static int ClampInt01(int value)
+        public static int ClampInt(int value, int min, int max)
         {
-            if (value > 1)
+            if (value > max)
             {
-                return 1;
-            }
-            
-            if(value < 0)
-            {
-                return 0;
+                return max;
             }
 
-            return value;
+            return value < min ? min : value;
+        }
+
+        public static int ClampInt01(int value)
+        {
+            return ClampInt(value, 0, 1);
+        }
+
+        public static int ClampInt1BothSign(int value)
+        {
+            return ClampInt(value, -1, 1);
         }
 
         public static int InverseRaw01(int value)
