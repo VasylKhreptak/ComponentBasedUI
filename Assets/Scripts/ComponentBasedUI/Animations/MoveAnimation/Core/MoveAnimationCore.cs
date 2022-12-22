@@ -17,26 +17,5 @@ namespace ComponentBasedUI.Animations.MoveAnimation.Core
         }
 
         #endregion
-
-        protected abstract void AssignStartPositionVariable();
-
-        protected abstract void AssignTargetPosition();
-
-        protected abstract void MoveToStartPosition();
-
-        protected abstract void MoveToTargetPosition(); 
-
-        #region Gizmos
-
-        private void OnDrawGizmosSelected()
-        {
-            if (_transform == null) return;
-
-            DrawGizmosSelected();
-        }
-
-        protected abstract void DrawGizmosSelected();
-
-        #endregion
     }
 }

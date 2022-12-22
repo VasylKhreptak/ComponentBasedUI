@@ -16,44 +16,52 @@ namespace ComponentBasedUI.Animations.MoveAnimation
 
         public override void PlayFromStart()
         {
-            MoveToStartPosition();
+            MoveToStart();
 
             _tween.Play();
         }
 
+        private void MoveToStart()
+        {
+            Vector3 localPosition = _transform.localPosition;
+            _transform.localPosition = new Vector3(localPosition.x, localPosition.y, _from);
+        }
+
+        #region Editor
+
+#if UNITY_EDITOR
+
         [Button("Assign Start Position")]
-        protected override void AssignStartPositionVariable()
+        private void AssignStartPositionVariable()
         {
             _from = _transform.localPosition.z;
         }
 
         [Button("Assign Target Position")]
-        protected override void AssignTargetPosition()
+        private void AssignTargetPosition()
         {
             _to = _transform.localPosition.z;
         }
 
         [Button("Move To Start")]
-        protected override void MoveToStartPosition()
+        private void MoveToStartPositionEditor()
         {
-            Vector3 localPosition = _transform.localPosition;
-
-            _transform.localPosition = new Vector3(localPosition.x, localPosition.y, _from);
+            MoveToStart();
         }
 
         [Button("Move To End")]
-        protected override void MoveToTargetPosition()
+        private void MoveToTargetPosition()
         {
             Vector3 localPosition = _transform.localPosition;
 
             _transform.localPosition = new Vector3(localPosition.x, localPosition.y, _to);
         }
 
-        protected override void DrawGizmosSelected()
+        private void OnDrawGizmosSelected()
         {
             Transform parent = _transform.parent;
 
-            if (parent == null) return;
+            if (_transform == null || parent == null) return;
 
             Vector3 localPosition = _transform.localPosition;
 
@@ -67,5 +75,10 @@ namespace ComponentBasedUI.Animations.MoveAnimation
             Gizmos.color = Color.blue;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
+
+#endif
+
+        #endregion
+
     }
 }

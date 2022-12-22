@@ -10,50 +10,58 @@ namespace ComponentBasedUI.Animations.MoveAnimation
         protected override Tween CreateTween()
         {
             Tween tween = _transform.DOLocalMoveX(_to, _duration);
-        
+
             return tween;
         }
 
         public override void PlayFromStart()
         {
-            MoveToStartPosition();
-            
+            MoveToStart();
+
             _tween.Play();
         }
 
+        private void MoveToStart()
+        {
+            Vector3 localPosition = _transform.localPosition;
+            _transform.localPosition = new Vector3(_from, localPosition.y, localPosition.z);
+        }
+
+        #region Editor
+
+#if UNITY_EDITOR
+
         [Button("Assign Start Position")]
-        protected override void AssignStartPositionVariable()
+        private void AssignStartPositionVariable()
         {
             _from = _transform.localPosition.x;
         }
-        
+
         [Button("Assign Target Position")]
-        protected override void AssignTargetPosition()
+        private void AssignTargetPosition()
         {
             _to = _transform.localPosition.x;
         }
 
         [Button("Move To Start")]
-        protected override void MoveToStartPosition()
+        private void MoveToStartPositionEditor()
         {
-            Vector3 localPosition = _transform.localPosition;
-
-            _transform.localPosition = new Vector3(_from, localPosition.y, localPosition.z);
+            MoveToStart();
         }
-        
+
         [Button("Move To End")]
-        protected override void MoveToTargetPosition()
+        private void MoveToTargetPosition()
         {
             Vector3 localPosition = _transform.localPosition;
 
             _transform.localPosition = new Vector3(_to, localPosition.y, localPosition.z);
         }
 
-        protected override void DrawGizmosSelected()
+        private void OnDrawGizmosSelected()
         {
             Transform parent = _transform.parent;
-            
-            if(parent == null) return;
+
+            if (_transform == null || parent == null) return;
 
             Vector3 localPosition = _transform.localPosition;
 
@@ -63,9 +71,14 @@ namespace ComponentBasedUI.Animations.MoveAnimation
             Vector3 startPosition = parent.TransformPoint(startLocalPosition);
             Vector3 targetPosition = parent.TransformPoint(targetLocalPosition);
             Vector3 direction = targetPosition - startPosition;
-            
+
             Gizmos.color = Color.red;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
+
+#endif
+
+        #endregion
+
     }
 }

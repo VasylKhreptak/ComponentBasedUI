@@ -21,6 +21,8 @@ namespace ComponentBasedUI.Extensions
             UnityEngine.Gizmos.DrawRay(position + direction, down * arrowHeadLength);
         }
 
+#if UNITY_EDITOR
+
         public static void DrawAngle(UnityEngine.Vector3 center, UnityEngine.Vector3 from, UnityEngine.Vector3 to, float radius,
             UnityEngine.Color arcColor, UnityEngine.Color wireArcColor)
         {
@@ -42,5 +44,8 @@ namespace ComponentBasedUI.Extensions
             UnityEngine.Gizmos.color = wireArcColor;
             DrawArrow(toEndPoint, toEndPoint - secondArrowPoint);
         }
+
+#endif
+
     }
 }

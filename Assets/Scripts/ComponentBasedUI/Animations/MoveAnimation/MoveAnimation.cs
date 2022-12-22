@@ -16,41 +16,57 @@ namespace ComponentBasedUI.Animations.MoveAnimation
 
         public override void PlayFromStart()
         {
-            _transform.position = _startPosition;
+            MoveToStart();
 
             _tween.Play();
         }
 
+        private void MoveToStart()
+        {
+            _transform.position = _startPosition;
+        }
+
+        #region Editor
+
+#if UNITY_EDITOR
+
         [Button("Assign Start Position")]
-        protected override void AssignStartPositionVariable()
+        private void AssignStartPositionVariable()
         {
             _startPosition = _transform.position;
         }
 
         [Button("Assign Target Position")]
-        protected override void AssignTargetPosition()
+        private void AssignTargetPosition()
         {
             _targetPosition = _transform.position;
         }
 
         [Button("Move To Start")]
-        protected override void MoveToStartPosition()
+        private void MoveToStartPositionEditor()
         {
-            _transform.position = _startPosition;
+            MoveToStart();
         }
 
         [Button("Move To End")]
-        protected override void MoveToTargetPosition()
+        private void MoveToTargetPosition()
         {
             _transform.position = _targetPosition;
         }
 
-        protected override void DrawGizmosSelected()
+        private void OnDrawGizmosSelected()
         {
+            if (_transform == null) return;
+
             Vector3 direction = _targetPosition - _startPosition;
 
             Gizmos.color = Color.white;
             Extensions.Gizmos.DrawArrow(_startPosition, direction);
         }
+
+#endif
+
+        #endregion
+
     }
 }

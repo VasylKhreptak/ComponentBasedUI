@@ -16,41 +16,51 @@ namespace ComponentBasedUI.Animations.MoveAnimation
 
         public override void PlayFromStart()
         {
-            MoveToStartPosition();
+            MoveToStart();
 
             _tween.Play();
         }
 
+        private void MoveToStart()
+        {
+            Vector3 position = _transform.position;
+            _transform.position = new Vector3(_from, position.y, position.z);
+        }
+
+        #region Editor
+
+#if UNITY_EDITOR
+
         [Button("Assign Start Position")]
-        protected override void AssignStartPositionVariable()
+        private void AssignStartPositionVariable()
         {
             _from = _transform.position.x;
         }
 
         [Button("Assign Target Position")]
-        protected override void AssignTargetPosition()
+        private void AssignTargetPosition()
         {
             _to = _transform.position.x;
         }
 
         [Button("Move To Start")]
-        protected override void MoveToStartPosition()
+        private void MoveToStartPositionEditor()
         {
-            Vector3 position = _transform.position;
-
-            _transform.position = new Vector3(_from, position.y, position.z);
+            MoveToStart();
         }
 
         [Button("Move To End")]
-        protected override void MoveToTargetPosition()
+        private void MoveToTargetPosition()
         {
             Vector3 position = _transform.position;
 
             _transform.position = new Vector3(_to, position.y, position.z);
         }
 
-        protected override void DrawGizmosSelected()
+        private void OnDrawGizmosSelected()
         {
+            if (_transform == null) return;
+
             Vector3 position = _transform.position;
 
             Vector3 startPosition = new Vector3(_from, position.y, position.z);
@@ -60,5 +70,10 @@ namespace ComponentBasedUI.Animations.MoveAnimation
             Gizmos.color = Color.red;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
+
+#endif
+
+        #endregion
+
     }
 }
