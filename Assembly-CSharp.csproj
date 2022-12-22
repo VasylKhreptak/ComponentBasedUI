@@ -134,6 +134,8 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Events\OnAnimationRewind.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetLocalPosition.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\EventListeners\Core\EventListenerCore.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\SetLocalScale.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Actions\Management\AddLocalScaleOffset.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Core" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management" />
