@@ -1,8 +1,8 @@
 using System;
 using DG.Tweening;
-using Animation = ComponentBasedUI.Animations.Core.Animation;
+using Animation = CBA.Animations.Core.Animation;
 
-public class TEST : Animation
+public class TEST : CBA.Animations.Core.Animation
 {
     protected override Tween CreateForwardTween()
     {
