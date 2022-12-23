@@ -4,7 +4,7 @@ using Animation = ComponentBasedUI.Animations.Core.Animation;
 
 namespace ComponentBasedUI.Animations.MoveAnimation.Core
 {
-    public abstract class MoveAnimationCore : Animation
+    public abstract class TransformAnimation : Animation
     {
         [Header("References")]
         [Required, SerializeField] protected Transform _transform;

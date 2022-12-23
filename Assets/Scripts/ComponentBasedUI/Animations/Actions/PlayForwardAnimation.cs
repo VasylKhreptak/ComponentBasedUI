@@ -1,5 +1,4 @@
 using ComponentBasedUI.Animations.Actions.Core;
-using DG.Tweening;
 
 namespace ComponentBasedUI.Animations.Actions
 {
@@ -7,7 +6,7 @@ namespace ComponentBasedUI.Animations.Actions
     {
         public override void Do()
         {
-            _animation.GetTween().PlayForward();
+            _animation.PlayForward();
         }
     }
 }

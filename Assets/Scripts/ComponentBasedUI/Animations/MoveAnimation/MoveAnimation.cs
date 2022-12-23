@@ -7,23 +7,24 @@ namespace ComponentBasedUI.Animations.MoveAnimation
 {
     public class MoveAnimation : PositionMoveAnimationCore
     {
-        protected override Tween CreateTween()
+        protected override Tween CreateForwardTween()
         {
-            Tween tween = _transform.DOMove(_targetPosition, _duration);
-
-            return tween;
+            return _transform.DOMove(_targetPosition, _duration);
         }
 
-        public override void PlayFromStart()
+        protected override Tween CreateBackwardTween()
         {
-            MoveToStart();
-
-            _tween.Play();
+            return _transform.DOMove(_startPosition, _duration);
         }
 
-        private void MoveToStart()
+        protected override void MoveToStartState()
         {
             _transform.position = _startPosition;
+        }
+
+        protected override void MoveToEndState()
+        {
+            _transform.position = _targetPosition;
         }
 
         #region Editor
@@ -45,13 +46,13 @@ namespace ComponentBasedUI.Animations.MoveAnimation
         [Button("Move To Start")]
         private void MoveToStartPositionEditor()
         {
-            MoveToStart();
+            MoveToStartState();
         }
 
         [Button("Move To End")]
         private void MoveToTargetPosition()
         {
-            _transform.position = _targetPosition;
+            MoveToEndState();
         }
 
         private void OnDrawGizmosSelected()
