@@ -60,62 +60,67 @@ namespace ComponentBasedUI.Animations.Core
 
         public void PlayForward()
         {
-            if (_tween == null || _tween.active == false)
+            if (CanPlay())
             {
-                _tween = CreateForwardTween();
-                ApplyAnimationPreferences();
-                _tween.Play();
+                PlayForwardImmediate();
             }
         }
 
         public void PlayBackward()
         {
-            if (_tween == null || _tween.active == false)
+            if (CanPlay())
             {
-                _tween = CreateBackwardTween();
-                ApplyAnimationPreferences();
-                _tween.Play();
+                PlayBackwardImmediate();
             }
+        }
+
+        public void PlayForwardImmediate()
+        {
+            _tween.Kill();
+            _tween = CreateForwardTween();
+            ApplyAnimationPreferences();
+            _tween.Play();
+        }
+
+        public void PlayBackwardImmediate()
+        {
+            _tween.Kill();
+            _tween = CreateBackwardTween();
+            ApplyAnimationPreferences();
+            _tween.Play();
         }
 
         public void PlayFromStart()
         {
-            if (_tween == null || _tween.active == false)
+            if (CanPlay())
             {
-                _tween = CreateForwardTween();
-                ApplyAnimationPreferences();
-                MoveToStartState();
-                _tween.Play();
+                PlayFromStartImmediate();
             }
         }
 
         public void PlayFromEnd()
         {
-            if (_tween == null || _tween.active == false)
+            if (CanPlay())
             {
-                _tween = CreateBackwardTween();
-                ApplyAnimationPreferences();
-                MoveToEndState();
-                _tween.Play();
+                PlayFromEndImmediate();
             }
         }
 
         public void PlayFromStartImmediate()
         {
-            _tween.Kill();
-            _tween = CreateForwardTween();
-            ApplyAnimationPreferences();
             MoveToStartState();
-            _tween.Play();
+            PlayForwardImmediate();
         }
 
         public void PlayFromEndImmediate()
         {
-            _tween.Kill();
-            _tween = CreateBackwardTween();
-            ApplyAnimationPreferences();
             MoveToEndState();
-            _tween.Play();
+            PlayBackwardImmediate();
+        }
+
+        private bool CanPlay()
+        {
+            return _tween == null || _tween.active == false;
         }
     }
 }

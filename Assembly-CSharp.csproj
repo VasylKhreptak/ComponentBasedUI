@@ -124,6 +124,8 @@
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayFromEnd.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayFromStartImmediate.cs" />
      <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayFromEndImmediate.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayForwardImmediate.cs" />
+     <Compile Include="Assets\Scripts\ComponentBasedUI\Animations\Actions\PlayBackwardImmediate.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\ComponentBasedUI\Actions\Management\Scripts\Core" />
