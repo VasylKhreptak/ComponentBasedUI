@@ -146,6 +146,8 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scene\Core\SceneAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Position\SetLocalPosition.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\Core\EventListenerCore.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Rotate\RotateAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Rotate\Core\AngleAnimation.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />
@@ -163,6 +165,7 @@
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Scale" />
      <Folder Include="Assets\Scripts\CBA\Actions" />
      <Folder Include="Assets\Scripts\CBA\Animations" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Rotate" />
      <Folder Include="Assets\Scripts\CBA\Sequences\Core" />
      <Folder Include="Assets\Scripts\CBA\Animations\Core" />
      <Folder Include="Assets\Scripts\CBA\Adapters" />
@@ -172,6 +175,7 @@
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move" />
      <Folder Include="Assets\Scripts\CBA\Adapters\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions\Core" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Rotate\Core" />
      <Folder Include="Assets\Scripts\CBA\Sequences\Events" />
      <Folder Include="Assets\Scripts\CBA\Sequences" />
      <Folder Include="Assets\Scripts\CBA\Adapters\Alpha" />

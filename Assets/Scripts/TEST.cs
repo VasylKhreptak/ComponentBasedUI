@@ -5,5 +5,7 @@ using Animation = CBA.Animations.Core.Animation;
 
 public class TEST : MonoBehaviour
 {
-    
+    private void Awake()
+    {
+    }
 }
