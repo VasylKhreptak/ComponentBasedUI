@@ -137,6 +137,15 @@
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\PauseAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\KillAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\TogglePauseAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationPause.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationUpdate.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationPlay.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationKill.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationInit.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationStepComplete.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationComplete.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Listeners\AnimationEventListener.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Listeners\AnimationListenerType.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />
@@ -167,6 +176,8 @@
      <Folder Include="Assets\Scripts\CBA\Sequences" />
      <Folder Include="Assets\Scripts\CBA\Adapters\Alpha" />
      <Folder Include="Assets\Scripts\CBA\Actions\Console" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Events" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Listeners" />
      <Folder Include="Assets\Scripts\CBA\Events\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions\Mono\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\GameObjects" />

@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
@@ -23,6 +24,8 @@ namespace CBA.Animations.Core
 
         public Tween Tween => _tween;
 
+        public Action onInit;
+
         #region MonoBehaviour
 
         protected virtual void OnDestroy()
@@ -39,6 +42,20 @@ namespace CBA.Animations.Core
         protected abstract void MoveToStartState();
 
         protected abstract void MoveToEndState();
+
+        private void InitForward()
+        {
+            _tween = CreateForwardTween();
+
+            onInit?.Invoke();
+        }
+
+        private void InitBackward()
+        {
+            _tween = CreateBackwardTween();
+
+            onInit?.Invoke();
+        }
 
         private void ApplyAnimationPreferences()
         {
@@ -77,7 +94,7 @@ namespace CBA.Animations.Core
         public void PlayForwardImmediate()
         {
             _tween.Kill();
-            _tween = CreateForwardTween();
+            InitForward();
             ApplyAnimationPreferences();
             _tween.Play();
         }
@@ -85,7 +102,7 @@ namespace CBA.Animations.Core
         public void PlayBackwardImmediate()
         {
             _tween.Kill();
-            _tween = CreateBackwardTween();
+            InitBackward();
             ApplyAnimationPreferences();
             _tween.Play();
         }
