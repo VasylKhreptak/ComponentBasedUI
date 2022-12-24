@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CBA.Animations.MoveAnimation
 {
-    public class MoveAnimation : PositionMoveAnimationCore
+    public class MoveAnimation : PositionMoveAnimation
     {
         protected override Tween CreateForwardTween()
         {
