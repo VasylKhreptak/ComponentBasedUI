@@ -14,7 +14,7 @@ namespace CBA.Animations.Actions.Core
         private void OnValidate()
         {
             _animation ??= GetComponent<Animation>();
-            Transform parent = transform.parent;
+            UnityEngine.Transform parent = transform.parent;
             if (_animation == null && parent != null)
             {
                 _animation = parent.GetComponent<Animation>();

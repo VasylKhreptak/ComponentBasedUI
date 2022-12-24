@@ -60,9 +60,9 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Mono\OnFixedUpdateAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Extensions\Gizmos.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\KillAnimation.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\MoveZAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\MoveZAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Rotation\SetRotation.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\LocalMoveYAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\LocalMoveYAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\GameObjects\DestroyObjects.cs" />
      <Compile Include="Assets\Scripts\CBA\Events\Mono\OnStartEvent.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scripts\EnableScripts.cs" />
@@ -70,7 +70,7 @@
      <Compile Include="Assets\Scripts\CBA\Sequences\Core\Sequence.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Position\SetPosition.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\Core\AnimationAction.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\LocalMoveZAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\LocalMoveZAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Adapters\Alpha\AdaptedCanvasGroupForAlpha.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationInit.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\Play\PlayFromEndImmediate.cs" />
@@ -85,11 +85,11 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\General\LookAtTransform.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationUpdate.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\MonoEventListener.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\MoveXAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\MoveXAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Scale\AddLocalScaleOffset.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\Play\PlayFromStart.cs" />
      <Compile Include="Assets\Scripts\CBA\Events\Mono\OnUpdateEvent.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\Core\PositionMoveAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\Core\PositionMoveAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Extensions\Color.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scene\LoadScene.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\GameObjects\Core\GameObjectsAction.cs" />
@@ -97,11 +97,11 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Mono\OnAwakeAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Extensions\Vector3.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Core\Action.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\Core\TransformAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\Core\TransformAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\ListenerType.cs" />
      <Compile Include="Assets\Scripts\CBA\Events\Core\MonoEvent.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Mono\OnDisableAction.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\LocalMoveAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\LocalMoveAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scripts\DisableScripts.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationPause.cs" />
      <Compile Include="Assets\Scripts\CBA\Adapters\Alpha\AdaptedImageForAlpha.cs" />
@@ -110,7 +110,7 @@
      <Compile Include="Assets\Scripts\CBA\Animations\Listeners\AnimationListenerType.cs" />
      <Compile Include="Assets\Scripts\CBA\Extensions\Mathf.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Mono\OnLateUpdateAction.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\Core\DirectionMoveAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\Core\DirectionMoveAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Events\Mono\OnLateUpdateEvent.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Mono\OnEnableAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Position\AddLocalPositionOffset.cs" />
@@ -124,8 +124,8 @@
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\CompleteAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scene\ReloadScene.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\Play\PlayForwardAnimation.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\LocalMoveXAnimation.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\MoveAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\LocalMoveXAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\MoveAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\General\OnEventDoAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationPlay.cs" />
      <Compile Include="Assets\Scripts\CBA\Adapters\Color\AdaptedTMPForColor.cs" />
@@ -136,7 +136,7 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Mono\Core\ActionContainer.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Rotation\AddRotationOffset.cs" />
      <Compile Include="Assets\Scripts\TEST.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Move\MoveYAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\MoveYAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Mono\OnStartAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Core\Animation.cs" />
      <Compile Include="Assets\Scripts\CBA\Adapters\Alpha\AdaptedSpriteRendererForAlpha.cs" />
@@ -156,7 +156,7 @@
      <Folder Include="Assets\Scripts\CBA\Extensions" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\CBA\EventListeners" />
-     <Folder Include="Assets\Scripts\CBA\Animations\Move\Core" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Rotation" />
      <Folder Include="Assets\Scripts\CBA\Events" />
      <Folder Include="Assets\Scripts\CBA\Actions\Mono" />
@@ -169,7 +169,7 @@
      <Folder Include="Assets\Scripts\CBA\Adapters\Color" />
      <Folder Include="Assets\Scripts\CBA\Animations\Actions" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\General" />
-     <Folder Include="Assets\Scripts\CBA\Animations\Move" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move" />
      <Folder Include="Assets\Scripts\CBA\Adapters\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions\Core" />
      <Folder Include="Assets\Scripts\CBA\Sequences\Events" />
@@ -194,6 +194,7 @@
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Scripts\CBA\Events\General" />
      <Folder Include="Assets\Resources" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
