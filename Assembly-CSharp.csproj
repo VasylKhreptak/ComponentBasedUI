@@ -148,6 +148,7 @@
      <Compile Include="Assets\Scripts\CBA\EventListeners\Core\EventListenerCore.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Rotate\RotateAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Rotate\Core\AngleAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Rotate\LocalRotateAnimation.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />

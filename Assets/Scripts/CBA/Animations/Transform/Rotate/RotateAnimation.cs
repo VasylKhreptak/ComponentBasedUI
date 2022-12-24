@@ -23,8 +23,8 @@ namespace CBA.Animations.Transform.Rotate
         {
             _transform.rotation = Quaternion.Euler(_targetAngle);
         }
-        
-         #region Editor
+
+        #region Editor
 
 #if UNITY_EDITOR
 

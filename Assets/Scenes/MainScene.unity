@@ -213,7 +213,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77755613}
-  m_LocalRotation: {x: 0.00000008940696, y: -0.000000029802319, z: 0.000000059604638, w: -1}
+  m_LocalRotation: {x: -0.00000008940696, y: 0.000000029802317, z: -0.000000059604638, w: 1}
   m_LocalPosition: {x: -2.86, y: 0.28, z: -7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -230,7 +230,7 @@ Transform:
   - {fileID: 1077171445}
   m_Father: {fileID: 1862759082}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -35.163, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -32.528}
 --- !u!114 &77755619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,27 +240,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 77755613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574895e2edbda294b8acddf44bf63f55, type: 3}
+  m_Script: {fileID: 11500000, guid: 5360f2696edfc1a48b2cf5fd20c93442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 5
-  _useAnimationCurve: 0
+  _duration: 0.5
+  _useAnimationCurve: 1
   _ease: 6
   _curve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _useAdditionalSettings: 0
+  _useAdditionalSettings: 1
   _id: -999
   _delay: 0
-  _loops: 1
-  _loopType: 0
+  _loops: -1
+  _loopType: 2
   _updateType: 0
   _transform: {fileID: 77755618}
-  _startAngle: {x: 15.070179, y: 105.45804, z: 258.06924}
-  _targetAngle: {x: 19.11819, y: 142.0676, z: 269.18408}
+  _startAngle: {x: -0.000010245283, y: 0.0000034150946, z: -0.000006830189}
+  _targetAngle: {x: -0.000012226397, y: -0.0000053267163, z: 327.4718}
 --- !u!1 &171027030
 GameObject:
   m_ObjectHideFlags: 0
