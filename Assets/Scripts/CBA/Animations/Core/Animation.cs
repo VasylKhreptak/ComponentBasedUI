@@ -11,14 +11,16 @@ namespace CBA.Animations.Core
         [SerializeField] protected float _duration;
 
         [Header("Animation Preferences")]
-        [SerializeField] private int _id = -999;
-        [SerializeField] private float _delay;
-        [SerializeField] private int _loops = 1;
-        [SerializeField] private LoopType _loopType = DOTween.defaultLoopType;
-        [SerializeField] private bool useAnimationCurve;
-        [HideIf(nameof(useAnimationCurve)), SerializeField] private Ease _ease = DOTween.defaultEaseType;
-        [ShowIf(nameof(useAnimationCurve)), SerializeField] private AnimationCurve _curve;
-        [SerializeField] private UpdateType _updateType = DOTween.defaultUpdateType;
+        [SerializeField] private bool _useAnimationCurve;
+        [HideIf(nameof(_useAnimationCurve)), SerializeField] private Ease _ease = DOTween.defaultEaseType;
+        [ShowIf(nameof(_useAnimationCurve)), SerializeField] private AnimationCurve _curve;
+        [SerializeField] private bool _useAdditionalSettings;
+        [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private int _id = -999;
+        [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private float _delay;
+        [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private int _loops = 1;
+        [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private LoopType _loopType = DOTween.defaultLoopType;
+        [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private UpdateType _updateType = DOTween.defaultUpdateType;
+
 
         private Tween _tween;
 
@@ -59,13 +61,16 @@ namespace CBA.Animations.Core
 
         private void ApplyAnimationPreferences()
         {
-            _tween.SetId(_id);
-            _tween.SetDelay(_delay);
-            _tween.SetLoops(_loops, _loopType);
-            _tween.SetUpdate(_updateType);
-            _tween.SetAutoKill(true);
+            if (_useAdditionalSettings)
+            {
+                _tween.SetId(_id);
+                _tween.SetDelay(_delay);
+                _tween.SetLoops(_loops, _loopType);
+                _tween.SetUpdate(_updateType);
+                _tween.SetAutoKill(true);
+            }
 
-            if (useAnimationCurve)
+            if (_useAnimationCurve)
             {
                 _tween.SetEase(_curve);
             }
