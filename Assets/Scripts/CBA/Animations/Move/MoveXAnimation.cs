@@ -1,30 +1,26 @@
-using CBA.Animations.MoveAnimation.Core;
+using CBA.Animations.Move.Core;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace CBA.Animations.MoveAnimation
+namespace CBA.Animations.Move
 {
-    public class LocalMoveAnimation : PositionMoveAnimation
+    public class MoveXAnimation : DirectionMoveAnimation
     {
         protected override Tween CreateForwardTween()
         {
-            return _transform.DOLocalMove(_targetPosition, _duration);
+            return _transform.DOMoveX(_to, _duration);
         }
 
         protected override Tween CreateBackwardTween()
         {
-            return _transform.DOLocalMove(_startPosition, _duration);
+            return _transform.DOMoveX(_from, _duration);
         }
 
-        protected override void MoveToStartState()
+        protected override void MoveTo(float axisPosition)
         {
-            _transform.localPosition = _startPosition;
-        }
-
-        protected override void MoveToEndState()
-        {
-            _transform.localPosition = _targetPosition;
+            Vector3 position = _transform.position;
+            _transform.position = new Vector3(axisPosition, position.y, position.z);
         }
 
         #region Editor
@@ -38,7 +34,7 @@ namespace CBA.Animations.MoveAnimation
         {
             if (_isRecording) return;
 
-            _startPosition = _transform.localPosition;
+            _from = _transform.position.x;
         }
 
         [Button("Assign Target Position")]
@@ -46,7 +42,7 @@ namespace CBA.Animations.MoveAnimation
         {
             if (_isRecording) return;
 
-            _targetPosition = _transform.localPosition;
+            _to = _transform.position.x;
         }
 
         [Button("Move To Start")]
@@ -68,7 +64,7 @@ namespace CBA.Animations.MoveAnimation
         [Button("Start Recording")]
         private void StartRecording()
         {
-            _startPosition = _transform.localPosition;
+            _from = _transform.position.x;
 
             _isRecording = true;
         }
@@ -78,7 +74,7 @@ namespace CBA.Animations.MoveAnimation
         {
             if (_isRecording == false) return;
 
-            _targetPosition = _transform.localPosition;
+            _to = _transform.position.x;
             MoveToStartState();
 
             _isRecording = false;
@@ -86,34 +82,35 @@ namespace CBA.Animations.MoveAnimation
 
         private void OnDrawGizmosSelected()
         {
-            Transform parent = _transform.parent;
-
-            if (_transform == null || parent == null) return;
+            if (_transform == null) return;
 
             if (_isRecording)
             {
-                DrawRecordingArrow(parent);
+                DrawRecordingArrow();
             }
             else
             {
-                DrawDefaultArrow(parent);
+                DrawDefaultArrow();
             }
         }
 
-        private void DrawDefaultArrow(Transform parent)
+        private void DrawDefaultArrow()
         {
-            Vector3 startPosition = parent.TransformPoint(_startPosition);
-            Vector3 targetPosition = parent.TransformPoint(_targetPosition);
+            Vector3 position = _transform.position;
+            Vector3 startPosition = new Vector3(_from, position.y, position.z);
+            Vector3 targetPosition = new Vector3(_to, position.y, position.z);
             Vector3 direction = targetPosition - startPosition;
 
-            Gizmos.color = Color.white;
+            Gizmos.color = Color.red;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
 
-        private void DrawRecordingArrow(Transform parent)
+        private void DrawRecordingArrow()
         {
-            Vector3 startPosition = parent.TransformPoint(_startPosition);
-            Vector3 direction = _transform.position - startPosition;
+            Vector3 position = _transform.position;
+            Vector3 startPosition = new Vector3(_from, position.y, position.z);
+            Vector3 targetPosition = new Vector3(position.x, startPosition.y, startPosition.z);
+            Vector3 direction = targetPosition - startPosition;
 
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(startPosition, 0.1f);

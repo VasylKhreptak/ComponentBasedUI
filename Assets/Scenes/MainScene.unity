@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77755613}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1648128, y: -3.84, z: -3.5647068}
+  m_LocalPosition: {x: -2.86, y: 0.28, z: -7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -240,15 +240,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 77755613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39eff3e6b607afa4292d69fe5d956eb6, type: 3}
+  m_Script: {fileID: 11500000, guid: e3223e3429b6943418d49bc4fd6cac58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 4
-  _id: -999
-  _delay: 0
-  _loops: 1
-  _loopType: 0
-  useAnimationCurve: 0
+  _duration: 7
+  _useAnimationCurve: 0
   _ease: 6
   _curve:
     serializedVersion: 2
@@ -256,10 +252,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _useAdditionalSettings: 0
+  _id: -999
+  _delay: 0
+  _loops: 1
+  _loopType: 0
   _updateType: 0
   _transform: {fileID: 77755618}
-  _from: -3.6723497
-  _to: 7.160544
+  _from: -3.62
+  _to: 1.25
 --- !u!1 &171027030
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,11 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _duration: 0
-  _id: -999
-  _delay: 0
-  _loops: 1
-  _loopType: 0
-  useAnimationCurve: 0
+  _useAnimationCurve: 0
   _ease: 6
   _curve:
     serializedVersion: 2
@@ -686,6 +683,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _useAdditionalSettings: 0
+  _id: -999
+  _delay: 0
+  _loops: 1
+  _loopType: 0
   _updateType: 0
 --- !u!4 &470109797
 Transform:
@@ -1707,7 +1709,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862759081}
-  m_LocalRotation: {x: -0, y: -0.36351985, z: -0, w: 0.93158644}
+  m_LocalRotation: {x: -0.56278384, y: 0.55853146, z: -0.5320566, w: 0.29704016}
   m_LocalPosition: {x: -1.7357851, y: 2.8666258, z: 0.20811987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1715,7 +1717,7 @@ Transform:
   - {fileID: 77755618}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 677.367, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.07, y: 105.458, z: -101.931}
 --- !u!1 &1976424800
 GameObject:
   m_ObjectHideFlags: 0

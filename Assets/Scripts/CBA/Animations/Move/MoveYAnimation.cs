@@ -1,26 +1,26 @@
-using CBA.Animations.MoveAnimation.Core;
+using CBA.Animations.Move.Core;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace CBA.Animations.MoveAnimation
+namespace CBA.Animations.Move
 {
-    public class MoveZAnimation : DirectionMoveAnimation
+    public class MoveYAnimation : DirectionMoveAnimation
     {
         protected override Tween CreateForwardTween()
         {
-            return _transform.DOMoveZ(_to, _duration);
+            return _transform.DOMoveY(_to, _duration);
         }
 
         protected override Tween CreateBackwardTween()
         {
-            return _transform.DOMoveZ(_from, _duration);
+            return _transform.DOMoveY(_from, _duration);
         }
 
         protected override void MoveTo(float axisPosition)
         {
             Vector3 position = _transform.position;
-            _transform.position = new Vector3(position.x, position.y, axisPosition);
+            _transform.position = new Vector3(position.x, axisPosition, position.z);
         }
 
         #region Editor
@@ -34,7 +34,7 @@ namespace CBA.Animations.MoveAnimation
         {
             if (_isRecording) return;
 
-            _from = _transform.position.z;
+            _from = _transform.position.y;
         }
 
         [Button("Assign Target Position")]
@@ -42,7 +42,7 @@ namespace CBA.Animations.MoveAnimation
         {
             if (_isRecording) return;
 
-            _to = _transform.position.z;
+            _to = _transform.position.y;
         }
 
         [Button("Move To Start")]
@@ -64,7 +64,7 @@ namespace CBA.Animations.MoveAnimation
         [Button("Start Recording")]
         private void StartRecording()
         {
-            _from = _transform.position.z;
+            _from = _transform.position.y;
 
             _isRecording = true;
         }
@@ -74,7 +74,7 @@ namespace CBA.Animations.MoveAnimation
         {
             if (_isRecording == false) return;
 
-            _to = _transform.position.z;
+            _to = _transform.position.y;
             MoveToStartState();
 
             _isRecording = false;
@@ -97,19 +97,19 @@ namespace CBA.Animations.MoveAnimation
         private void DrawDefaultArrow()
         {
             Vector3 position = _transform.position;
-            Vector3 startPosition = new Vector3(position.x, position.y, _from);
-            Vector3 targetPosition = new Vector3(position.x, position.y, _to);
+            Vector3 startPosition = new Vector3(position.x, _from, position.z);
+            Vector3 targetPosition = new Vector3(position.x, _to, position.z);
             Vector3 direction = targetPosition - startPosition;
 
-            Gizmos.color = Color.blue;
+            Gizmos.color = Color.green;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
 
         private void DrawRecordingArrow()
         {
             Vector3 position = _transform.position;
-            Vector3 startPosition = new Vector3(position.x, position.y, _from);
-            Vector3 targetPosition = new Vector3(startPosition.x, startPosition.y, position.z);
+            Vector3 startPosition = new Vector3(position.x, _from, position.z);
+            Vector3 targetPosition = new Vector3(startPosition.x, position.y, startPosition.z);
             Vector3 direction = targetPosition - startPosition;
 
             Gizmos.color = Color.red;

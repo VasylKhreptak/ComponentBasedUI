@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace CBA.Animations.MoveAnimation.Core
+namespace CBA.Animations.Move.Core
 {
     public abstract class TransformAnimation : Animations.Core.Animation
     {
