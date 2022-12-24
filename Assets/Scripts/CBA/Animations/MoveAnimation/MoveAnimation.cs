@@ -79,7 +79,7 @@ namespace CBA.Animations.MoveAnimation
             if (_isRecording == false) return;
 
             _targetPosition = _transform.position;
-            _transform.position = _startPosition;
+            MoveToStartState();
 
             _isRecording = false;
         }
