@@ -1,4 +1,3 @@
-using System;
 using CBA.Animations.Graphics.Color.Core;
 using DG.Tweening;
 using NaughtyAttributes;

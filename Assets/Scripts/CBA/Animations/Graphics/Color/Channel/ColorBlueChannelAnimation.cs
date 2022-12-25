@@ -1,6 +1,5 @@
 ﻿using CBA.Animations.Graphics.Color.Channel.Core;
 using CBA.Extensions;
-using UnityEngine;
 
 namespace CBA.Animations.Graphics.Color.Channel
 {
