@@ -2,7 +2,7 @@ using CBA.Adapters.Alpha.Core;
 using CBA.Extensions;
 using NaughtyAttributes;
 using UnityEngine;
-using Image = UnityEngine.UI.Image;
+using UnityEngine.UI;
 
 namespace CBA.Adapters.Alpha
 {

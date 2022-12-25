@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CBA.Adapters.Alpha
 {
-    public class AdaptedCanvasGroupForColor : AlphaAdapter
+    public class AdaptedCanvasGroupForAlpha : AlphaAdapter
     {
         [Header("References")]
         [Required, SerializeField] private CanvasGroup _canvasGroup;
