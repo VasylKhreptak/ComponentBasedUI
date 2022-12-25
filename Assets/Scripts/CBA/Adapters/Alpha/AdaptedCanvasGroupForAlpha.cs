@@ -1,15 +1,15 @@
-using CBA.Adapters.Core;
+using CBA.Adapters.Alpha.Core;
 using NaughtyAttributes;
 using UnityEngine;
 
 namespace CBA.Adapters.Alpha
 {
-    public class AdaptedCanvasGroupForColor : FloatAdapter
+    public class AdaptedCanvasGroupForColor : AlphaAdapter
     {
         [Header("References")]
         [Required, SerializeField] private CanvasGroup _canvasGroup;
     
-        public override float value
+        public override float alpha
         {
             get => _canvasGroup.alpha;
             set => _canvasGroup.alpha = value;

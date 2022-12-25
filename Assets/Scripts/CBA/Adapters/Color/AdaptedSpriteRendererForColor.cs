@@ -1,4 +1,4 @@
-using CBA.Adapters.Core;
+using CBA.Adapters.Color.Core;
 using NaughtyAttributes;
 using UnityEngine;
 
