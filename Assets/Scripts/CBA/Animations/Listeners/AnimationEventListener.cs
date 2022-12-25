@@ -1,14 +1,14 @@
+using CBA.Animations.Core;
 using CBA.EventListeners.Core;
 using NaughtyAttributes;
 using UnityEngine;
-using Animation = CBA.Animations.Core.Animation;
 
 namespace CBA.Animations.Listeners
 {
     public abstract class AnimationEventListener : EventListenerCore
     {
         [Header("References")]
-        [Required, SerializeField] protected  Animation _animation;
+        [Required, SerializeField] protected  AnimationCore _animation;
 
         [Header("Listener Preferences")]
         [SerializeField] private AnimationListenerType _listenerType = AnimationListenerType.OnEnableOnDisable;
@@ -19,7 +19,7 @@ namespace CBA.Animations.Listeners
 
         private void OnValidate()
         {
-            _animation ??= GetComponent<Animation>();
+            _animation ??= GetComponent<AnimationCore>();
         }
 
         private void Awake()

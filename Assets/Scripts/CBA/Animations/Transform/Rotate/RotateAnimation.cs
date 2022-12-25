@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Rotate
 {
-    public class RotateAnimation : AngleAnimation
+    public class RotateAnimation : RotateAnimationCore
     {
         protected override Tween CreateForwardTween()
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Move
 {
-    public class MoveZAnimation : DirectionMoveAnimation
+    public class MoveZAnimation : DirectionMoveAnimationCore
     {
         protected override Tween CreateForwardTween()
         {
