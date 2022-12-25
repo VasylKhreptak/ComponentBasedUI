@@ -12,10 +12,19 @@ namespace CBA.Animations.Graphics.Color.Channel
             set => _colorAdapter.color = _colorAdapter.color.WithRed(value);
         }
 
+        #region Editor
+
+#if UNITY_EDITOR
+        
         protected override void UpdateColorPreview()
         {
             _startColorPreview = _colorAdapter.color.WithRed(_from);
             _targetColorPreview = _colorAdapter.color.WithRed(_to);
         }
+        
+#endif
+
+        #endregion
+        
     }
 }

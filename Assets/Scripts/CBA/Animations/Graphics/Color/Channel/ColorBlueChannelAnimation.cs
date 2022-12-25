@@ -3,7 +3,7 @@ using CBA.Extensions;
 
 namespace CBA.Animations.Graphics.Color.Channel
 {
-    public class ColorBlueChannelAnimation: ColorChannelAnimationCore
+    public class ColorBlueChannelAnimation : ColorChannelAnimationCore
     {
         protected override float _channel
         {
@@ -11,10 +11,19 @@ namespace CBA.Animations.Graphics.Color.Channel
             set => _colorAdapter.color = _colorAdapter.color.WithBlue(value);
         }
         
+        #region Editor
+
+#if UNITY_EDITOR
+
         protected override void UpdateColorPreview()
         {
             _startColorPreview = _colorAdapter.color.WithBlue(_from);
             _targetColorPreview = _colorAdapter.color.WithBlue(_to);
         }
+
+#endif
+
+        #endregion
+
     }
 }
