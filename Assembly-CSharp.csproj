@@ -152,6 +152,12 @@
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\Jump\Core\JumpAnimationCore.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\Jump\JumpAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\Jump\LocalJumpAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\Core\ScaleAnimationCore.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\ScaleAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\Core\DirectionScaleAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\ScaleXAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\ScaleYAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\ScaleZAnimation.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />
@@ -162,9 +168,11 @@
      <Folder Include="Assets\Scripts\CBA\Extensions" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\CBA\EventListeners" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Scale\Core" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Rotation" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Jump" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Scale" />
      <Folder Include="Assets\Scripts\CBA\Events" />
      <Folder Include="Assets\Scripts\CBA\Actions\Mono" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Scale" />
