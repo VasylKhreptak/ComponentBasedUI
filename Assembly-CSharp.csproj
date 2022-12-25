@@ -162,7 +162,11 @@
      <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Color\ColorAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Adapters\Alpha\AdaptedTMPForAlpha.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Color\Core\ColorAnimationCore.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Fade\Core\AlphaAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Fade\Core\AlphaAnimationCore.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Color\Channel\Core\ColorChannelAnimationCore.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Color\Channel\ColorRedChannelAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Color\Channel\ColorGreenChannelAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Color\Channel\ColorBlueChannelAnimation.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />

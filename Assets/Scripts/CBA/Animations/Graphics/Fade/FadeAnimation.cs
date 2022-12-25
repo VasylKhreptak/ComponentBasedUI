@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace CBA.Animations.Graphics.Fade
 {
-    public class FadeAnimation : AlphaAnimation
+    public class FadeAnimation : AlphaAnimationCore
     {
         [Header("Fade Preferences")]
-        [SerializeField] private float _startAlpha;
-        [SerializeField] private float _targetAlpha = 1f;
+        [SerializeField, Range(0f, 1f)] private float _startAlpha;
+        [SerializeField, Range(0f, 1f)] private float _targetAlpha = 1f;
 
         protected override Tween CreateForwardTween()
         {
