@@ -1,3 +1,4 @@
+using System;
 using CBA.Animations.Graphics.Color.Core;
 using DG.Tweening;
 using NaughtyAttributes;
@@ -38,6 +39,8 @@ namespace CBA.Animations.Graphics.Color.Channel.Core
 #if UNITY_EDITOR
 
         [ShowNonSerializedField] private bool _isRecording;
+        [ShowNonSerializedField] protected UnityEngine.Color _startColorPreview;
+        [ShowNonSerializedField] protected UnityEngine.Color _targetColorPreview;
 
         [Button("Assign Start Channel")]
         private void AssignStartChannel()
@@ -89,6 +92,13 @@ namespace CBA.Animations.Graphics.Color.Channel.Core
 
             _isRecording = false;
         }
+
+        private void OnDrawGizmosSelected()
+        {
+            UpdateColorPreview();
+        }
+
+        protected abstract void UpdateColorPreview();
 
 #endif
 
