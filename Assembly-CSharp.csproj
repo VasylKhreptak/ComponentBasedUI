@@ -160,6 +160,7 @@
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\ScaleZAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Graphics\FadeAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Graphics\ColorAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Adapters\Alpha\AdaptedTMPForAlpha.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />

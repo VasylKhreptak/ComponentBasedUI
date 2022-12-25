@@ -14,7 +14,7 @@ namespace CBA.Adapters.Alpha
         public override float alpha
         {
             get => _image.color.a;
-            set => _image.color.WithAlpha(value);
+            set => _image.color = _image.color.WithAlpha(value);
         }
     
         #region MonoBehaviour

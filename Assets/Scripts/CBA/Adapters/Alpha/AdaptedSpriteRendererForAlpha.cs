@@ -9,13 +9,13 @@ namespace CBA.Adapters.Alpha
     {
         [Header("References")]
         [Required, SerializeField] private SpriteRenderer _spriteRenderer;
-    
+
         public override float alpha
         {
             get => _spriteRenderer.color.a;
-            set => _spriteRenderer.color.WithAlpha(value);
+            set => _spriteRenderer.color = _spriteRenderer.color.WithAlpha(value);
         }
-    
+
         #region MonoBehaviour
 
         private void OnValidate()
