@@ -1,6 +1,5 @@
 using CBA.Animations.Transform.Core;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CBA.Animations.Transform.Punch.Core
 {

@@ -9,12 +9,12 @@ namespace CBA.Animations.Transform.Move
     {
         protected override Tween CreateForwardTween()
         {
-            return _transform.DOLocalMoveY(_to, _duration);
+            return _transform.DOLocalMoveY(_to, _duration, _snapping);
         }
 
         protected override Tween CreateBackwardTween()
         {
-            return _transform.DOLocalMoveY(_from, _duration);
+            return _transform.DOLocalMoveY(_from, _duration, _snapping);
         }
 
         protected override void MoveTo(float axisPosition)

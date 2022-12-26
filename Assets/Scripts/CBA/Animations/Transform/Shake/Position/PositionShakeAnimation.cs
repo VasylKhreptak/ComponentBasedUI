@@ -6,6 +6,9 @@ namespace CBA.Animations.Transform.Shake.Position
 {
     public class PositionShakeAnimation : ShakeAnimationCore
     {
+        [Header("Snapping")]
+        [SerializeField] private bool _snapping;
+
         private Vector3 _startLocalPosition;
 
         #region MonoBehaviour
@@ -19,12 +22,12 @@ namespace CBA.Animations.Transform.Shake.Position
 
         protected override Tween CreateForwardTween()
         {
-            return _transform.DOShakePosition(_duration, _strengthDirection * _strength, _vibrato, _randomness, fadeOut: _fadeOut, randomnessMode: _shakeRandomnessMode);
+            return _transform.DOShakePosition(_duration, _strengthDirection * _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode);
         }
 
         protected override Tween CreateBackwardTween()
         {
-            return _transform.DOShakePosition(_duration, -_strengthDirection * _strength, _vibrato, _randomness, fadeOut: _fadeOut, randomnessMode: _shakeRandomnessMode);
+            return _transform.DOShakePosition(_duration, -_strengthDirection * _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode);
 
         }
 

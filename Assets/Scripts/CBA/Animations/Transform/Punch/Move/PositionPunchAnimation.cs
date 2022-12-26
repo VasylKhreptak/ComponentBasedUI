@@ -6,6 +6,9 @@ namespace CBA.Animations.Transform.Punch.Move
 {
     public class PositionPunchAnimation : PunchAnimationCore
     {
+        [Header("Snapping")]
+        [SerializeField] private bool _snapping;
+
         private Vector3 _startLocalPosition;
 
         #region MonnBehaviour
@@ -19,12 +22,12 @@ namespace CBA.Animations.Transform.Punch.Move
 
         protected override Tween CreateForwardTween()
         {
-            return _transform.DOPunchPosition(_strengthDirection * _strength, _duration, _vibrato, _elasticity);
+            return _transform.DOPunchPosition(_strengthDirection * _strength, _duration, _vibrato, _elasticity, _snapping);
         }
 
         protected override Tween CreateBackwardTween()
         {
-            return _transform.DOPunchPosition(-_strengthDirection * _strength, _duration, _vibrato, _elasticity);
+            return _transform.DOPunchPosition(-_strengthDirection * _strength, _duration, _vibrato, _elasticity, _snapping);
         }
 
         protected override void MoveToStartState()

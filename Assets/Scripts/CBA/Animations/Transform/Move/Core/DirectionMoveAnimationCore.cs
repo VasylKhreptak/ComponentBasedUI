@@ -9,6 +9,9 @@ namespace CBA.Animations.Transform.Move.Core
         [SerializeField] protected float _from;
         [SerializeField] protected float _to;
 
+        [Header("Snapping")]
+        [SerializeField] protected bool _snapping;
+
         protected override void MoveToStartState()
         {
             MoveTo(_from);

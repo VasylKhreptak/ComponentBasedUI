@@ -9,11 +9,11 @@ namespace CBA.Animations.Transform.Move.Jump
     {
         protected override Tween CreateForwardTween()
         {
-            return _transform.DOLocalJump(_targetPosition, _power, _jumpsNumber, _duration);
+            return _transform.DOLocalJump(_targetPosition, _power, _jumpsNumber, _duration, _snapping);
         }
         protected override Tween CreateBackwardTween()
         {
-            return _transform.DOLocalJump(_startPosition, _power, _jumpsNumber, _duration);
+            return _transform.DOLocalJump(_startPosition, _power, _jumpsNumber, _duration, _snapping);
         }
         protected override void MoveToStartState()
         {
