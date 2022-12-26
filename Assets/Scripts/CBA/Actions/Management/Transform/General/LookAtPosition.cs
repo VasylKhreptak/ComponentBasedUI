@@ -1,13 +1,14 @@
 using CBA.Actions.Management.Transform.Core;
+using CBA.Animations.Transform.Look.PositionProvider.Core;
 using NaughtyAttributes;
 using UnityEngine;
 
 namespace CBA.Actions.Management.Transform.General
 {
-    public class LookAtTransform : TransformAction
+    public class LookAtPosition : TransformAction
     {
         [Header("Preferences")]
-        [Required, SerializeField] private UnityEngine.Transform _target;
+        [Required, SerializeField] private PositionProvider _target;
         [SerializeField] private Vector3Int _upwards = Vector3Int.up;
         [SerializeField] private Vector3 _rotationOffset;
 

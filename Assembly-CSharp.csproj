@@ -91,7 +91,7 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Rotation\AddLocalRotationOffset.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\Core\EventListener.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\General\DoActionLooped.cs" />
-     <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\General\LookAtTransform.cs" />
+     <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\General\LookAtPosition.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\ScaleAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationUpdate.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\MonoEventListener.cs" />
