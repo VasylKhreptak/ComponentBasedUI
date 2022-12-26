@@ -174,6 +174,11 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scene\Core\SceneAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Position\SetLocalPosition.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\Core\EventListenerCore.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\Punch\PunchPositionAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Punch\Core\PunchAnimationCore.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Punch\Move\PositionPunchAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Punch\Rotation\RotationPunchAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Punch\Scale\ScalePunchAnimation.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />
@@ -182,6 +187,7 @@
      <Folder Include="Assets\Scripts\CBA" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Position" />
      <Folder Include="Assets\Scripts\CBA\Extensions" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Punch" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\CBA\EventListeners" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Scale\Core" />
@@ -189,13 +195,17 @@
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Rotation" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Jump" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Scale" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Punch\Scale" />
      <Folder Include="Assets\Scripts\CBA\Events" />
      <Folder Include="Assets\Scripts\CBA\Actions\Mono" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Scale" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Punch" />
      <Folder Include="Assets\Scripts\CBA\Actions" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Core" />
      <Folder Include="Assets\Scripts\CBA\Animations" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Punch\Rotation" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Rotate" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Punch\Core" />
      <Folder Include="Assets\Scripts\CBA\Sequences\Core" />
      <Folder Include="Assets\Scripts\CBA\Animations\Core" />
      <Folder Include="Assets\Scripts\CBA\Adapters" />
@@ -232,6 +242,7 @@
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Look" />
      <Folder Include="Assets\Scripts\CBA\Animations\Graphics\Fade" />
+     <Folder Include="Assets\Scripts\CBA\Animations\Transform\Punch\Move" />
      <Folder Include="Assets\Scripts\CBA\Sequences\Actions" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform" />
      <Folder Include="Assets\Scripts\CBA\Animations\Graphics\Color" />

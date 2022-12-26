@@ -8,7 +8,7 @@ namespace CBA.Animations.Core
     public abstract class AnimationCore : MonoBehaviour
     {
         [Header("Duration")]
-        [SerializeField] protected float _duration;
+        [SerializeField] protected float _duration = 1f;
 
         [Header("Animation Preferences")]
         [SerializeField] private bool _useAnimationCurve;
