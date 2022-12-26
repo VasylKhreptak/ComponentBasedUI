@@ -19,25 +19,25 @@ namespace CBA.Animations.Transform.Punch.Move
 
         protected override Tween CreateForwardTween()
         {
-            return _transform.DOPunchPosition(_punchDirection * _strength, _duration, _vibrato, _elasticity);
+            return _transform.DOPunchPosition(_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
         protected override Tween CreateBackwardTween()
         {
-            return _transform.DOPunchPosition(-_punchDirection * _strength, _duration, _vibrato, _elasticity);
+            return _transform.DOPunchPosition(-_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
         protected override void MoveToStartState()
         {
-            ResetPosition();
+            ResetLocalPosition();
         }
 
         protected override void MoveToEndState()
         {
-            ResetPosition();
+            ResetLocalPosition();
         }
 
-        private void ResetPosition()
+        private void ResetLocalPosition()
         {
             _transform.localPosition = _startLocalPosition;
         }

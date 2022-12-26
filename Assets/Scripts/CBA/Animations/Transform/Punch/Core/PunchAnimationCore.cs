@@ -1,12 +1,13 @@
 using CBA.Animations.Transform.Core;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CBA.Animations.Transform.Punch.Core
 {
     public abstract class PunchAnimationCore : TransformAnimationCore
     {
         [Header("Punch Preferences")]
-        [SerializeField] protected Vector3 _punchDirection;
+        [SerializeField] protected Vector3 _strengthDirection;
         [SerializeField] protected float _strength;
         [SerializeField] protected int _vibrato = 10;
         [SerializeField] protected float _elasticity = 1f;
@@ -27,7 +28,7 @@ namespace CBA.Animations.Transform.Punch.Core
         protected virtual void DrawPunch(UnityEngine.Transform parent)
         {
             Vector3 position = parent.TransformPoint(_transform.localPosition);
-            Vector3 direction = parent.TransformDirection(_punchDirection * _strength);
+            Vector3 direction = parent.TransformDirection(_strengthDirection * _strength);
 
             Gizmos.color = Color.white;
             Extensions.Gizmos.DrawArrow(position, direction);

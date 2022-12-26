@@ -19,12 +19,12 @@ namespace CBA.Animations.Transform.Punch.Scale
 
         protected override Tween CreateForwardTween()
         {
-            return _transform.DOPunchScale(_punchDirection * _strength, _duration, _vibrato, _elasticity);
+            return _transform.DOPunchScale(_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
         protected override Tween CreateBackwardTween()
         {
-            return _transform.DOPunchScale(-_punchDirection * _strength, _duration, _vibrato, _elasticity);
+            return _transform.DOPunchScale(-_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
         protected override void MoveToStartState()
@@ -49,7 +49,7 @@ namespace CBA.Animations.Transform.Punch.Scale
         protected override void DrawPunch(UnityEngine.Transform parent)
         {
             Vector3 position = parent.TransformPoint(_transform.localPosition);
-            Vector3 direction = _transform.TransformDirection(_punchDirection * _strength);
+            Vector3 direction = _transform.TransformDirection(_strengthDirection * _strength);
 
             Gizmos.color = Color.white;
             Extensions.Gizmos.DrawArrow(position, direction);

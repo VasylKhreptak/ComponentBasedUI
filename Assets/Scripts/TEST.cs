@@ -10,6 +10,5 @@ public class TEST : MonoBehaviour
     [Button("Test")]
     private void Test()
     {
-        Debug.Log(CBA.Extensions.AxisConstraint.ToVector3Int(_axisConstraint));
     }
 }
