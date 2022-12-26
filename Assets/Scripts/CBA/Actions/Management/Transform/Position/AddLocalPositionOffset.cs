@@ -9,7 +9,7 @@ namespace CBA.Actions.Management.Transform.Position
         [Header("Preferences")]
         [SerializeField] private Vector3 _localPositionOffset;
 
-        private Vector3 EvaluatedLocalPositionOffset => Extensions.Vector3.ReplaceWithByAxes(_localPositionOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(_axes));
+        private Vector3 EvaluatedLocalPositionOffset => Extensions.Vector3.ReplaceWithByAxes(_localPositionOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(AllowedAxes));
         
         public override void Do()
         {
@@ -101,7 +101,7 @@ namespace CBA.Actions.Management.Transform.Position
         private void OnRecording(UnityEngine.Transform parent)
         {
             Vector3 transformLocalPosition = _transform.localPosition;
-            Vector3 targetLocalPosition = Extensions.Vector3.ReplaceWithByAxes(transformLocalPosition, _startLocalPosition, Extensions.Vector3Int.InverseAxes(_axes));
+            Vector3 targetLocalPosition = Extensions.Vector3.ReplaceWithByAxes(transformLocalPosition, _startLocalPosition, Extensions.Vector3Int.InverseAxes(AllowedAxes));
             Vector3 startPosition = parent.TransformPoint(_startLocalPosition);
             Vector3 targetPosition = parent.TransformPoint(targetLocalPosition);
             Vector3 direction = targetPosition - startPosition;

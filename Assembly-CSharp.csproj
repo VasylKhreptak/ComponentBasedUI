@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\Jump\Core\JumpAnimationCore.cs" />
      <Compile Include="Assets\Scripts\CBA\Extensions\Gizmos.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Color\Channel\ColorBlueChannelAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Look\PositionProvider\Core\PositionProvider.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Rotate\LocalRotateAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\KillAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\MoveZAnimation.cs" />
@@ -140,6 +141,7 @@
      <Compile Include="Assets\Scripts\CBA\Events\Mono\OnDisableEvent.cs" />
      <Compile Include="Assets\Scripts\CBA\Events\Mono\OnEnableEvent.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\General\ActionGroup.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Look\PositionProvider\TransformPositionProvider.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\CompleteAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scene\ReloadScene.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Graphics\Color\Channel\ColorRedChannelAnimation.cs" />
@@ -149,6 +151,7 @@
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\LocalMoveXAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Move\MoveAnimation.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\General\OnEventDoAction.cs" />
+     <Compile Include="Assets\Scripts\CBA\Extensions\AxisConstraint.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Transform\Scale\Core\ScaleAnimationCore.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Events\OnAnimationPlay.cs" />
      <Compile Include="Assets\Scripts\CBA\Adapters\Color\AdaptedTMPForColor.cs" />
@@ -171,9 +174,6 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scene\Core\SceneAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Position\SetLocalPosition.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\Core\EventListenerCore.cs" />
-     <Compile Include="Assets\Scripts\CBA\Extensions\AxisConstraint.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Look\PositionProvider\Core\PositionProvider.cs" />
-     <Compile Include="Assets\Scripts\CBA\Animations\Transform\Look\PositionProvider\TransformPositionProvider.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />

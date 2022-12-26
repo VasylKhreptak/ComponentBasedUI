@@ -30,5 +30,10 @@ namespace CBA.Extensions
 
             return result;
         }
+
+        public static UnityEngine.Vector3Int AllowedAxes(this DG.Tweening.AxisConstraint axisConstraint)
+        {
+            return Vector3Int.InverseAxes(axisConstraint.ToVector3Int());
+        }
     }
 }

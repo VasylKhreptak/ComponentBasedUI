@@ -9,7 +9,7 @@ namespace CBA.Actions.Management.Transform.Rotation
         [Header("Preferences")]
         [SerializeField] private Vector3 _localRotationOffset;
 
-        private Vector3 EvaluatedLocalRotationOffset => Extensions.Vector3.ReplaceWithByAxes(_localRotationOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(_axes));
+        private Vector3 EvaluatedLocalRotationOffset => Extensions.Vector3.ReplaceWithByAxes(_localRotationOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(AllowedAxes));
         
         public override void Do()
         {

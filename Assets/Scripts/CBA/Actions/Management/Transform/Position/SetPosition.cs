@@ -9,7 +9,7 @@ namespace CBA.Actions.Management.Transform.Position
         [Header("Preferences")]
         [SerializeField] private Vector3 _position;
 
-        private Vector3 EvaluatedTargetPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.position, _position, _axes);
+        private Vector3 EvaluatedTargetPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.position, _position, AllowedAxes);
         
         public override void Do()
         {
@@ -100,7 +100,7 @@ namespace CBA.Actions.Management.Transform.Position
 
         private void DrawRecordingArrow()
         {
-            Vector3 targetPosition = Extensions.Vector3.ReplaceWithByAxes(_transform.position, _startPosition, Extensions.Vector3Int.InverseAxes(_axes));
+            Vector3 targetPosition = Extensions.Vector3.ReplaceWithByAxes(_transform.position, _startPosition, Extensions.Vector3Int.InverseAxes(AllowedAxes));
             Vector3 direction = targetPosition - _startPosition;
             
             Gizmos.color = Color.red;

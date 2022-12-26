@@ -42,7 +42,7 @@ namespace CBA.Actions.Management.Transform.General
 
         private Vector3 GetEvaluatedLookRotation()
         {
-            return Extensions.Vector3.ReplaceWithByAxes(_transform.rotation.eulerAngles, GetLookRotation(), _axes);
+            return Extensions.Vector3.ReplaceWithByAxes(_transform.rotation.eulerAngles, GetLookRotation(), AllowedAxes);
         }
 
 #if UNITY_EDITOR

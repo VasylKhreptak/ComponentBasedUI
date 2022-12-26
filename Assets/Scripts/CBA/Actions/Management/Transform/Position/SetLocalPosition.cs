@@ -9,7 +9,7 @@ namespace CBA.Actions.Management.Transform.Position
         [Header("Preferences")]
         [SerializeField] private Vector3 _localPosition;
 
-        private Vector3 EvaluatedLocalPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.localPosition, _localPosition, _axes);
+        private Vector3 EvaluatedLocalPosition => Extensions.Vector3.ReplaceWithByAxes(_transform.localPosition, _localPosition, AllowedAxes);
         
         public override void Do()
         {
@@ -106,7 +106,7 @@ namespace CBA.Actions.Management.Transform.Position
         {
             Vector3 transformLocalPosition = _transform.localPosition;
             Vector3 startPosition = parent.TransformPoint(_startLocalPosition);
-            Vector3 targetLocalPosition = Extensions.Vector3.ReplaceWithByAxes(transformLocalPosition, _startLocalPosition, Extensions.Vector3Int.InverseAxes(_axes));
+            Vector3 targetLocalPosition = Extensions.Vector3.ReplaceWithByAxes(transformLocalPosition, _startLocalPosition, Extensions.Vector3Int.InverseAxes(AllowedAxes));
             Vector3 targetPosition = parent.TransformPoint(targetLocalPosition);
             Vector3 direction = targetPosition - startPosition;
 

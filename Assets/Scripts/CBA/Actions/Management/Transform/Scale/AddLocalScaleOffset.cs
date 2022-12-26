@@ -9,7 +9,7 @@ namespace CBA.Actions.Management.Transform.Scale
         [Header("Preferences")]
         [SerializeField] private Vector3 _localScaleOffset;
 
-        private Vector3 EvaluatedLocalScaleOffset => Extensions.Vector3.ReplaceWithByAxes(_localScaleOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(_axes));
+        private Vector3 EvaluatedLocalScaleOffset => Extensions.Vector3.ReplaceWithByAxes(_localScaleOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(AllowedAxes));
         
         public override void Do()
         {

@@ -9,7 +9,7 @@ namespace CBA.Actions.Management.Transform.Rotation
         [Header("Preferences")]
         [SerializeField] private Vector3 _localRotation;
 
-        Vector3 EvaluatedLocalRotation => Extensions.Vector3.ReplaceWithByAxes(_transform.localRotation.eulerAngles, _localRotation, _axes);
+        Vector3 EvaluatedLocalRotation => Extensions.Vector3.ReplaceWithByAxes(_transform.localRotation.eulerAngles, _localRotation, AllowedAxes);
         
         public override void Do()
         {
