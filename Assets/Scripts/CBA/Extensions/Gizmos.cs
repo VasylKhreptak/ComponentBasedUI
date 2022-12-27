@@ -21,6 +21,24 @@ namespace CBA.Extensions
             UnityEngine.Gizmos.DrawRay(position + direction, down * arrowHeadLength);
         }
 
+        public static void DrawPoints(UnityEngine.Vector3[] points, float radius)
+        {
+            foreach (var point in points)
+            {
+                UnityEngine.Gizmos.DrawSphere(point, radius);
+            }
+        }
+
+        public static void DrawLines(UnityEngine.Vector3[] points)
+        {
+            for (int i = 1; i < points.Length; i++)
+            {
+                UnityEngine.Vector3 startPoint = points[i - 1];
+                UnityEngine.Vector3 endPoint = points[i];
+                UnityEngine.Gizmos.DrawLine(startPoint, endPoint);
+            }
+        }
+
 #if UNITY_EDITOR
 
         public static void DrawAngle(UnityEngine.Vector3 center, UnityEngine.Vector3 from, UnityEngine.Vector3 to, float radius,
