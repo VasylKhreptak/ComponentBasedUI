@@ -11,7 +11,7 @@ namespace CBA.Animations.Transform.Punch.Move
 
         private Vector3 _startLocalPosition;
 
-        #region MonnBehaviour
+        #region MonoBehaviour
 
         private void Awake()
         {

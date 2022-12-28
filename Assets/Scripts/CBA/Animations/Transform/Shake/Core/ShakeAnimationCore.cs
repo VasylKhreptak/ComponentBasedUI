@@ -8,7 +8,7 @@ namespace CBA.Animations.Transform.Shake.Core
     {
         [Header("Shake Preferences")]
         [SerializeField] protected Vector3 _strengthDirection;
-        [SerializeField] protected float _strength;
+        [SerializeField] protected float _strength = 5f;
         [SerializeField] protected int _vibrato = 10;
         [SerializeField] protected float _randomness = 90f;
         [SerializeField] protected bool _fadeOut = true;

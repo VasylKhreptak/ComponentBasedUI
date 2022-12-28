@@ -190,6 +190,22 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Position\SetLocalPosition.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\Core\EventListenerCore.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Core\RectTransformAnimationCore.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\AnchorMoveAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Extensions\RectTransform.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\AnchorMoveXAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\AnchorMoveYAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\AnchorMinMax\AnchorMaxAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\AnchorMinMax\AnchorMinAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Jump\AnchorJumpAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Punch\AnchorPunchAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Shake\AnchorShakeAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Pivot\PivotMoveAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Pivot\PivotMoveXAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Pivot\PivotMoveYAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Anchor3D\Anchor3DMoveAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Anchor3D\Anchor3DMoveXAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Anchor3D\Anchor3DMoveYAnimation.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Anchor3D\Anchor3DMoveZAnimation.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />
@@ -202,6 +218,7 @@
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\CBA\EventListeners" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Scale\Core" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\AnchorMinMax" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Rotation" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Jump" />
@@ -216,6 +233,7 @@
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Path\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Core" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Pivot" />
      <Folder Include="Assets\Scripts\CBA\Animations" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Punch\Rotation" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Rotate" />
@@ -230,6 +248,7 @@
      <Folder Include="Assets\Scripts\CBA\Animations\Actions" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\General" />
      <Folder Include="Assets\Scripts\CBA\Animations\Graphics\Color\Channel" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\Move" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Jump\Core" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move" />
      <Folder Include="Assets\Scripts\CBA\Adapters\Color\Core" />
@@ -237,9 +256,11 @@
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Rotate\Core" />
      <Folder Include="Assets\Scripts\CBA\Sequences\Events" />
      <Folder Include="Assets\Scripts\CBA\Animations\Graphics\Color\Core" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\Move\Anchor3D" />
      <Folder Include="Assets\Scripts\CBA\Sequences" />
      <Folder Include="Assets\Scripts\CBA\Adapters\Alpha" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Shake\Rotation" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\Punch" />
      <Folder Include="Assets\Scripts\CBA\Actions\Console" />
      <Folder Include="Assets\Scripts\CBA\Animations\Events" />
      <Folder Include="Assets\Scripts\CBA\Animations\Listeners" />
@@ -269,8 +290,10 @@
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Scripts\CBA\Events\General" />
      <Folder Include="Assets\Resources" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\Jump" />
      <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\Core" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Shake\Position" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\Shake" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

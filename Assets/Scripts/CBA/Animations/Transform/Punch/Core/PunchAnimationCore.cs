@@ -7,7 +7,7 @@ namespace CBA.Animations.Transform.Punch.Core
     {
         [Header("Punch Preferences")]
         [SerializeField] protected Vector3 _strengthDirection;
-        [SerializeField] protected float _strength;
+        [SerializeField] protected float _strength = 5f;
         [SerializeField] protected int _vibrato = 10;
         [SerializeField] protected float _elasticity = 1f;
 

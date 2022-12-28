@@ -1,15 +1,16 @@
-using DG.Tweening;
-using NaughtyAttributes;
 using UnityEngine;
 
 public class TEST : MonoBehaviour
 {
-    [Header("Preferences")]
-    [SerializeField] private AxisConstraint _axisConstraint;
+    [Header("References")]
+    [SerializeField] private RectTransform _rectTransform;
 
-    [Button("Test")]
-    private void Test()
+
+    private void OnDrawGizmos()
     {
-        RectTransform rectTransform;
+        if (_rectTransform == null) return;
+
+        Gizmos.color = Color.red;
     }
+
 }
