@@ -21,7 +21,6 @@ namespace CBA.Animations.Core
         [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private LoopType _loopType = DOTween.defaultLoopType;
         [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private UpdateType _updateType = DOTween.defaultUpdateType;
 
-
         private Tween _tween;
 
         public Tween Tween => _tween;

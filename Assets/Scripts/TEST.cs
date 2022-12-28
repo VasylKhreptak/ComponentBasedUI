@@ -10,6 +10,6 @@ public class TEST : MonoBehaviour
     [Button("Test")]
     private void Test()
     {
-        
+        RectTransform rectTransform;
     }
 }

@@ -72,9 +72,10 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Management\GameObjects\DestroyObjects.cs" />
      <Compile Include="Assets\Scripts\CBA\Events\Mono\OnStartEvent.cs" />
      <Compile Include="Assets\Scripts\CBA\Extensions\List.cs" />
+     <Compile Include="Assets\TestingBezier.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scripts\EnableScripts.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\Play\PlayForwardImmediate.cs" />
-     <Compile Include="Assets\Scripts\CBA\Sequences\Core\Sequence.cs" />
+     <Compile Include="Assets\Scripts\CBA\Sequences\Core\SequenceCore.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Position\SetPosition.cs" />
      <Compile Include="Assets\Scripts\CBA\Animations\Actions\Core\AnimationAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Extensions\PositionProvider.cs" />
@@ -188,7 +189,7 @@
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Scene\Core\SceneAction.cs" />
      <Compile Include="Assets\Scripts\CBA\Actions\Management\Transform\Position\SetLocalPosition.cs" />
      <Compile Include="Assets\Scripts\CBA\EventListeners\Core\EventListenerCore.cs" />
-     <Compile Include="Assets\TestingBezier.cs" />
+     <Compile Include="Assets\Scripts\CBA\Animations\RectTransform\Core\RectTransformAnimationCore.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scene" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Scripts\Core" />
@@ -211,6 +212,7 @@
      <Folder Include="Assets\Scripts\CBA\Events" />
      <Folder Include="Assets\Scripts\CBA\Actions\Mono" />
      <Folder Include="Assets\Scripts\CBA\Actions\Management\Transform\Scale" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Move\Path\Core" />
      <Folder Include="Assets\Scripts\CBA\Actions" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Core" />
@@ -267,6 +269,7 @@
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Scripts\CBA\Events\General" />
      <Folder Include="Assets\Resources" />
+     <Folder Include="Assets\Scripts\CBA\Animations\RectTransform\Core" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform\Shake\Position" />
      <Folder Include="Assets\Scripts\CBA\Animations\Transform" />
      <Reference Include="UnityEngine">
