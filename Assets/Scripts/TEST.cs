@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TEST : MonoBehaviour
@@ -5,6 +6,10 @@ public class TEST : MonoBehaviour
     [Header("References")]
     [SerializeField] private RectTransform _rectTransform;
 
+    private void Awake()
+    {
+        AudioSource audioSource;
+    }
 
     private void OnDrawGizmos()
     {
