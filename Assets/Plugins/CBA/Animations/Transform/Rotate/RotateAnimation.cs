@@ -11,14 +11,17 @@ namespace CBA.Animations.Transform.Rotate
         {
             return _transform.DORotate(_targetAngle, _duration);
         }
+        
         protected override Tween CreateBackwardTween()
         {
             return _transform.DORotate(_startAngle, _duration);
         }
+        
         protected override void MoveToStartState()
         {
             _transform.rotation = Quaternion.Euler(_startAngle);
         }
+        
         protected override void MoveToEndState()
         {
             _transform.rotation = Quaternion.Euler(_targetAngle);

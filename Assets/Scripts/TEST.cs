@@ -8,7 +8,6 @@ public class TEST : MonoBehaviour
 
     private void Awake()
     {
-        AudioSource audioSource;
     }
 
     private void OnDrawGizmos()

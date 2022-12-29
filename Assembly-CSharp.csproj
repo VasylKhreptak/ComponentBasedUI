@@ -768,13 +768,13 @@
       <Project>{c555af35-2114-0d29-be0a-5ba66fcff60b}</Project>
       <Name>NaughtyAttributes.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="NaughtyAttributes.Core.csproj">
-      <Project>{8eead09c-6944-3870-8079-852c523334d0}</Project>
-      <Name>NaughtyAttributes.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="DOTween.Modules.csproj">
       <Project>{5a738b21-4a20-57a9-52a7-3187fde3a3e4}</Project>
       <Name>DOTween.Modules</Name>
+    </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Core.csproj">
+      <Project>{8eead09c-6944-3870-8079-852c523334d0}</Project>
+      <Name>NaughtyAttributes.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
