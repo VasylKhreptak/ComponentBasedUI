@@ -10,10 +10,8 @@ namespace CBA.EventListeners.Core
         [SerializeField] protected ListenerType _listenerType;
 
         [Header("Manual Listener Preferences")]
-        [ShowIf(nameof(CanShowManualControl)), Required, SerializeField]
-        private MonoEvent _addListenerEvent;
-        [ShowIf(nameof(CanShowManualControl)), Required, SerializeField]
-        private MonoEvent _removeListenerEvent;
+        [ShowIf(nameof(CanShowManualControl)), Required, SerializeField] private MonoEvent _addListenerEvent;
+        [ShowIf(nameof(CanShowManualControl)), Required, SerializeField] private MonoEvent _removeListenerEvent;
 
         private bool CanShowManualControl() => _listenerType == ListenerType.FullyManual;
 
@@ -74,8 +72,8 @@ namespace CBA.EventListeners.Core
                 _removeListenerEvent.onMonoCall -= TryRemoveListener;
             }
         }
-        
-        private  void TryRunInEditor()
+
+        private void TryRunInEditor()
         {
             if (_listenerType == ListenerType.Editor)
             {

@@ -2239,8 +2239,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1177737483}
   - component: {fileID: 1177737482}
-  - component: {fileID: 1177737481}
   - component: {fileID: 1177737484}
+  - component: {fileID: 1177737481}
+  - component: {fileID: 1177737485}
   m_Layer: 0
   m_Name: Flip
   m_TagString: Untagged
@@ -2290,7 +2291,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1177737484
 MonoBehaviour:
@@ -2304,9 +2305,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcd4808c802434ba627d3e9d6d6401a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _useTarget: 0
+  _useTarget: 1
   _id: 10
-  _target: {fileID: 0}
+  _target: {fileID: 77755618}
+  _complete: 0
+--- !u!114 &1177737485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177737479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98bf5ef7f4e42209e15688aacc1fe74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _complete: 0
 --- !u!1 &1199174185
 GameObject:
@@ -2764,51 +2778,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animation: {fileID: 94465016}
---- !u!1 &1354553493
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1354553495}
-  - component: {fileID: 1354553494}
-  m_Layer: 0
-  m_Name: Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1354553494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354553493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 084379a4e77acae46a0c3b0d38b8a026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _component: {fileID: 1033669547}
---- !u!4 &1354553495
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354553493}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.769002, y: -3.2173958, z: 7.5935173}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444972766
 GameObject:
   m_ObjectHideFlags: 0
