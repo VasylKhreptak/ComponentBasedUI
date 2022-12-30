@@ -35,5 +35,44 @@ namespace CBA.Extensions
                 Object.DestroyImmediate(child.gameObject);
             }
         }
+
+        public static void Reset(this UnityEngine.Transform transform)
+        {
+            ResetPosition(transform);
+            ResetRotation(transform);
+            ResetScale(transform);
+        }
+
+        public static void ResetLocal(this UnityEngine.Transform transform)
+        {
+            transform.ResetLocalPosition();
+            transform.ResetLocalRotation();
+            transform.ResetScale();
+        }
+
+        public static void ResetPosition(this UnityEngine.Transform transform)
+        {
+            transform.position = UnityEngine.Vector3.zero;
+        }
+
+        public static void ResetLocalPosition(this UnityEngine.Transform transform)
+        {
+            transform.localPosition = UnityEngine.Vector3.zero;
+        }
+
+        public static void ResetRotation(this UnityEngine.Transform transform)
+        {
+            transform.rotation = Quaternion.identity;
+        }
+
+        public static void ResetLocalRotation(this UnityEngine.Transform transform)
+        {
+            transform.localRotation = Quaternion.identity;
+        }
+
+        public static void ResetScale(this UnityEngine.Transform transform)
+        {
+            transform.localScale = UnityEngine.Vector3.one;
+        }
     }
 }

@@ -14,6 +14,14 @@ namespace CBA.Animations.Transform.Move.Path
 {
     public class PathAnimation : PathAnimationCore
     {
+        protected List<PositionProvider.Core.PositionProvider> GetReversedPath()
+        {
+            List<PositionProvider.Core.PositionProvider> position = new List<PositionProvider.Core.PositionProvider>(_positionProviders);
+            position.Reverse();
+
+            return position;
+        }
+
         protected override Tween CreateForwardTween()
         {
             return _transform.DOPath(Extensions.PositionProvider.ToVector3Array(_positionProviders), _duration, _pathType, _pathMode, _resolution);
@@ -21,9 +29,7 @@ namespace CBA.Animations.Transform.Move.Path
 
         protected override Tween CreateBackwardTween()
         {
-            List<PositionProvider.Core.PositionProvider> position = new List<PositionProvider.Core.PositionProvider>(_positionProviders);
-            position.Reverse();
-            return _transform.DOPath(Extensions.PositionProvider.ToVector3Array(position), _duration, _pathType, _pathMode, _resolution);
+            return _transform.DOPath(Extensions.PositionProvider.ToVector3Array(GetReversedPath()), _duration, _pathType, _pathMode, _resolution);
         }
 
         protected override void MoveToStartState()
@@ -42,8 +48,8 @@ namespace CBA.Animations.Transform.Move.Path
 
         [Header("Editor")]
         [SerializeField] private bool _selectPositionOnAdd;
-        [SerializeField] private float _newPositionDistance = 3f;
-        [Required, SerializeField] private UnityEngine.Transform _pathHolder;
+        [SerializeField] protected float _newPositionDistance = 3f;
+        [Required, SerializeField] protected UnityEngine.Transform _pathHolder;
 
         [Button("Clear Path")]
         private void ClearPath()
@@ -52,6 +58,18 @@ namespace CBA.Animations.Transform.Move.Path
 
             _positionProviders.Clear();
             _pathHolder.DestroyImmediateChildren();
+            DestroyImmediate(_pathHolder.gameObject);
+        }
+
+        [Button("Create Path Holder")]
+        private void CreatePathHolder()
+        {
+            if (HasPathHolder()) return;
+
+            GameObject pathHolder = new GameObject("Path Holder");
+            pathHolder.transform.SetParent(_transform.parent);
+            pathHolder.transform.ResetLocal();
+            _pathHolder = pathHolder.transform;
         }
 
         [Button("Move To Start")]
@@ -134,7 +152,7 @@ namespace CBA.Animations.Transform.Move.Path
             return positionProvider;
         }
 
-        private PositionProvider.Core.PositionProvider AttachPositionProvider(GameObject target)
+        protected virtual PositionProvider.Core.PositionProvider AttachPositionProvider(GameObject target)
         {
             return target.AddComponent<TransformPositionProvider>();
         }
@@ -144,7 +162,7 @@ namespace CBA.Animations.Transform.Move.Path
             pathPoint.position = GetPointStartPosition(createdFromStart);
         }
 
-        private bool HasPathHolder() => _pathHolder != null;
+        protected bool HasPathHolder() => _pathHolder != null;
 
         private bool IsPathValid() => _positionProviders.Count != 0 && _positionProviders.All(x => x != null);
 
@@ -164,7 +182,7 @@ namespace CBA.Animations.Transform.Move.Path
 
             if (_positionProviders.Count == 1)
             {
-                lastPosition = _positionProviders[0].position;
+                lastPosition = _positionProviders[0].transform.position;
                 previousPosition = _transform.position;
 
                 if (lastPosition == previousPosition)
@@ -174,13 +192,13 @@ namespace CBA.Animations.Transform.Move.Path
             }
             else if (createdFromStart)
             {
-                lastPosition = _positionProviders.First().position;
-                previousPosition = _positionProviders[1].position;
+                lastPosition = _positionProviders.First().transform.position;
+                previousPosition = _positionProviders[1].transform.position;
             }
             else
             {
-                lastPosition = _positionProviders.Last().position;
-                previousPosition = _positionProviders[_positionProviders.Count - 2].position;
+                lastPosition = _positionProviders.Last().transform.position;
+                previousPosition = _positionProviders[_positionProviders.Count - 2].transform.position;
             }
 
             Vector3 direction = (lastPosition - previousPosition).normalized;
@@ -203,12 +221,12 @@ namespace CBA.Animations.Transform.Move.Path
             DrawLines();
         }
 
-        private void DrawPoints()
+        protected virtual void DrawPoints()
         {
             Extensions.Gizmos.DrawPoints(_positionProviders.Select(x => x.position).ToArray(), 0.2f);
         }
 
-        private void DrawLines()
+        protected virtual void DrawLines()
         {
             Extensions.Gizmos.DrawLines(_positionProviders.Select(x => x.position).ToArray());
         }
