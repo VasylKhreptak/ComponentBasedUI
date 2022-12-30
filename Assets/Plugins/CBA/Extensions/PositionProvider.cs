@@ -15,5 +15,17 @@ namespace CBA.Extensions
 
             return positions;
         }
+        
+        public static UnityEngine.Vector2[] ToVector2Array(List<Animations.Transform.Move.PositionProvider.Core.PositionProvider> positionProviders)
+        {
+            UnityEngine.Vector2[] positions = new UnityEngine.Vector2[positionProviders.Count];
+
+            for (int i = 0; i < positionProviders.Count; i++)
+            {
+                positions[i] = positionProviders[i].position;
+            }
+
+            return positions;
+        }
     }
 }

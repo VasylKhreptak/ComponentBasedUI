@@ -10,7 +10,7 @@ namespace CBA.Animations.Transform.Core
 
         #region MonoBehaviour
 
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             _transform ??= GetComponent<UnityEngine.Transform>();
         }

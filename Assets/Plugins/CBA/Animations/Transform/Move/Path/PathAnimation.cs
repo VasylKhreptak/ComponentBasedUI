@@ -49,6 +49,7 @@ namespace CBA.Animations.Transform.Move.Path
         [Header("Editor")]
         [SerializeField] private bool _selectPositionOnAdd;
         [SerializeField] protected float _newPositionDistance = 3f;
+        [SerializeField] private Vector3 _pathCreationDirection = Vector3.forward;
         [Required, SerializeField] protected UnityEngine.Transform _pathHolder;
 
         [Button("Clear Path")]
@@ -162,7 +163,7 @@ namespace CBA.Animations.Transform.Move.Path
             pathPoint.position = GetPointStartPosition(createdFromStart);
         }
 
-        protected bool HasPathHolder() => _pathHolder != null;
+        private bool HasPathHolder() => _pathHolder != null;
 
         private bool IsPathValid() => _positionProviders.Count != 0 && _positionProviders.All(x => x != null);
 
@@ -187,7 +188,7 @@ namespace CBA.Animations.Transform.Move.Path
 
                 if (lastPosition == previousPosition)
                 {
-                    return _transform.position + ((!createdFromStart).ToDirection() * Vector3.forward * _newPositionDistance);
+                    return _transform.position + ((!createdFromStart).ToDirection() * _pathCreationDirection * _newPositionDistance);
                 }
             }
             else if (createdFromStart)

@@ -3,7 +3,6 @@ using CBA.Animations.Transform.Move.PositionProvider;
 using DG.Tweening;
 using UnityEngine;
 using CBA.Extensions;
-using Vector3 = UnityEngine.Vector3;
 
 namespace CBA.Animations.Transform.Move.Path
 {
