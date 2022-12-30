@@ -16,22 +16,22 @@ namespace CBA.Animations.RectTransform.Jump
         [Header("Snapping")]
         [SerializeField] protected bool _snapping;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rectTransform.DOJumpAnchorPos(_targetAnchoredPosition, _power, _jumpsNumber, _duration, _snapping);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rectTransform.DOJumpAnchorPos(_startAnchoredPosition, _power, _jumpsNumber, _duration, _snapping);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _rectTransform.anchoredPosition = _startAnchoredPosition;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _rectTransform.anchoredPosition = _targetAnchoredPosition;
         }

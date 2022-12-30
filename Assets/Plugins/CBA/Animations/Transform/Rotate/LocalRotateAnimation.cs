@@ -7,19 +7,19 @@ namespace CBA.Animations.Transform.Rotate
 {
     public class LocalRotateAnimation : RotateAnimationCore
     {
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOLocalRotate(_targetAngle, _duration);
         }
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOLocalRotate(_startAngle, _duration);
         }
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _transform.localRotation = Quaternion.Euler(_startAngle);
         }
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _transform.localRotation = Quaternion.Euler(_targetAngle);
         }

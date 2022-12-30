@@ -7,19 +7,19 @@ namespace CBA.Animations.Transform.Move.Jump
 {
     public class JumpAnimation : JumpAnimationCore
     {
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOJump(_targetPosition, _power, _jumpsNumber, _duration, _snapping);
         }
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOJump(_startPosition, _power, _jumpsNumber, _duration, _snapping);
         }
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _transform.position = _startPosition;
         }
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _transform.position = _targetPosition;
         }

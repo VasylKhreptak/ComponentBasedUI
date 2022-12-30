@@ -14,22 +14,22 @@ namespace CBA.Animations.RectTransform.AnchorMinMax
         [Header("Snapping")]
         [SerializeField] private bool _snapping;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rectTransform.DOAnchorMin(_targetAnchorMin, _duration, _snapping);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rectTransform.DOAnchorMin(_startAnchorMin, _duration, _snapping);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _rectTransform.anchorMin = _startAnchorMin;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _rectTransform.anchorMin = _targetAnchorMin;
         }

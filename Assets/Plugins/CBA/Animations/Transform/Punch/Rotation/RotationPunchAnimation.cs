@@ -17,22 +17,22 @@ namespace CBA.Animations.Transform.Punch.Rotation
 
         #endregion
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOPunchRotation(_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOPunchRotation(-_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             ResetRotation();
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             ResetRotation();
         }

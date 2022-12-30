@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using Sequence = DG.Tweening.Sequence;
 
 public class TEST : MonoBehaviour
 {
@@ -8,13 +8,6 @@ public class TEST : MonoBehaviour
 
     private void Awake()
     {
+        Sequence sequence;
     }
-
-    private void OnDrawGizmos()
-    {
-        if (_rectTransform == null) return;
-
-        Gizmos.color = Color.red;
-    }
-
 }

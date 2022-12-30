@@ -17,22 +17,22 @@ namespace CBA.Animations.Transform.Punch.Scale
 
         #endregion
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOPunchScale(_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOPunchScale(-_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             ResetScale();
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             ResetScale();
         }

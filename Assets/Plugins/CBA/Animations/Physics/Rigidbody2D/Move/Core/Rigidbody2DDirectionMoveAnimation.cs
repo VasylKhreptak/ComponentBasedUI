@@ -9,12 +9,12 @@ namespace CBA.Animations.Physics.Rigidbody2D.Move.Core
         [SerializeField] protected float _from;
         [SerializeField] protected float _to;
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             MoveTo(_from);
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             MoveTo(_to);
         }

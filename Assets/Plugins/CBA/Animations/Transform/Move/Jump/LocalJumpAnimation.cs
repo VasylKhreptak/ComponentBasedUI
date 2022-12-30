@@ -7,19 +7,19 @@ namespace CBA.Animations.Transform.Move.Jump
 {
     public class LocalJumpAnimation : JumpAnimationCore
     {
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOLocalJump(_targetPosition, _power, _jumpsNumber, _duration, _snapping);
         }
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOLocalJump(_startPosition, _power, _jumpsNumber, _duration, _snapping);
         }
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _transform.localPosition = _startPosition;
         }
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _transform.localPosition = _targetPosition;
         }

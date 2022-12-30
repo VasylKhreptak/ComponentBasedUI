@@ -17,23 +17,23 @@ namespace CBA.Animations.Transform.Shake.Rotation
 
         #endregion
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOShakeRotation(_duration, _strengthDirection * _strength, _vibrato, _randomness, _fadeOut, _shakeRandomnessMode);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOShakeRotation(_duration, -_strengthDirection * _strength, _vibrato, _randomness, _fadeOut, _shakeRandomnessMode);
 
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             ResetLocalRotation();
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             ResetLocalRotation();
         }

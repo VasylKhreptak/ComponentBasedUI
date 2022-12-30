@@ -6,22 +6,22 @@ namespace CBA.Animations.Transform.Scale
 {
     public class ScaleAnimation : ScaleAnimationCore
     {
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOScale(_targetScale, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOScale(_startScale, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _transform.localScale = _startScale;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _transform.localScale = _targetScale;
         }

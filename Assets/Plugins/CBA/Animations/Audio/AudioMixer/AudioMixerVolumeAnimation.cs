@@ -32,22 +32,22 @@ namespace CBA.Animations.Audio.AudioMixer
             }
         }
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _audioMixerGroup.audioMixer.DOSetFloat(_audioMixerGroup.name, _targetVolume, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _audioMixerGroup.audioMixer.DOSetFloat(_audioMixerGroup.name, _startVolume, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _volume = _startVolume;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _volume = _targetVolume;
         }

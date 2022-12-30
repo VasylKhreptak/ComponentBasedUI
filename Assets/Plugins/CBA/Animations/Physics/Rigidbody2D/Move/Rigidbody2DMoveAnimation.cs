@@ -11,22 +11,22 @@ namespace CBA.Animations.Physics.Rigidbody2D.Move
         [SerializeField] private Vector2 _startPosition;
         [SerializeField] private Vector2 _targetPosition;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rigidbody2D.DOMove(_targetPosition, _duration, _snapping);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rigidbody2D.DOMove(_startPosition, _duration, _snapping);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _transform.position = _startPosition;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _transform.position = _targetPosition;
         }

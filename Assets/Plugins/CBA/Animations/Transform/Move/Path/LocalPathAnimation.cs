@@ -8,22 +8,22 @@ namespace CBA.Animations.Transform.Move.Path
 {
     public class LocalPathAnimation : PathAnimation
     {
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOLocalPath(Extensions.PositionProvider.ToVector3Array(_positionProviders), _duration, _pathType, _pathMode, _resolution);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOLocalPath(Extensions.PositionProvider.ToVector3Array(GetReversedPath()), _duration, _pathType, _pathMode, _resolution);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _transform.localPosition = _positionProviders.First().position;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _transform.localPosition = _positionProviders.Last().position;
         }

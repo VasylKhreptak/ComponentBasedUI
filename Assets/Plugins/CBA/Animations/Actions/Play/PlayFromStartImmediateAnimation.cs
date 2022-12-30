@@ -2,11 +2,11 @@ using CBA.Animations.Actions.Core;
 
 namespace CBA.Animations.Actions.Play
 {
-    public class PlayFromEndImmediate : AnimationAction
+    public class PlayFromStartImmediateAnimation : AnimationAction
     {
         public override void Do()
         {
-            _animation.PlayFromEndImmediate();
+            _animation.PlayFromStartImmediate();
         }
     }
 }

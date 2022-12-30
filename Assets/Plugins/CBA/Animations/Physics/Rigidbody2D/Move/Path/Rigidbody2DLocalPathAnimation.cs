@@ -20,12 +20,12 @@ namespace CBA.Animations.Physics.Rigidbody2D.Move.Path
 
         #endregion
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rigidbody2D.DOLocalPath(Extensions.PositionProvider.ToVector2Array(_positionProviders), _duration, _pathType, _pathMode, _resolution);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rigidbody2D.DOLocalPath(Extensions.PositionProvider.ToVector2Array(GetReversedPath()), _duration, _pathType, _pathMode, _resolution);
         }

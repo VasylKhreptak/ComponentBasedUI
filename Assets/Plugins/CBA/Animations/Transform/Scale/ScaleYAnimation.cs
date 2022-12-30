@@ -7,23 +7,23 @@ namespace CBA.Animations.Transform.Scale
 {
     public class ScaleYAnimation : DirectionScaleAnimation
     {
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOScaleY(_to, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOScaleY(_from, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             Vector3 scale = _transform.localScale;
             _transform.localScale = new Vector3(scale.x, _from, scale.z);
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             Vector3 scale = _transform.localScale;
             _transform.localScale = new Vector3(scale.x, _to, scale.z);

@@ -11,22 +11,22 @@ namespace CBA.Animations.Audio.AudioSource
         [SerializeField, Range(0f, 1f)] private float _startVolume;
         [SerializeField, Range(0f, 1f)] private float _targetVolume = 1f;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _audioSource.DOFade(_targetVolume, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _audioSource.DOFade(_startVolume, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _audioSource.volume = _startVolume;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _audioSource.volume = _targetVolume;
         }

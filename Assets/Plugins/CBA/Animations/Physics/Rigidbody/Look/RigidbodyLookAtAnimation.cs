@@ -14,17 +14,17 @@ namespace CBA.Animations.Physics.Rigidbody.Look
         [SerializeField] protected AxisConstraint _axisConstraint = AxisConstraint.None;
         [SerializeField] protected Vector3 _up = Vector3.up;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rigidbody.DOLookAt(_endTarget.position, _duration, _axisConstraint, _up);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rigidbody.DOLookAt(_starTarget.position, _duration, _axisConstraint, _up);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             Vector3 lookDirection = _starTarget.position - _transform.position;
             Vector3 lookRotation = Quaternion.LookRotation(lookDirection, _up).eulerAngles;
@@ -33,7 +33,7 @@ namespace CBA.Animations.Physics.Rigidbody.Look
             _transform.rotation = Quaternion.Euler(evaluatedRotation);
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             Vector3 lookDirection = _endTarget.position - _transform.position;
             Vector3 lookRotation = Quaternion.LookRotation(lookDirection, _up).eulerAngles;

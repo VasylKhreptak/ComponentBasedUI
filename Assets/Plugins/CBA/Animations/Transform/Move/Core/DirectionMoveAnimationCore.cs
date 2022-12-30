@@ -12,12 +12,12 @@ namespace CBA.Animations.Transform.Move.Core
         [Header("Snapping")]
         [SerializeField] protected bool _snapping;
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             MoveTo(_from);
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             MoveTo(_to);
         }

@@ -14,23 +14,23 @@ namespace CBA.Animations.RectTransform.Move.Anchor3D
         [Header("Snapping")]
         [SerializeField] private bool _snapping;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rectTransform.DOAnchorPos3DY(_targetAnchorY, _duration, _snapping);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rectTransform.DOAnchorPos3DY(_startAnchorY, _duration, _snapping);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             Vector3 anchoredPosition = _rectTransform.anchoredPosition3D;
             _rectTransform.anchoredPosition3D = new Vector3(anchoredPosition.x, _startAnchorY, anchoredPosition.z);
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             Vector3 anchoredPosition = _rectTransform.anchoredPosition3D;
             _rectTransform.anchoredPosition3D = new Vector3(anchoredPosition.x, _targetAnchorY, anchoredPosition.z);

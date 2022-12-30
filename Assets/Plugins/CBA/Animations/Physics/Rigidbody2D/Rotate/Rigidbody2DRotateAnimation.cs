@@ -12,23 +12,23 @@ namespace CBA.Animations.Physics.Rigidbody2D.Rotate
         [SerializeField] private float _startAngle;
         [SerializeField] private float _targetAngle;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rigidbody2D.DORotate(_targetAngle, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rigidbody2D.DORotate(_startAngle, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             Vector3 rotation = _transform.rotation.eulerAngles;
             _transform.rotation = Quaternion.Euler(rotation.x, rotation.y, _startAngle);
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             Vector3 rotation = _transform.rotation.eulerAngles;
             _transform.rotation = Quaternion.Euler(rotation.x, rotation.y, _targetAngle);

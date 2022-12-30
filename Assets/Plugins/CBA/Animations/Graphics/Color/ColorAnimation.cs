@@ -13,22 +13,22 @@ namespace CBA.Animations.Graphics.Color
         [SerializeField] private UnityEngine.Color _startColor = UnityEngine.Color.white;
         [SerializeField] private UnityEngine.Color _targetColor = UnityEngine.Color.white;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return DOTween.To(() => _colorAdapter.color, x => _colorAdapter.color = x, _targetColor, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return DOTween.To(() => _colorAdapter.color, x => _colorAdapter.color = x, _startColor, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _colorAdapter.color = _startColor;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _colorAdapter.color = _targetColor;
         }

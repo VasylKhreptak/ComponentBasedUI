@@ -7,22 +7,22 @@ namespace CBA.Animations.Transform.Move
 {
     public class MoveAnimation : MoveAnimationCore
     {
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOMove(_targetPosition, _duration, _snapping);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOMove(_startPosition, _duration, _snapping);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _transform.position = _startPosition;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _transform.position = _targetPosition;
         }

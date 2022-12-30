@@ -11,22 +11,22 @@ namespace CBA.Animations.Audio.AudioSource
         [SerializeField, Range(-3f, 3f)] private float _startPitch = 1f;
         [SerializeField, Range(-3f, 3f)] private float _targetPitch = 1f;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _audioSource.DOPitch(_targetPitch, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _audioSource.DOPitch(_startPitch, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _audioSource.pitch = _startPitch;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _audioSource.pitch = _targetPitch;
         }

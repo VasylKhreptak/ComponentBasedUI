@@ -12,22 +12,22 @@ namespace CBA.Animations.RectTransform.Move.Pivot
         [SerializeField] private Vector2 _startPivotPosition;
         [SerializeField] private Vector2 _targetPivotPosition;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rectTransform.DOPivot(_targetPivotPosition, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rectTransform.DOPivot(_startPivotPosition, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _rectTransform.pivot = _startPivotPosition;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _rectTransform.pivot = _targetPivotPosition;
         }

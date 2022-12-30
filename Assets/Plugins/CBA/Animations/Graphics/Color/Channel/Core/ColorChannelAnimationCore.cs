@@ -13,22 +13,22 @@ namespace CBA.Animations.Graphics.Color.Channel.Core
 
         protected abstract float _channel { get; set; }
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return DOTween.To(() => _channel, x => _channel = x, _to, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return DOTween.To(() => _channel, x => _channel = x, _from, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _channel = _from;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _channel = _to;
         }

@@ -7,12 +7,12 @@ namespace CBA.Animations.Transform.Move
 {
     public class MoveYAnimation : DirectionMoveAnimationCore
     {
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _transform.DOMoveY(_to, _duration, _snapping);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _transform.DOMoveY(_from, _duration, _snapping);
         }

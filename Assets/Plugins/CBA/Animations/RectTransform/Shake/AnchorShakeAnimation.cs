@@ -28,23 +28,23 @@ namespace CBA.Animations.RectTransform.Shake
 
         #endregion
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return _rectTransform.DOShakeAnchorPos(_duration, _strengthDirection * _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return _rectTransform.DOShakeAnchorPos(_duration, -_strengthDirection * _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode);
 
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             ResetAnchoredPosition();
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             ResetAnchoredPosition();
         }

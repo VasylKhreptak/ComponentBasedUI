@@ -11,22 +11,22 @@ namespace CBA.Animations.Graphics.Fade
         [SerializeField, Range(0f, 1f)] private float _startAlpha;
         [SerializeField, Range(0f, 1f)] private float _targetAlpha = 1f;
 
-        protected override Tween CreateForwardTween()
+        public override Tween CreateForwardTween()
         {
             return DOTween.To(() => _alphaAdapter.alpha, x => _alphaAdapter.alpha = x, _targetAlpha, _duration);
         }
 
-        protected override Tween CreateBackwardTween()
+        public override Tween CreateBackwardTween()
         {
             return DOTween.To(() => _alphaAdapter.alpha, x => _alphaAdapter.alpha = x, _startAlpha, _duration);
         }
 
-        protected override void MoveToStartState()
+        public override void MoveToStartState()
         {
             _alphaAdapter.alpha = _startAlpha;
         }
 
-        protected override void MoveToEndState()
+        public override void MoveToEndState()
         {
             _alphaAdapter.alpha = _targetAlpha;
         }

@@ -36,13 +36,13 @@ namespace CBA.Animations.Core
 
         #endregion
 
-        protected abstract Tween CreateForwardTween();
+        public abstract Tween CreateForwardTween();
 
-        protected abstract Tween CreateBackwardTween();
+        public abstract Tween CreateBackwardTween();
 
-        protected abstract void MoveToStartState();
+        public abstract void MoveToStartState();
 
-        protected abstract void MoveToEndState();
+        public abstract void MoveToEndState();
 
         private void InitForward()
         {
