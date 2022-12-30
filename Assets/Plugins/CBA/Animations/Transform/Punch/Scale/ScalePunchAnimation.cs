@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Punch.Scale
 {
-    public class ScalePunchAnimation : PunchAnimationCore
+    public class ScalePunchAnimation : PunchAnimation
     {
         private Vector3 _startLocalScale;
 
@@ -17,12 +17,12 @@ namespace CBA.Animations.Transform.Punch.Scale
 
         #endregion
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOPunchScale(_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOPunchScale(-_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }

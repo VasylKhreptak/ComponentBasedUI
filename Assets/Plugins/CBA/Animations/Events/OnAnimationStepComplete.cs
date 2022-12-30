@@ -6,11 +6,11 @@ namespace CBA.Animations.Events
     {
         protected override void AddListener()
         {
-            _animation.Tween.onStepComplete += Invoke;
+            _animation.Animation.onStepComplete += Invoke;
         }
         protected override void RemoveListener()
         {
-            _animation.Tween.onStepComplete -= Invoke;
+            _animation.Animation.onStepComplete -= Invoke;
         }
     }
 }

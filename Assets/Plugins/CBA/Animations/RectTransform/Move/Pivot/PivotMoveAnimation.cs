@@ -6,18 +6,18 @@ using UnityEngine.Serialization;
 
 namespace CBA.Animations.RectTransform.Move.Pivot
 {
-    public class PivotMoveAnimation : RectTransformAnimationCore
+    public class PivotMoveAnimation : RectTransformAnimation
     {
         [Header("Move Preferences")]
         [SerializeField] private Vector2 _startPivotPosition;
         [SerializeField] private Vector2 _targetPivotPosition;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rectTransform.DOPivot(_targetPivotPosition, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rectTransform.DOPivot(_startPivotPosition, _duration);
         }

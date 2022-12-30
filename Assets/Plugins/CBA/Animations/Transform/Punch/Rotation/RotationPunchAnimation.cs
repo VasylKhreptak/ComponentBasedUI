@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Punch.Rotation
 {
-    public class RotationPunchAnimation : PunchAnimationCore
+    public class RotationPunchAnimation : PunchAnimation
     {
         private Quaternion _startLocalRotation;
 
@@ -17,12 +17,12 @@ namespace CBA.Animations.Transform.Punch.Rotation
 
         #endregion
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOPunchRotation(_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOPunchRotation(-_strengthDirection * _strength, _duration, _vibrato, _elasticity);
         }

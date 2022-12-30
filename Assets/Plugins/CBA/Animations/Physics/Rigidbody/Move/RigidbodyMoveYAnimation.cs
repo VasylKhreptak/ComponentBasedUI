@@ -7,12 +7,12 @@ namespace CBA.Animations.Physics.Rigidbody.Move
 {
     public class RigidbodyMoveYAnimation : RigidbodyDirectionMoveAnimation
     {
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rigidbody.DOMoveY(_to, _duration, _snapping);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rigidbody.DOMoveY(_from, _duration, _snapping);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Shake.Rotation
 {
-    public class RotationShakeAnimation : ShakeAnimationCore
+    public class RotationShakeAnimation : ShakeAnimation
     {
         private Quaternion _startLocalRotation;
 
@@ -17,12 +17,12 @@ namespace CBA.Animations.Transform.Shake.Rotation
 
         #endregion
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOShakeRotation(_duration, _strengthDirection * _strength, _vibrato, _randomness, _fadeOut, _shakeRandomnessMode);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOShakeRotation(_duration, -_strengthDirection * _strength, _vibrato, _randomness, _fadeOut, _shakeRandomnessMode);
 

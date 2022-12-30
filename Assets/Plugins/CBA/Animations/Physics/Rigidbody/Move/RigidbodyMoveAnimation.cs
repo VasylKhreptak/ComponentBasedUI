@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace CBA.Animations.Physics.Rigidbody.Move
 {
-    public class RigidbodyMoveAnimation : RigidbodyMoveAnimationCore
+    public class RigidbodyMoveAnimation : Core.RigidbodyMoveAnimation
     {
         [Header("Move Preferences")]
         [SerializeField] private Vector3 _startPosition;
         [SerializeField] private Vector3 _targetPosition;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rigidbody.DOMove(_targetPosition, _duration, _snapping);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rigidbody.DOMove(_startPosition, _duration, _snapping);
         }

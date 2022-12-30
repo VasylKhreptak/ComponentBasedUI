@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Punch.Move
 {
-    public class PositionPunchAnimation : PunchAnimationCore
+    public class PositionPunchAnimation : PunchAnimation
     {
         [Header("Snapping")]
         [SerializeField] private bool _snapping;
@@ -20,12 +20,12 @@ namespace CBA.Animations.Transform.Punch.Move
 
         #endregion
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOPunchPosition(_strengthDirection * _strength, _duration, _vibrato, _elasticity, _snapping);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOPunchPosition(-_strengthDirection * _strength, _duration, _vibrato, _elasticity, _snapping);
         }

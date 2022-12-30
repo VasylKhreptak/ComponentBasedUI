@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CBA.Animations.RectTransform.Jump
 {
-    public class AnchorJumpAnimation : RectTransformAnimationCore
+    public class AnchorJumpAnimation : RectTransformAnimation
     {
         [Header("Jump Preferences")]
         [SerializeField] private Vector2 _startAnchoredPosition;
@@ -16,12 +16,12 @@ namespace CBA.Animations.RectTransform.Jump
         [Header("Snapping")]
         [SerializeField] protected bool _snapping;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rectTransform.DOJumpAnchorPos(_targetAnchoredPosition, _power, _jumpsNumber, _duration, _snapping);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rectTransform.DOJumpAnchorPos(_startAnchoredPosition, _power, _jumpsNumber, _duration, _snapping);
         }

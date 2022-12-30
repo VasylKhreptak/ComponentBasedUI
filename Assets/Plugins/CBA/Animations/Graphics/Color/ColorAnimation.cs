@@ -7,18 +7,18 @@ using UnityEngine;
 
 namespace CBA.Animations.Graphics.Color
 {
-    public class ColorAnimation : ColorAnimationCore
+    public class ColorAnimation : Core.ColorAnimation
     {
         [Header("Fade Preferences")]
         [SerializeField] private UnityEngine.Color _startColor = UnityEngine.Color.white;
         [SerializeField] private UnityEngine.Color _targetColor = UnityEngine.Color.white;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return DOTween.To(() => _colorAdapter.color, x => _colorAdapter.color = x, _targetColor, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return DOTween.To(() => _colorAdapter.color, x => _colorAdapter.color = x, _startColor, _duration);
         }

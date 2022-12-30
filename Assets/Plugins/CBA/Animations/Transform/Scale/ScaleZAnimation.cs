@@ -7,12 +7,12 @@ namespace CBA.Animations.Transform.Scale
 {
     public class ScaleZAnimation : DirectionScaleAnimation
     {
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOScaleZ(_to, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOScaleZ(_from, _duration);
         }

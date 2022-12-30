@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace CBA.Animations.Graphics.Fade
 {
-    public class FadeAnimation : AlphaAnimationCore
+    public class FadeAnimation : AlphaAnimation
     {
         [Header("Fade Preferences")]
         [SerializeField, Range(0f, 1f)] private float _startAlpha;
         [SerializeField, Range(0f, 1f)] private float _targetAlpha = 1f;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return DOTween.To(() => _alphaAdapter.alpha, x => _alphaAdapter.alpha = x, _targetAlpha, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return DOTween.To(() => _alphaAdapter.alpha, x => _alphaAdapter.alpha = x, _startAlpha, _duration);
         }

@@ -7,7 +7,7 @@ namespace CBA.Animations.Actions
     {
         public override void Do()
         {
-            _animation.Tween.TogglePause();
+            _animation.Animation.TogglePause();
         }
     }
 }

@@ -4,7 +4,7 @@ using CBA.Extensions;
 
 namespace CBA.Animations.Graphics.Color.Channel
 {
-    public class ColorRedChannelAnimation : ColorChannelAnimationCore
+    public class ColorRedChannelAnimation : ColorChannelAnimation
     {
         protected override float _channel
         {

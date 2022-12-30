@@ -7,9 +7,6 @@ namespace CBA.Animations.Core
 {
     public abstract class AnimationCore : MonoBehaviour
     {
-        [Header("Duration")]
-        [SerializeField] protected float _duration = 1f;
-
         [Header("Animation Preferences")]
         [SerializeField] private bool _useAnimationCurve;
         [HideIf(nameof(_useAnimationCurve)), SerializeField] private Ease _ease = DOTween.defaultEaseType;
@@ -21,63 +18,63 @@ namespace CBA.Animations.Core
         [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private LoopType _loopType = DOTween.defaultLoopType;
         [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private UpdateType _updateType = DOTween.defaultUpdateType;
 
-        private Tween _tween;
+        private Tween _animation;
 
-        public Tween Tween => _tween;
-
+        public Tween Animation => _animation;
+        
         public Action onInit;
 
         #region MonoBehaviour
 
         protected virtual void OnDestroy()
         {
-            _tween.Kill();
+            _animation.Kill();
         }
 
         #endregion
 
-        public abstract Tween CreateForwardTween();
-
-        public abstract Tween CreateBackwardTween();
-
-        public abstract void MoveToStartState();
-
-        public abstract void MoveToEndState();
-
-        private void InitForward()
-        {
-            _tween = CreateForwardTween();
-
-            onInit?.Invoke();
-        }
-
-        private void InitBackward()
-        {
-            _tween = CreateBackwardTween();
-
-            onInit?.Invoke();
-        }
-
-        private void ApplyAnimationPreferences()
+        protected void ApplyAnimationPreferences()
         {
             if (_useAdditionalSettings)
             {
-                _tween.SetId(_id);
-                _tween.SetDelay(_delay);
-                _tween.SetLoops(_loops, _loopType);
-                _tween.SetUpdate(_updateType);
-                _tween.SetAutoKill(true);
+                _animation.SetId(_id);
+                _animation.SetDelay(_delay);
+                _animation.SetLoops(_loops, _loopType);
+                _animation.SetUpdate(_updateType);
+                _animation.SetAutoKill(true);
             }
 
             if (_useAnimationCurve)
             {
-                _tween.SetEase(_curve);
+                _animation.SetEase(_curve);
             }
             else
             {
-                _tween.SetEase(_ease);
+                _animation.SetEase(_ease);
             }
         }
+
+        protected void InitForward()
+        {
+            _animation = CreateForwardAnimation();
+
+            onInit?.Invoke();
+        }
+
+        protected void InitBackward()
+        {
+            _animation = CreateBackwardAnimation();
+
+            onInit?.Invoke();
+        }
+
+        public abstract Tween CreateForwardAnimation();
+
+        public abstract Tween CreateBackwardAnimation();
+
+        public abstract void MoveToStartState();
+
+        public abstract void MoveToEndState();
 
         public void PlayForward()
         {
@@ -95,20 +92,20 @@ namespace CBA.Animations.Core
             }
         }
 
-        public void PlayForwardImmediate()
+        public virtual void PlayForwardImmediate()
         {
-            _tween.Kill();
+            _animation.Kill();
             InitForward();
             ApplyAnimationPreferences();
-            _tween.Play();
+            _animation.Play();
         }
 
-        public void PlayBackwardImmediate()
+        public virtual void PlayBackwardImmediate()
         {
-            _tween.Kill();
+            _animation.Kill();
             InitBackward();
             ApplyAnimationPreferences();
-            _tween.Play();
+            _animation.Play();
         }
 
         public void PlayFromStart()
@@ -141,7 +138,7 @@ namespace CBA.Animations.Core
 
         private bool CanPlay()
         {
-            return _tween == null || _tween.active == false;
+            return _animation == null || _animation.active == false;
         }
     }
 }

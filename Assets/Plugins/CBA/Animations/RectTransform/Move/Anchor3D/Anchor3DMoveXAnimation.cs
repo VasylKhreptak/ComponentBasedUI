@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CBA.Animations.RectTransform.Move.Anchor3D
 {
-    public class Anchor3DMoveXAnimation : RectTransformAnimationCore
+    public class Anchor3DMoveXAnimation : RectTransformAnimation
     {
         [Header("Move Preferences")]
         [SerializeField] private float _startAnchorX;
@@ -14,12 +14,12 @@ namespace CBA.Animations.RectTransform.Move.Anchor3D
         [Header("Snapping")]
         [SerializeField] private bool _snapping;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rectTransform.DOAnchorPos3DX(_targetAnchorX, _duration, _snapping);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rectTransform.DOAnchorPos3DX(_startAnchorX, _duration, _snapping);
         }

@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace CBA.Animations.RectTransform.Move.Pivot
 {
-    public class PivotMoveYAnimation : RectTransformAnimationCore
+    public class PivotMoveYAnimation : RectTransformAnimation
     {
         [Header("Move Preferences")]
         [SerializeField] private float _startPivotYPosition;
         [SerializeField] private float _targetPivotYPosition;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rectTransform.DOPivotY(_startPivotYPosition, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rectTransform.DOPivotY(_targetPivotYPosition, _duration);
         }

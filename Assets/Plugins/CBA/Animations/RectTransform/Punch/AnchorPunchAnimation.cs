@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CBA.Animations.RectTransform.Punch
 {
-    public class AnchorPunchAnimation : RectTransformAnimationCore
+    public class AnchorPunchAnimation : RectTransformAnimation
     {
         [Header("Punch Preferences")]
         [SerializeField] protected Vector2 _strengthDirection;
@@ -27,12 +27,12 @@ namespace CBA.Animations.RectTransform.Punch
 
         #endregion
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rectTransform.DOPunchAnchorPos(_strengthDirection * _strength, _duration, _vibrato, _elasticity, _snapping);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rectTransform.DOPunchAnchorPos(-_strengthDirection * _strength, _duration, _vibrato, _elasticity, _snapping);
         }

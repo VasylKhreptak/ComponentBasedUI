@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Move.Jump
 {
-    public class LocalJumpAnimation : JumpAnimationCore
+    public class LocalJumpAnimation : Core.JumpAnimation
     {
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOLocalJump(_targetPosition, _power, _jumpsNumber, _duration, _snapping);
         }
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOLocalJump(_startPosition, _power, _jumpsNumber, _duration, _snapping);
         }

@@ -4,14 +4,14 @@ using NaughtyAttributes;
 
 namespace CBA.Animations.Transform.Scale
 {
-    public class ScaleAnimation : ScaleAnimationCore
+    public class ScaleAnimation : Core.ScaleAnimation
     {
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOScale(_targetScale, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOScale(_startScale, _duration);
         }

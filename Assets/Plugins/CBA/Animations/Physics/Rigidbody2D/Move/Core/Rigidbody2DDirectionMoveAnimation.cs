@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Physics.Rigidbody2D.Move.Core
 {
-    public abstract class Rigidbody2DDirectionMoveAnimation : Rigidbody2DMoveAnimationCore
+    public abstract class Rigidbody2DDirectionMoveAnimation : Rigidbody2DMoveAnimation
     {
         [Header("Move Preferences")]
         [SerializeField] protected float _from;

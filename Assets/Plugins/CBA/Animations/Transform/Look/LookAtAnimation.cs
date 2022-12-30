@@ -6,14 +6,14 @@ using AxisConstraint = CBA.Extensions.AxisConstraint;
 
 namespace CBA.Animations.Transform.Look
 {
-    public class LookAtAnimation : LookAtAnimationCore
+    public class LookAtAnimation : Core.LookAtAnimation
     {
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOLookAt(_endTarget.position, _duration, _axisConstraint, _up);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOLookAt(_starTarget.position, _duration, _axisConstraint, _up);
         }

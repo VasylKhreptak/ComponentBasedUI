@@ -1,6 +1,7 @@
 using CBA.Animations.Core;
 using NaughtyAttributes;
 using UnityEngine;
+using Animation = CBA.Animations.Core.Animation;
 
 namespace CBA.Animations.Actions.Core
 {
@@ -14,10 +15,10 @@ namespace CBA.Animations.Actions.Core
         private void OnValidate()
         {
             _animation ??= GetComponent<AnimationCore>();
-            UnityEngine.Transform parent = transform.parent;
-            if (_animation == null && parent != null)
+            
+            if (transform.parent != null)
             {
-                _animation = parent.GetComponent<AnimationCore>();
+                _animation ??= transform.parent.GetComponent<AnimationCore>();
             }
         }
 

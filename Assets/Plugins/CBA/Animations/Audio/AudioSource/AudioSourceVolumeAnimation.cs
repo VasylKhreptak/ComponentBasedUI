@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace CBA.Animations.Audio.AudioSource
 {
-    public class AudioSourceVolumeAnimation : AudioSourceAnimationCore
+    public class AudioSourceVolumeAnimation : AudioSourceAnimation
     {
         [Header("Volume Preferences")]
         [SerializeField, Range(0f, 1f)] private float _startVolume;
         [SerializeField, Range(0f, 1f)] private float _targetVolume = 1f;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _audioSource.DOFade(_targetVolume, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _audioSource.DOFade(_startVolume, _duration);
         }

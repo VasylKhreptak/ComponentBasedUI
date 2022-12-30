@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Rotate
 {
-    public class LocalRotateAnimation : RotateAnimationCore
+    public class LocalRotateAnimation : Core.RotateAnimation
     {
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOLocalRotate(_targetAngle, _duration);
         }
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOLocalRotate(_startAngle, _duration);
         }

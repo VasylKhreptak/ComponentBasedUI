@@ -3,7 +3,7 @@ using CBA.Extensions;
 
 namespace CBA.Animations.Graphics.Color.Channel
 {
-    public class ColorBlueChannelAnimation : ColorChannelAnimationCore
+    public class ColorBlueChannelAnimation : ColorChannelAnimation
     {
         protected override float _channel
         {

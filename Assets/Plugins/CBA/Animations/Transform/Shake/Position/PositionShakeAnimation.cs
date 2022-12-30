@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Shake.Position
 {
-    public class PositionShakeAnimation : ShakeAnimationCore
+    public class PositionShakeAnimation : ShakeAnimation
     {
         [Header("Snapping")]
         [SerializeField] private bool _snapping;
@@ -20,12 +20,12 @@ namespace CBA.Animations.Transform.Shake.Position
 
         #endregion
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOShakePosition(_duration, _strengthDirection * _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOShakePosition(_duration, -_strengthDirection * _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode);
 

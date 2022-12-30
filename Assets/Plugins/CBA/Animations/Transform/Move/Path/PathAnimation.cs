@@ -12,7 +12,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace CBA.Animations.Transform.Move.Path
 {
-    public class PathAnimation : PathAnimationCore
+    public class PathAnimation : Core.PathAnimation
     {
         protected List<PositionProvider.Core.PositionProvider> GetReversedPath()
         {
@@ -22,12 +22,12 @@ namespace CBA.Animations.Transform.Move.Path
             return position;
         }
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOPath(Extensions.PositionProvider.ToVector3Array(_positionProviders), _duration, _pathType, _pathMode, _resolution);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOPath(Extensions.PositionProvider.ToVector3Array(GetReversedPath()), _duration, _pathType, _pathMode, _resolution);
         }

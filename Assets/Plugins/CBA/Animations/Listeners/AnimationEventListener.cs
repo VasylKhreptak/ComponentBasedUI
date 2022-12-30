@@ -2,6 +2,7 @@ using CBA.Animations.Core;
 using CBA.EventListeners.Core;
 using NaughtyAttributes;
 using UnityEngine;
+using Animation = CBA.Animations.Core.Animation;
 
 namespace CBA.Animations.Listeners
 {
@@ -19,7 +20,7 @@ namespace CBA.Animations.Listeners
 
         private void OnValidate()
         {
-            _animation ??= GetComponent<AnimationCore>();
+            _animation ??= GetComponent<Animation>();
         }
 
         private void Awake()

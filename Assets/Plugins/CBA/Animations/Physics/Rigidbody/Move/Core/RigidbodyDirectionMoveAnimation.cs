@@ -2,7 +2,7 @@
 
 namespace CBA.Animations.Physics.Rigidbody.Move.Core
 {
-    public abstract class RigidbodyDirectionMoveAnimation : RigidbodyMoveAnimationCore
+    public abstract class RigidbodyDirectionMoveAnimation : RigidbodyMoveAnimation
     {
         [Header("Move Preferences")]
         [SerializeField] protected float _from;

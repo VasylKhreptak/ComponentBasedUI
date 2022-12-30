@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Shake.Scale
 {
-    public class ScaleShakeAnimation : ShakeAnimationCore
+    public class ScaleShakeAnimation : ShakeAnimation
     {
         private Vector3 _startLocalScale;
 
@@ -17,12 +17,12 @@ namespace CBA.Animations.Transform.Shake.Scale
 
         #endregion
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOShakeScale(_duration, _strengthDirection * _strength, _vibrato, _randomness, _fadeOut, _shakeRandomnessMode);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOShakeScale(_duration, -_strengthDirection * _strength, _vibrato, _randomness, _fadeOut, _shakeRandomnessMode);
 

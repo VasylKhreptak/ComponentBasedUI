@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Physics.Rigidbody.Look
 {
-    public class RigidbodyLookAtAnimation : RigidbodyAnimationCore
+    public class RigidbodyLookAtAnimation : RigidbodyAnimation
     {
         [Header("Look At Preferences")]
         [Required, SerializeField] protected PositionProvider _starTarget;
@@ -14,12 +14,12 @@ namespace CBA.Animations.Physics.Rigidbody.Look
         [SerializeField] protected AxisConstraint _axisConstraint = AxisConstraint.None;
         [SerializeField] protected Vector3 _up = Vector3.up;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rigidbody.DOLookAt(_endTarget.position, _duration, _axisConstraint, _up);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rigidbody.DOLookAt(_starTarget.position, _duration, _axisConstraint, _up);
         }

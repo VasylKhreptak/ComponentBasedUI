@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace CBA.Animations.Transform.Move
 {
-    public class MoveXAnimation : DirectionMoveAnimationCore
+    public class MoveXAnimation : DirectionMoveAnimation
     {
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _transform.DOMoveX(_to, _duration, _snapping);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _transform.DOMoveX(_from, _duration, _snapping);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CBA.Animations.RectTransform.Shake
 {
-    public class AnchorShakeAnimation : RectTransformAnimationCore
+    public class AnchorShakeAnimation : RectTransformAnimation
     {
         [Header("Shake Preferences")]
         [SerializeField] protected Vector2 _strengthDirection;
@@ -28,12 +28,12 @@ namespace CBA.Animations.RectTransform.Shake
 
         #endregion
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rectTransform.DOShakeAnchorPos(_duration, _strengthDirection * _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rectTransform.DOShakeAnchorPos(_duration, -_strengthDirection * _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode);
 

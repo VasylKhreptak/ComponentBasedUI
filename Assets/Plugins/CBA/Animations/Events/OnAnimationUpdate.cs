@@ -6,11 +6,11 @@ namespace CBA.Animations.Events
     {
         protected override void AddListener()
         {
-            _animation.Tween.onUpdate += Invoke;
+            _animation.Animation.onUpdate += Invoke;
         }
         protected override void RemoveListener()
         {
-            _animation.Tween.onUpdate -= Invoke;
+            _animation.Animation.onUpdate -= Invoke;
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CBA.Animations.Audio.AudioMixer
 {
-    public class AudioMixerVolumeAnimation : AudioMixerAnimationCore
+    public class AudioMixerVolumeAnimation : AudioMixerAnimation
     {
         [Header("Volume Preferences")]
         [SerializeField, Range(-80f, 20f)] private float _startVolume = -80f;
@@ -32,12 +32,12 @@ namespace CBA.Animations.Audio.AudioMixer
             }
         }
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _audioMixerGroup.audioMixer.DOSetFloat(_audioMixerGroup.name, _targetVolume, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _audioMixerGroup.audioMixer.DOSetFloat(_audioMixerGroup.name, _startVolume, _duration);
         }

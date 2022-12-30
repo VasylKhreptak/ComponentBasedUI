@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CBA.Animations.RectTransform.AnchorMinMax
 {
-    public class AnchorMinAnimation : RectTransformAnimationCore
+    public class AnchorMinAnimation : RectTransformAnimation
     {
         [Header("Move Preferences")]
         [SerializeField] private Vector2 _startAnchorMin;
@@ -14,12 +14,12 @@ namespace CBA.Animations.RectTransform.AnchorMinMax
         [Header("Snapping")]
         [SerializeField] private bool _snapping;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rectTransform.DOAnchorMin(_targetAnchorMin, _duration, _snapping);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rectTransform.DOAnchorMin(_startAnchorMin, _duration, _snapping);
         }

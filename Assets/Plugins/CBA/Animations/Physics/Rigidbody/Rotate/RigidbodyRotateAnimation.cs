@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace CBA.Animations.Physics.Rigidbody.Rotate
 {
-    public class RigidbodyRotateAnimation : RigidbodyAnimationCore
+    public class RigidbodyRotateAnimation : RigidbodyAnimation
     {
         [Header("Rotate Preferences")]
         [SerializeField] private Vector3 _startAngle;
         [SerializeField] private Vector3 _targetAngle;
 
-        public override Tween CreateForwardTween()
+        public override Tween CreateForwardAnimation()
         {
             return _rigidbody.DORotate(_targetAngle, _duration);
         }
 
-        public override Tween CreateBackwardTween()
+        public override Tween CreateBackwardAnimation()
         {
             return _rigidbody.DORotate(_startAngle, _duration);
         }
