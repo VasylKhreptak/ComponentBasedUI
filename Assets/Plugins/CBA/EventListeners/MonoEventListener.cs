@@ -24,21 +24,14 @@ namespace CBA.EventListeners
         
         protected override void AddListener()
         {
-            _monoEvent.onMonoCall += OnMonoCall;
+            _monoEvent.onMonoCall += OnEventFired;
         }
 
         protected override void RemoveListener()
         {
-            _monoEvent.onMonoCall -= OnMonoCall;
+            _monoEvent.onMonoCall -= OnEventFired;
         }
 
-        private void OnMonoCall()
-        {
-            OnEventFired();
-            
-            Invoke();
-        }
-        
         protected abstract void OnEventFired();
     }
 }
