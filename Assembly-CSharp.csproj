@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\TEST.cs" />
+     <Compile Include="Assets\EditorTargetFramerate.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\TestShaders" />

@@ -8,12 +8,15 @@ namespace CBA.Actions.Management.Transform.Position
     {
         [Header("Preferences")]
         [SerializeField] private Vector3 _localPositionOffset;
+        [SerializeField] private bool _smoothByDeltaTime;
 
         private Vector3 EvaluatedLocalPositionOffset => Extensions.Vector3.ReplaceWithByAxes(_localPositionOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(AllowedAxes));
-        
+
+        private Vector3 SmoothEvaluatedLocalPositionOffset => EvaluatedLocalPositionOffset * Time.deltaTime;
+
         public override void Do()
         {
-            _transform.localPosition += EvaluatedLocalPositionOffset;
+            _transform.localPosition += _smoothByDeltaTime ? SmoothEvaluatedLocalPositionOffset : EvaluatedLocalPositionOffset;
         }
 
         #region Editor
@@ -25,7 +28,7 @@ namespace CBA.Actions.Management.Transform.Position
         [ShowNonSerializedField] private bool _movedToStart;
         [ShowNonSerializedField] private bool _movedToEnd;
 
-        [Button("Start Recording")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Start Recording")]
         private void StartRecording()
         {
             if (_isRecording) return;
@@ -37,7 +40,7 @@ namespace CBA.Actions.Management.Transform.Position
             _movedToStart = false;
         }
 
-        [Button("Stop Recording")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Stop Recording")]
         private void StopRecording()
         {
             if (_isRecording == false) return;
@@ -50,7 +53,7 @@ namespace CBA.Actions.Management.Transform.Position
             _movedToStart = false;
         }
 
-        [Button("Move To End")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Move To End")]
         private void MoveToEnd()
         {
             if (_isRecording || _movedToEnd) return;
@@ -63,7 +66,7 @@ namespace CBA.Actions.Management.Transform.Position
             _movedToStart = false;
         }
 
-        [Button("Move To Start")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Move To Start")]
         private void MoveToStart()
         {
             if (_isRecording || _movedToStart || _movedToEnd == false) return;
@@ -73,7 +76,7 @@ namespace CBA.Actions.Management.Transform.Position
             _movedToStart = true;
             _movedToEnd = false;
         }
-        
+
         private void OnDrawGizmosSelected()
         {
             UnityEngine.Transform parent = _transform.parent;
@@ -91,7 +94,7 @@ namespace CBA.Actions.Management.Transform.Position
                 if (_movedToEnd)
                 {
                     Vector3 pointCenter = parent.TransformPoint(_startLocalPosition);
-                    
+
                     Gizmos.color = Color.white;
                     DrawPoint(ref pointCenter);
                 }
@@ -126,7 +129,7 @@ namespace CBA.Actions.Management.Transform.Position
         {
             Gizmos.DrawSphere(position, 0.1f);
         }
-        
+
 #endif
 
         #endregion

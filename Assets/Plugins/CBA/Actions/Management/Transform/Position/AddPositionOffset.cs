@@ -8,24 +8,27 @@ namespace CBA.Actions.Management.Transform.Position
     {
         [Header("Preferences")]
         [SerializeField] private Vector3 _offset;
+        [SerializeField] private bool _smoothByDeltaTime;
 
         private Vector3 EvaluatedOffset => Extensions.Vector3.ReplaceWithByAxes(_offset, Vector3.zero, Extensions.Vector3Int.InverseAxes(AllowedAxes));
-        
+
+        private Vector3 SmoothEvaluatedOffset => EvaluatedOffset * Time.deltaTime;
+
         public override void Do()
         {
-            _transform.position += EvaluatedOffset;
+            _transform.position += _smoothByDeltaTime ? SmoothEvaluatedOffset : EvaluatedOffset;
         }
 
         #region Editor
 
 #if UNITY_EDITOR
-        
+
         [ShowNonSerializedField] private Vector3 _startPosition;
         [ShowNonSerializedField] private bool _isRecording;
         [ShowNonSerializedField] private bool _movedToStart;
         [ShowNonSerializedField] private bool _movedToEnd;
 
-        [Button("Start Recording")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Start Recording")]
         private void StartRecording()
         {
             if (_isRecording) return;
@@ -37,7 +40,7 @@ namespace CBA.Actions.Management.Transform.Position
             _movedToStart = false;
         }
 
-        [Button("Stop Recording")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Stop Recording")]
         private void StopRecording()
         {
             if (_isRecording == false) return;
@@ -50,7 +53,7 @@ namespace CBA.Actions.Management.Transform.Position
             _movedToStart = false;
         }
 
-        [Button("Move To End")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Move To End")]
         private void MoveToEnd()
         {
             if (_isRecording || _movedToEnd) return;
@@ -63,7 +66,7 @@ namespace CBA.Actions.Management.Transform.Position
             _movedToStart = false;
         }
 
-        [Button("Move To Start")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Move To Start")]
         private void MoveToStart()
         {
             if (_isRecording || _movedToStart || _movedToEnd == false) return;
@@ -98,7 +101,7 @@ namespace CBA.Actions.Management.Transform.Position
         {
             Vector3 targetPosition = Extensions.Vector3.ReplaceWithByAxes(_transform.position, _startPosition, Extensions.Vector3Int.InverseAxes(AllowedAxes));
             Vector3 direction = targetPosition - _startPosition;
-            
+
             Gizmos.color = Color.red;
             DrawPoint(ref _startPosition);
             Extensions.Gizmos.DrawArrow(_startPosition, direction);
@@ -109,7 +112,7 @@ namespace CBA.Actions.Management.Transform.Position
             Vector3 startPosition = _transform.position;
             Vector3 targetPosition = startPosition + EvaluatedOffset;
             Vector3 direction = targetPosition - startPosition;
-            
+
             Gizmos.color = Color.white;
             Extensions.Gizmos.DrawArrow(startPosition, direction);
         }
@@ -118,7 +121,7 @@ namespace CBA.Actions.Management.Transform.Position
         {
             Gizmos.DrawSphere(position, 0.1f);
         }
-        
+
 #endif
 
         #endregion

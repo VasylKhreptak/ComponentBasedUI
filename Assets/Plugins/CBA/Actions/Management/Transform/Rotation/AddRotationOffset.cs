@@ -8,14 +8,17 @@ namespace CBA.Actions.Management.Transform.Rotation
     {
         [Header("Preferences")]
         [SerializeField] private Vector3 _rotationOffset;
+        [SerializeField] private bool _smoothByDeltaTime;
 
         private Vector3 EvaluatedRotationOffset => Extensions.Vector3.ReplaceWithByAxes(_rotationOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(AllowedAxes));
-        
+
+        private Vector3 SmoothEvaluatedRotationOffset => EvaluatedRotationOffset * Time.deltaTime;
+
         public override void Do()
         {
             Quaternion rotation = _transform.rotation;
 
-            _transform.rotation = Quaternion.Euler(EvaluatedRotationOffset) * rotation;
+            _transform.rotation = Quaternion.Euler(_smoothByDeltaTime ? SmoothEvaluatedRotationOffset : EvaluatedRotationOffset) * rotation;
         }
 
         #region Editor
@@ -26,7 +29,7 @@ namespace CBA.Actions.Management.Transform.Rotation
         [ShowNonSerializedField] private bool _rotatedToStart;
         [ShowNonSerializedField] private bool _rotatedToEnd;
 
-        [Button("Start Recording")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Start Recording")]
         private void StartRecording()
         {
             if (_isRecording) return;
@@ -38,7 +41,7 @@ namespace CBA.Actions.Management.Transform.Rotation
             _rotatedToStart = false;
         }
 
-        [Button("Stop Recording")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Stop Recording")]
         private void StopRecording()
         {
             if (_isRecording == false) return;
@@ -51,7 +54,7 @@ namespace CBA.Actions.Management.Transform.Rotation
             _rotatedToStart = false;
         }
 
-        [Button("Rotate To End")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Rotate To End")]
         private void RotateToEnd()
         {
             if (_isRecording || _rotatedToEnd) return;
@@ -65,7 +68,7 @@ namespace CBA.Actions.Management.Transform.Rotation
             _rotatedToStart = false;
         }
 
-        [Button("Rotate To Start")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Rotate To Start")]
         private void RotateToStart()
         {
             if (_isRecording || _rotatedToStart || _rotatedToEnd == false) return;

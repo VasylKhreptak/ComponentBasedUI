@@ -8,24 +8,27 @@ namespace CBA.Actions.Management.Transform.Scale
     {
         [Header("Preferences")]
         [SerializeField] private Vector3 _localScaleOffset;
+        [SerializeField] private bool _smoothByDeltaTime;
 
         private Vector3 EvaluatedLocalScaleOffset => Extensions.Vector3.ReplaceWithByAxes(_localScaleOffset, Vector3.zero, Extensions.Vector3Int.InverseAxes(AllowedAxes));
-        
+
+        private Vector3 SmoothEvaluatedLocalScaleOffset => EvaluatedLocalScaleOffset * Time.deltaTime;
+
         public override void Do()
         {
-            _transform.localScale += EvaluatedLocalScaleOffset;
+            _transform.localScale += _smoothByDeltaTime ? SmoothEvaluatedLocalScaleOffset : EvaluatedLocalScaleOffset;
         }
-        
+
         #region Editor
 
 #if UNITY_EDITOR
-        
+
         [ShowNonSerializedField] private Vector3 _startLocalScale;
         [ShowNonSerializedField] private bool _isRecording;
         [ShowNonSerializedField] private bool _movedToStart;
         [ShowNonSerializedField] private bool _movedToEnd;
 
-        [Button("Start Recording")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Start Recording")]
         private void StartRecording()
         {
             if (_isRecording) return;
@@ -37,7 +40,7 @@ namespace CBA.Actions.Management.Transform.Scale
             _movedToStart = false;
         }
 
-        [Button("Stop Recording")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Stop Recording")]
         private void StopRecording()
         {
             if (_isRecording == false) return;
@@ -50,7 +53,7 @@ namespace CBA.Actions.Management.Transform.Scale
             _movedToStart = false;
         }
 
-        [Button("Scale To End")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Scale To End")]
         private void ScaleToEnd()
         {
             if (_isRecording || _movedToEnd) return;
@@ -62,7 +65,7 @@ namespace CBA.Actions.Management.Transform.Scale
             _movedToStart = false;
         }
 
-        [Button("Scale To Start")]
+        [HideIf(nameof(_smoothByDeltaTime)), Button("Scale To Start")]
         private void ScaleToStart()
         {
             if (_isRecording || _movedToStart || _movedToEnd == false) return;
@@ -76,6 +79,6 @@ namespace CBA.Actions.Management.Transform.Scale
 #endif
 
         #endregion
-        
+
     }
 }
