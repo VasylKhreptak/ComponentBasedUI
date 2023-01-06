@@ -1,6 +1,5 @@
 using CBA.Adapters.Float.Core;
 using DG.Tweening;
-using NaughtyAttributes;
 using UnityEngine;
 using Animation = CBA.Animations.Core.Animation;
 

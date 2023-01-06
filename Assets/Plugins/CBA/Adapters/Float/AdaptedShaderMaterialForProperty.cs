@@ -1,5 +1,4 @@
 ﻿using CBA.Adapters.Float.Core;
-using CBA.Animations.Tweeners;
 using UnityEngine;
 
 namespace CBA.Adapters.Float
