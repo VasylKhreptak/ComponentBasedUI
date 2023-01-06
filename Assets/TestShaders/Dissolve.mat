@@ -58,7 +58,7 @@ Material:
     - _AoStrength: 1
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Dissolve: 0
+    - _Dissolve: 0.41936028
     - _EdgeLength: 0.3
     - _Metallic: 0
     - _NoiseScale: 84.22
