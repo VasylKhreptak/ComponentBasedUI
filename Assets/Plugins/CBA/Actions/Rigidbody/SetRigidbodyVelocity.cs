@@ -35,6 +35,5 @@ namespace CBA.Actions.Rigidbody
 
         #endregion
 
-
     }
 }
