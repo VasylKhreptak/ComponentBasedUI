@@ -1,7 +1,6 @@
 ﻿using CBA.Animations.Physics.Rigidbody2D.Core;
 using DG.Tweening;
 using NaughtyAttributes;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 namespace CBA.Animations.Physics.Rigidbody2D.Rotate
