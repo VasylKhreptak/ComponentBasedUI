@@ -1,4 +1,4 @@
-An easy tool for creating component based animations with no single line of code. Based on DoTween.
+An easy tool for creating component based animations with no single line of code. Based on DoTween. Supports animations, sequences and other tools.
 
 How to install?
 1. Install DoTween and Naughty Attributes.Move Naugthy Attributes to Plugins folder. In DoTween panel import all the plugins, set AutoKill = true, AutoPlay = None.
