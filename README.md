@@ -8,3 +8,5 @@ How to install?
 References:
 1. https://github.com/dbrizov/NaughtyAttributes
 2. https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676#reviews
+
+YouTube: https://youtu.be/V9QjUZnMtZU
