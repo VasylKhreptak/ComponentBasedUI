@@ -5,6 +5,15 @@ How to install?
 2. Then download CBA and paste it to the Plugins folder.
 3. After that, you need to create an ASMDEF file(in DoTween panel) and add DoTween.dll to CBA. After that, add NaughtyAttributes.Core and Unity.TextMeshPro to ASMDEF in CBA.
 
+Features:
+1. Extremely flexible event based system.
+2. Contains 60+ animations
+3. Each animation has a lot of settings.
+4. You can also make an animation sequences.
+5. Each animation and sequence has state events.
+6. You can also write your own animations based on your needs.
+
+
 References:
 1. https://github.com/dbrizov/NaughtyAttributes
 2. https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676#reviews
