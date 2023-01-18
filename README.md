@@ -13,6 +13,7 @@ Features:
 5. Each animation and sequence has state events.
 6. You can also write your own animations based on your needs.
 
+This plugin contains 247 classes and almost 8600 Lines of CODE(11632 lines, inlcuding spaces and brackets).
 
 References:
 1. https://github.com/dbrizov/NaughtyAttributes
