@@ -22,7 +22,7 @@ namespace CBA.Animations.Core
 
         public Tween Animation => _animation;
         
-        public Action onInit;
+        public event Action onInit;
 
         #region MonoBehaviour
 
