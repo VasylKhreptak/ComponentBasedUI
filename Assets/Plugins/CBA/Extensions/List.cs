@@ -60,5 +60,15 @@ namespace CBA.Extensions
         {
             return array[array.Count - 1];
         }
+        
+        public static void Shuffle<T>(this List<T> array)
+        {
+            int n = array.Count;
+            while (n > 1)
+            {
+                int k = UnityEngine.Random.Range(0, n--);
+                (array[n], array[k]) = (array[k], array[n]);
+            }
+        }
     }
 }
