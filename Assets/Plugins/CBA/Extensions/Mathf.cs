@@ -43,6 +43,9 @@ namespace CBA.Extensions
 
         public static bool Probability(float probability)
         {
+            if (probability == 0) return false;
+            if (probability == 1) return true;
+
             if (probability.IsBetween(0f, 1f) == false)
             {
                 Debug.LogWarning("Probability must be between 0 and 1");
