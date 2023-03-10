@@ -19,7 +19,7 @@ namespace CBA.Animations.Core
         [ShowIf(nameof(_useAdditionalSettings)), SerializeField] private UpdateType _updateType = DOTween.defaultUpdateType;
 
         private Tween _animation;
-
+        
         public Tween Animation => _animation;
         
         public event Action onInit;
@@ -71,6 +71,13 @@ namespace CBA.Animations.Core
         public abstract Tween CreateForwardAnimation();
 
         public abstract Tween CreateBackwardAnimation();
+
+        private bool CanPlay()
+        {
+            return _animation == null || _animation.active == false;
+        }
+
+        #region AnimationControl
 
         public abstract void MoveToStartState();
 
@@ -136,9 +143,6 @@ namespace CBA.Animations.Core
             PlayBackwardImmediate();
         }
 
-        private bool CanPlay()
-        {
-            return _animation == null || _animation.active == false;
-        }
+        #endregion
     }
 }
