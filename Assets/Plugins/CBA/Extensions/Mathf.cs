@@ -1,3 +1,7 @@
+using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
+
 namespace CBA.Extensions
 {
     public static class Mathf
@@ -29,7 +33,31 @@ namespace CBA.Extensions
 
         public static int Inverse01(int value)
         {
+            if (value != 0 && value != 1)
+            {
+                Debug.LogWarning("Inverse01 can only be used on 0 or 1");
+            }
+
             return value == 0 ? 1 : 0;
+        }
+
+        public static bool Probability(float probability)
+        {
+            if (probability.IsBetween(0f, 1f) == false)
+            {
+                Debug.LogWarning("Probability must be between 0 and 1");
+                probability = probability.Clamp01();
+            }
+
+            return Random.value <= probability;
+        }
+
+        public static void Probability(float probability, Action action)
+        {
+            if (Probability(probability))
+            {
+                action.Invoke();
+            }
         }
     }
 }
